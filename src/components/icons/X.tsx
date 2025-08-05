@@ -1,0 +1,26 @@
+import { FC } from 'react';
+
+interface XProps {
+    height: number;
+    width: number;
+    color: string;
+}
+
+const X: FC<XProps> = ({ height, width, color }) => {
+    return (
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 487.43 456.19"
+            width={width}
+            height={height}>
+            <path
+                id="path1009"
+                fill={color}
+                d="M7.48,21.9,195.66,273.57,6.29,478.1H48.91L214.71,299l134,179.11h145L294.93,212.33,471.2,21.9H428.58L275.89,186.82,152.51,21.9ZM70.16,53.3h66.63L431,446.7H364.39Z"
+                transform="translate(-6.29 -21.9)"
+            />
+        </svg>
+    );
+};
+
+export default X;

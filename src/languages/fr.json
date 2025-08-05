@@ -1,0 +1,67 @@
+{
+    "Navbar": {
+        "about_me": "À propos de moi",
+        "contact_me": "Me contacter",
+        "tools": "Outils",
+        "blog": "Blog",
+        "sign_in": "Connexion",
+        "theme_toggle": {
+            "sr": "Changer le thème",
+            "light": "Clair",
+            "dark": "Sombre",
+            "system": "Système"
+        },
+        "user_nav": {
+            "profile": "Profil",
+            "sign_out": "Se déconnecter"
+        },
+        "admin": "Admin"
+    },
+    "Index": {
+        "Hero": {
+            "heading": "Salut, moi c'est Antoine !",
+            "alt_heading": [
+                "Je suis un développeur autodidacte français connu sous le nom de Melio.",
+                "Spécialisé dans le développement web, j'aime créer des sites web propres."
+            ]
+        },
+        "Projects": {
+            "title": "Mes projets",
+            "meliodas": {
+                "short_description": "Bot multifonction et simple d'usage disponible en Français et Anglais.",
+                "description": "Méliodas est mon plus grand projet, I have been working on it for a few years now."
+            },
+            "naybor": {
+                "short_description": "Naybor est un bot discord musical open-source : Français et Anglais.",
+                "description": "Aaaa\nbb"
+            },
+            "sbl": {
+                "short_description": "Discord bots list vous permettant de trouver le bot de vos rêves.",
+                "description": "Aaaa\nbb"
+            },
+            "crmpt": {
+                "short_description": "Site internet moderne et sécurisé pour une monnaie virtuelle échangeable.",
+                "description": "Aaaa\nbb"
+            },
+            "projet_amboise": {
+                "short_description": "[FR] Site internet d'un jeu vidéo qui aidait à financer mon bal de promo.",
+                "description": "Aaaa\nbb"
+            }
+        },
+        "Tools": {
+            "title": "Qu'est-ce que j'utilise ?",
+            "software": "Logiciels",
+            "technologies": "Technologies"
+        },
+        "Contact": {
+            "title": "Me contacter",
+            "subtitle": [
+                "N'hésitez pas à me contacter pour des projets, suggestions ou tout autre chose !\nCe formulaire vous permet de discuter avec moi par e-mail, mais vous pouvez toujours me contacter sur mon",
+                "serveur discord"
+            ]
+        }
+    },
+    "Footer": {
+        "legal_info": "Mentions légales"
+    }
+}

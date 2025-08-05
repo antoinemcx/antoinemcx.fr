@@ -1,0 +1,67 @@
+{
+    "Navbar": {
+        "about_me": "About me",
+        "contact_me": "Contact me",
+        "tools": "Tools",
+        "blog": "Blog",
+        "sign_in": "Sign in",
+        "theme_toggle": {
+            "sr": "Toggle theme",
+            "light": "Light",
+            "dark": "Dark",
+            "system": "System"
+        },
+        "user_nav": {
+            "profile": "Profile",
+            "sign_out": "Sign out"
+        },
+        "admin": "Admin"
+    },
+    "Index": {
+        "Hero": {
+            "heading": "Hi, I'm Antoine",
+            "alt_heading": [
+                "I am a French self-taught developer also known as Melio.",
+                "Specialized in web development, I love making clean websites."
+            ]
+        },
+        "Projects": {
+            "title": "My projects",
+            "meliodas": {
+                "short_description": "Easy-to-use and multifunctional bot available in French and English.",
+                "description": "Méliodas is my biggest project, I have been working on it for a few years now."
+            },
+            "naybor": {
+                "short_description": "Naybor is an open-source music discord bot : French and English.",
+                "description": "Aaaa\nbb"
+            },
+            "sbl": {
+                "short_description": "Discord bots list allowing you to find the bot of your dreams.",
+                "description": "Aaaa\nbb"
+            },
+            "crmpt": {
+                "short_description": "Modern and secure website for an exchangeable virtual currency.",
+                "description": "Aaaa\nbb"
+            },
+            "projet_amboise": {
+                "short_description": "[FR] Website of a videogame that helped in financing my prom.",
+                "description": "Aaaa\nbb"
+            }
+        },
+        "Tools": {
+            "title": "What do I use ?",
+            "software": "Software",
+            "technologies": "Technologies"
+        },
+        "Contact": {
+            "title": "Contact me",
+            "subtitle": [
+                "Don't hesitate to contact me for projects, suggestions or anything else !\nThis form allows you to chat with me by e-mail, but you can always contact me on my",
+                "discord server"
+            ]
+        }
+    },
+    "Footer": {
+        "legal_info": "Legal information"
+    }
+}

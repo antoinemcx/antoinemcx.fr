@@ -1,0 +1,135 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --background: #e4e4eb;
+        --foreground: #0e101b;
+
+        --primary: #616df1;
+        --primaryHover: #7680ee;
+
+        --muted: #464d57;
+        --muted-hard: #3d444d;
+        --accent: #e6e6ee;
+        --accentAlt: #e0e0e0;
+        --highlight: #0f0f0f;
+        --paragraph: #334155;
+        --paragraph-hover: #3a4a61;
+
+        --button: #0c0c0c;
+        --buttonHover: #2e2e2e;
+
+        --card: #f0f0f0;
+        --card-foreground: #cacaca;
+        --cardAlt: #f7f7f7;
+        --cardAlt-hover: #e6e6e6;
+
+        --border: #e2e8f0;
+        --input: #e2e8f0;
+
+        --destructive: #ff0000;
+        --destructive-foreground: #f5faff;
+
+        --radius: 0.5rem;
+    }
+
+    .dark {
+        --background: #17171b;
+        --foreground: #f8f8f8;
+
+        --primary: #6f7bf8;
+        --primaryHover: #7781ec;
+
+        --muted: #9aa1a8;
+        --muted-hard: #82868b;
+        --accent: #29292c;
+        --accentAlt: #2c2c30;
+        --highlight: #f8f8f8;
+        --paragraph: #cfd1d4;
+        --paragraph-hover: #ebedf3;
+
+        --button: #e4e4e4;
+        --buttonHover: #f5f5f5;
+
+        --card: #29292e;
+        --card-foreground: #4d4d55;
+        --card-hover: #393941;
+        --cardAlt: #26262b;
+        --cardAlt-hover: #2d2d33;
+
+        --border: #27303d;
+        --input: #2b3544;
+
+        --destructive: #b12a2a;
+        --destructive-foreground: #f5faff;
+    }
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+    body {
+        @apply bg-background text-foreground;
+    }
+}
+
+@layer utilities {
+    .animation-delay-2000 {
+        animation-delay: 2s;
+    }
+    .animation-delay-4000 {
+        animation-delay: 4s;
+    }
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+::-webkit-scrollbar-thumb {
+    background-color: var(--accent);
+    border-radius: 15px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: initial;
+}
+
+.drawer-gradient {
+    position: absolute;
+    width: 100px;
+    height: 400px;
+    top: 10%;
+    right: 10%;
+
+    background: var(--primary);
+    transform: rotate(-150deg);
+    filter: blur(170px);
+}
+
+.gradient-top {
+    position: absolute;
+    width: 1000px;
+    height: 1000px;
+    border-radius: 50%;
+    top: -550px;
+    left: -550px;
+
+    background: var(--primary);
+    transform: rotate(-150deg);
+    filter: blur(750px);
+}
+.gradient-bottom {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    border-radius: 500px 0 0 0;
+    bottom: 0;
+    right: 0;
+
+    background: var(--primary);
+    overflow: hidden;
+    filter: blur(550px);
+}
