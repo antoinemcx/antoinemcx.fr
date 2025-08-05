@@ -16,8 +16,7 @@
         },
         "lang": [ ["fr", "FR"], ["en", "Anglais"], "antoinemcx.fr/en/", ["Français", "Anglais"] ],
         "url": "antoinemcx.fr/",
-        "cookies": [ "Tu aimes les cookies ?", "Nous en utilisons pour une meilleure expérience sur notre site.", "En savoir plus", "Accepter" ],
-        "wip_alert": [ "Le site est en cours de refonte.", "Il n'a pas été modifié depuis 2023 mais une refonte est en cours, il sera bientôt de retour !" ]
+        "cookies": [ "Tu aimes les cookies ?", "Nous en utilisons pour une meilleure expérience sur notre site.", "En savoir plus", "Accepter" ]
     },
     "errors": {
         "admin": [ "Vous n'êtes pas autorisé(e) !", "Page est réservée aux administrateurs." ],

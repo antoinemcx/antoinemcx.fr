@@ -16,8 +16,7 @@
         },
         "lang": [ ["en", "EN"], ["fr", "French"], "antoinemcx.fr/", ["French", "English"] ],
         "url": "antoinemcx.fr/en/",
-        "cookies": [ "Do you like cookies ?", "We use them for a better experience on our site.", "Read more", "Accept" ],
-        "wip_alert": [ "The site is being rebuilt", "It has not been modified since 2023 but a redesign is underway, it will be back soon!" ]
+        "cookies": [ "Do you like cookies ?", "We use them for a better experience on our site.", "Read more", "Accept" ]
     },
     "errors": {
         "admin": [ "You are not allowed !", "This page is for administrators only." ],
