@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Mélioᴼᶠᶠ💫</title>
+        <link rel="icon" href="<%= avatar %>" class="flavicon">
+        <meta name="description" content="Mélioᴼᶠᶠ💫's personnal website.">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="css/bootstrap/bootstrap.css">
+        <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
+        <link rel="stylesheet" href="css/main.css">
+        <!-- <link rel="stylesheet" media="screen and (max-width: 1280px)" href="css/mobile.css"> -->
+        <link href="https://fonts.cdnfonts.com/css/whitney-2" rel="stylesheet" type="text/css" />
+		
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    </head>
+
+    <body>
+        <img src="https://images4.alphacoders.com/909/thumb-1920-909912.png" style="position: absolute; height: 100%; width: 100%; opacity: 0.15; z-index: -1;">
+
+        <div class="profile">
+            <div class="banner">
+                <div class="pfp"></div>
+                <div class="badgeList">
+                    <a href="/discord" target='_BLANK'><img aria-hidden="true" draggable="false" src="img/hypesquad_brillance.svg"></a>
+                    <a href="/discord" target='_BLANK'><img aria-hidden="true" draggable="false" src="img/certified_developer.svg"></a>
+                </div>
+                <a href="/dc" target='_BLANK'><button type="button" id="server"><div>My discord server</div></button></a>
+                <div class="day-night">
+                    <i class="fas"></i>
+                </div>
+            </div>
+            
+            <style>
+                .banner .pfp::before { background-image: url('<%= avatar %>'); }
+            </style>
+
+            <div class="header">
+                <h1 class="username">
+                    <%= username %><span class="id" style="display: initial;">#<%= tag %></span>
+                </h1>
+            </div>
+
+            <div class="tabs">
+                <ul>
+                    <li id="userinfo" class="active">User info</li>
+                    <li id="projects">Projects</li>
+                    <li id="contact">Contact</li>
+                </ul>
+            </div>
+
+            <div id="userinfoContent" class="content">
+                <h3>ABOUT ME</h3>
+                <p class="userBio">
+                    <span>Hi, I'm French, you can contact me <a href="/dc" target="_BLANK">here</a> 👋</span>
+                    <span style="margin-left: 10px;">•  Self-learner developer (HTML, CSS, JS, SQL, EJS)</span>
+                    <span style="margin-left: 10px;">•  Developer of Méliodas・<a href="https://meliodasbot.fr" target="_BLANK">meliodasbot.fr</a></span>
+                    <span style="margin-left: 10px;">•  StellarBotList Founder・<a href="https://stellarbotlist.com" target="_BLANK">stellarbotlist.com</a></span>
+                </p>
+                <h3>LANGUAGES AND TOOLS</h3>
+                <p style="margin-bottom: 45px">
+                    <code><img height="25" src="https://raw.githubusercontent.com/rahul-jha98/github_readme_icons/main/language_and_tools/square/javascript/javascript.png"></code>
+                    <code><img height="25" src="https://raw.githubusercontent.com/rahul-jha98/github_readme_icons/main/language_and_tools/square/node/node.png"></code>
+                    <code><img height="25" src="https://raw.githubusercontent.com/rahul-jha98/github_readme_icons/main/language_and_tools/square/python/python.png"></code>
+                    <code><img height="25" src="https://raw.githubusercontent.com/rahul-jha98/github_readme_icons/main/language_and_tools/square/git-scm/git-scm.png"></code>
+                    <code><img height="25" src="https://raw.githubusercontent.com/hussainweb/hussainweb/main/icons/vscode.png"></code>
+                    <code><img height="25" src="https://github.com/hussainweb/hussainweb/raw/main/icons/mariadb.png"></code>
+                    <code><img height="25" src="https://raw.githubusercontent.com/rahul-jha98/github_readme_icons/main/language_and_tools/square/html/html.png"></code>
+                    <code><img height="25" src="https://raw.githubusercontent.com/rahul-jha98/github_readme_icons/main/language_and_tools/square/css/css.png"></code>
+                    <code><img height="25" src="https://cdn.worldvectorlogo.com/logos/npm-2.svg"></code>
+                    <code><img height="25" src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/express_js.png"></code>
+                    <code><img height="25" src="https://raw.githubusercontent.com/rahul-jha98/github_readme_icons/main/language_and_tools/square/bootstrap/bootstrap.png"></code>  
+                </p>
+                <hr>
+                <div class="links">
+                    <div class="link">
+                        <h2><img src="img/github.png"></h2>
+                        <h3>meliooff</h3>
+                        <h3><a href="https://github.com/meliooff" target="_blank"><i class="fas fa-external-link-alt externalLink" style="margin-left: 120px;"></i></a></h3>
+                    </div>
+                    <div class="link">
+                        <h2><img src="https://imgur.com/EriePcB.png"></h2>
+                        <h3>meliooff_</h3>
+                        <h3><a href="https://instagram.com/meliooff_" target="_blank"><i class="fas fa-external-link-alt externalLink" style="margin-left: 110px;"></i></a></h3>
+                    </div>
+                    <div class="link">
+                        <h2><img src="img/youtube.png"></h2>
+                        <h3>MélioOff</h3>
+                        <h3><a href="https://www.youtube.com/channel/UCwG-Svp485Xjss6OaP0eXJw" target="_blank"><i class="fas fa-external-link-alt externalLink" style="margin-left: 115px;"></i></a></h3>
+                    </div>
+                    <div class="link">
+                        <h2><img src="img/twitter.png"></h2>
+                        <h3>meliodas__off</h3>
+                        <h3><a href="https://twitter.com/meliodas__off" target="_blank"><i class="fas fa-external-link-alt externalLink" style="margin-left: 79px;"></i></a></h3>
+                    </div>
+                </div><br>
+            </div>
+            
+            <div class="container content" id="contactContent">
+                <div class="row">
+                <div class="col-md-12">
+                    <form id="contact-form" action="<%= formspree %>" method="POST">
+                    <div class="form-group center-block">
+                        <label for="inputName"><h3>NAME</h3></label>
+                        <input type="text" class="form-control contact-input" id="inputName" placeholder="Name" name="name">
+                    </div>
+                    <div class="form-group center-block">
+                        <label for="inputEmail"><h3>E-MAIL</h3></label>
+                        <input type="email" class="form-control contact-input" id="inputEmail" placeholder="E-mail" name="email">
+                    </div>
+                    <div class="form-group center-block">
+                        <label for="inputSubject"><h3>SUBJECT</h3></label>
+                        <input type="text" class="form-control contact-input" id="inputSubject" placeholder="Subect" name="subject" minlength="5">
+                    </div>
+                    <div class="form-group center-block">
+                        <label for="inputMessage"><h3>MESSAGE</h3></label>
+                        <textarea id="inputMessage" class="form-control contact-input" rows="3" placeholder="Your message" name="message" minlength="25"></textarea>
+                    </div>
+                    <input type="text" name="_gotcha" style="display: none">
+                    <div class="text-center">
+                        <button class="btn btn-default" type="submit" id="email-submit-btn" value="Send">Submit</button>
+                    </div>
+                    <span></span>
+                    </form>
+                </div>
+                </div>
+            </div>
+            
+            <div id="projectsContent" class="content" style="display: none;">
+                <h3>DISCORD SERVERS</h3>
+                <div class="roles-body">
+                    <div class="rol red">
+                        <i class="fas fa-circle"></a></i>
+                        <span><a href='https://meliodasbot.fr/support' target='_BLANK' style="color: var(--white)!important;">Méliodas</a></span>
+                    </div>
+                    <div class="rol blurple">
+                        <i class="fas fa-circle"></i>
+                        <span><a href='https://stellarbotlist.com/dc' target='_BLANK' style="color: var(--white)!important;">Stellar Bot List</a></span>
+                    </div>
+                    <div class="rol green">
+                        <i class="fas fa-circle"></i>
+                        <span><a href='https://discord.gg/FNEJpn8' target='_BLANK' style="color: var(--white)!important;">Ravnica</a></span>
+                    </div>
+                    <div class="rol blue">
+                        <i class="fas fa-circle"></i>
+                        <span><a href='/discord' target='_BLANK' style="color: var(--white)!important;">Mélioᵈᵉᵛ's world</a></span>
+                    </div>
+                </div>
+
+                <h3>DISCORD BOTS</h3>
+                <div class="row" style="margin-left: 0px;">
+                    <div class="container-fluid">
+                        <div class="row row-cols-1 row-cols-md-3">
+                            <div class="bot_column">
+                                <div class="teamcard border-animation" style="border-right: 3px #de3f3e solid;">
+                                    <div class="avatar"><img draggable="false" src="https://cdn.discordapp.com/avatars/562571094947659783/10872e489314925e4c4b2ff328acb448.png?size=512"></div>
+                                    <div class="user">
+                                        <h1>Méliodas</h1>
+                                        <h2 class="text-animation"><a href="https://meliodasbot.fr" target="_BLANK">Website</a> - <a href="https://meliodasbot.fr/support" target="_BLANK">Support</a> - <a href="https://meliodasbot.fr/invite" target="_BLANK">Invite</a></h2>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bot_column">
+                                <div class="teamcard border-animation" style="border-right: 3px #5b8a52 solid;">
+                                    <div class="avatar"><img draggable="false" src="https://cdn.discordapp.com/avatars/793213992910585898/b563c0464256bdbf72a4751363f48f07.png?size=512"></div>
+                                    <div class="user">
+                                        <h1>Naybor</h1>
+                                        <h2 class="text-animation"><a href="/dc" target="_BLANK">Support</a> - <a href="https://discordapp.com/oauth2/authorize?client_id=793213992910585898&permissions=8&scope=bot" target="_BLANK">Invite</a></h2>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bot_column">
+                                <div class="teamcard border-animation" style="border-right: 3px var(--grey) solid;">
+                                    <div class="avatar"><img draggable="false" src="https://cdn.discordapp.com/avatars/696335582187749478/f58a200f3025fa9557b30c8e0609d5ee.png?size=512"></div>
+                                    <div class="user">
+                                        <h1>Ravnica <i class="fas fa-lock" style="font-size: 11px; margin-left: 3.5px;"></i></h1>
+                                        <h2 class="text-animation"><a href="https://discord.gg/Wa8x8WUFSF" target="_BLANK">Discord server</a></h2>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bot_column">
+                                <div class="teamcard border-animation" style="border-right: 3px var(--blurple) solid;">
+                                    <div class="avatar"><img draggable="false" src="https://cdn.discordapp.com/avatars/599202833073438730/4842c13bcf08846fa7f9cdac9b90ea36.png?size=512"></div>
+                                    <div class="user">
+                                        <h1>Stellar Bot List <i class="fas fa-lock" style="font-size: 11px; margin-left: 3.5px;"></i></h1>
+                                        <h2 class="text-animation"><a href="https://stellarbotlist.com" target="_BLANK">Website</a> - <a href="https://stellarbotlist.com/dc" target="_BLANK">Discord server</a></h2>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bot_column">
+                                <div class="teamcard border-animation" style="border-right: 3px var(--blurple) solid;">
+                                    <div class="avatar"><img draggable="false" src="https://cdn.discordapp.com/avatars/832590912302612591/5ec9b551f283fd1440b360970b4cab06.png?size=512"></div>
+                                    <div class="user">
+                                        <h1>Mélioᵈᵉᵛ's bot <i class="fas fa-lock" style="font-size: 11px; margin-left: 3.5px;"></i></h1>
+                                        <h2 class="text-animation"><a href="/dc" target="_BLANK">Discord server</a></h2>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bot_column">
+                                <div class="teamcard border-animation" style="border-right: 3px var(--idle) solid;">
+                                    <div class="avatar"><img draggable="false" src="https://cdn.discordapp.com/avatars/688321466885734503/79b22dea1009f99653508c3bd92a9c7a.png?size=512"></div>
+                                    <div class="user">
+                                        <h1>Hawk <i class="fas fa-lock" style="font-size: 11px; margin-left: 3.5px;"></i></h1>
+                                        <h2 class="text-animation"><a href="https://meliodasbot.fr/support" target="_BLANK">Discord server</a></h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- JS FILES -->
+        <script src="js/main.js"></script>
+        <script src="js/pages.js"></script>
+        <script src="js/contact-form.js"></script>
+    </body>
+
+    <div class="copyrights" style="position: absolute; bottom: 0; padding: 10px; width: 100%; display: block;">
+        Copyright 2021 ©. All rights reserved.
+    </div>
+
+    <div class="alert text-center cookiealert" role="alert">
+        &#x1F36A; <b>Do you like cookies ?</b> We use cookies for a best experience on our website. <a href="https://cookiesandyou.com/" target="_blank">Learn more</a>
+        <button type="button" class="btn btn-primary btn-sm acceptcookies">I agree</button>
+    </div>
+</html> 

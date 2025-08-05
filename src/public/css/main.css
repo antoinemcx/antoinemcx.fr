@@ -1,0 +1,447 @@
+    :root {
+		--black: #000000;
+		--darkest: #202225;
+		--notblack: #18191c;
+		--darker: #2f3136;
+		--dark: #36393f;
+		--darkgrey: #3b3e45;
+		--grey: #b9bbbe;
+		--white: #ffffff;
+		--red: #ed4245;
+		--idle: #faa81a;
+		--blurple: #5865f2;
+		--darkblurple: #4752c4;
+        --text: #bdbebf;
+        --scrollbar: #2c2f33;
+		--contactform: #36393f;
+	}
+    body.light {
+		--black: #000000;
+		--darkest: #e3e5e8;
+		--notblack: #fff;
+		--darker: #2f3136;
+		--dark: #36393f;
+		--darkgrey: #3b3e45;
+		--grey: #4f5660;
+		--white: #000;
+		--red: #ed4245;
+		--idle: #faa81a;
+		--blurple: #5865f2;
+		--darkblurple: #4752c4;
+        --text: #5b5f63;
+        --scrollbar: #cacbce; 
+		--contactform: #e3e5e8;
+	}
+    .red { color: #e74c3c; }
+    .green { color: #5b8a52; }
+    .blue { color: #326cab; }
+    .blurple { color: var(--blurple); }
+    * {
+        font-family: Whitney,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    }
+    .profile {
+		overflow: hidden;
+		box-sizing: border-box;
+		background: var(--notblack);
+		margin: 10rem auto;
+		padding: 0;
+		border-radius: 0.5em;
+		height: 100vh;
+		max-height: 505px;
+		width: 600px;
+	}
+    .banner {
+        position: relative;
+		box-sizing: border-box;
+		width: 100%;
+		height: 120px;
+		/* background-image: url(../img/banner.png); */
+        background-color: rgb(61, 42, 38);
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center center;
+		margin-bottom: 5rem;
+    }
+    .banner .pfp {
+        position: absolute;
+		top: 50%;
+		left: 1rem;
+		width: 140px;
+		height: 140px;
+		background: var(--notblack);
+		border-radius: 50%;
+    }
+    .banner .pfp::after {
+        content: "";
+		position: absolute;
+		top: 65%;
+		left: 65%;
+		width: 2.5rem;
+		height: 2.5rem;
+		border-radius: 50%;
+		background: radial-gradient( circle, var(--red) 0%, var(--red) 43%, var(--notblack) 43%, var(--notblack) 100% ), var(--notblack);
+    }
+    .banner .pfp::before {
+        content: "";
+		position: absolute;
+		top: 0.5rem;
+		left: 0.5rem;
+		bottom: 0.5rem;
+		right: 0.5rem;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center center;
+		border-radius: 50%;
+    }
+    .header {
+		box-sizing: border-box;
+		position: relative;
+		font-size: 0.6rem;
+		width: 100%;
+		padding: 0 1rem 0.5rem;
+    }
+    .header .id {
+		color: var(--grey);
+	}
+	.header .id, .username {
+        font-size: 20px;
+	}
+    .tabs ul {
+		box-sizing: border-box;
+		display: flex;
+		justify-content: left;
+		padding: 0 0 0 1rem;
+		list-style-type: none;
+		border-bottom: 1px solid var(--dark);
+		overflow-y: visible;
+    }
+	.tabs li {
+        font-size: 14px;
+		padding: 0.125rem 0 0.5rem;
+		margin-left: 10px;
+        margin-right: 40px;
+		border-bottom: 1px solid #0000;
+		transition: border-bottom 100ms linear;
+    }
+    .tabs li {
+        color: var(--grey);
+    }
+    .tabs .active {
+		border-bottom: 1px solid var(--white);
+        color: var(--white);
+	}
+    .tabs li:hover {
+		border-bottom: 1px solid var(--white);
+        cursor: pointer;
+    }
+    .content {
+		box-sizing: border-box;
+        padding-right: 10px;
+        padding: 16px;
+        padding-top: 0px;
+        margin-top: -10px;
+		width: 100%;
+		overflow-y: scroll;
+		height: 243px;
+	}
+    content * {
+		font-size: 0.8rem;
+	}
+	span {
+		display: block;
+	}
+	hr {
+		border: none;
+		border-bottom: 1px solid var(--dark);
+	}
+    html {
+        position: relative;
+        width: 100vw;
+        height: 100vh;
+        overflow-y: hidden;
+    }
+    body {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        color: var(--white);
+        background: var(--darkest);
+        box-sizing: border-box;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    }
+    a {
+        color: var(--blurple);
+        text-decoration: none;
+    }
+    a:hover {
+        color: var(--darkblurple);
+        text-decoration: none;
+    }
+    label {
+        display: block;
+    }
+    input, button, select, textarea {
+        font-family: inherit;
+        font-size: inherit;
+        -webkit-padding: 0.4em 0;
+        padding: 0.4em;
+        margin: 0 0 0.5em 0;
+        box-sizing: border-box;
+        border: none;
+        border-radius: 2px;
+        background: #0000;
+        color: var(--white);
+        resize: none;
+    }
+    textarea:focus {
+        background: var(--darker);
+        border: none;
+        outline: none;
+    }
+    input:disabled, button:disabled {
+        color: var(--darkgrey);
+    }
+    button {
+        background-color: var(--blurple);
+        outline: none;
+    }
+    button:not(:disabled):active, button:focus {
+        border-color: var(--darkblurple);
+    }
+    ::-webkit-scrollbar {
+        width: 3px;
+    }
+    *::-webkit-scrollbar-track {
+        background: var(--almostBlack); 
+    }
+    ::-webkit-scrollbar-thumb {
+        background: var(--scrollbar)
+    }
+    h3 {
+        font-weight: 700;
+        font-size: 12px;
+        color: var(--grey);
+        margin: 13px 0px;
+    }
+    .userBio {
+        margin-bottom: 17px;
+        font-size: 14px;
+        line-height: 18px;
+        color: var(--text);
+    }
+    .badgeList {
+        position: absolute;
+        top: 136px;
+        left: 160px;
+        display: flex;
+        align-items: center;
+    }
+	.links {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+	}
+    .link h3 {
+		position: relative;
+        font-size: 16px;
+        font-weight: 500;
+        margin-left: 10px;
+	}
+    .link h2 {
+		position: relative;
+    }
+	.link img {
+		right: 0;
+		max-width: 25px;
+		width: 25px;
+		height: 25px;
+		max-height: 25px;
+	}
+	.link {
+        height: 48px;
+        margin: 0.5rem;
+		padding: 0 0.5rem;
+		border: 1px solid var(--dark);
+		display: flex;
+    }
+	.link .externalLink {
+		color: var(--grey);
+		text-decoration: none;
+        font-size: 13px;
+    }
+	.link .externalLink:hover {
+		color: var(--white);
+	}
+	.link .externalLink:visited {
+		color: var(--grey);
+	}
+    .roles-body{
+        margin-top: 15px;
+    }
+    .roles-body{
+        text-decoration: none;
+        flex-wrap: wrap;
+        display: flex;
+    }
+    .roles-body .rol {
+        border: 1px solid;
+        border-radius: 11px;
+        display: flex;
+        align-items: center;
+        margin: 0 4px 4px 0;
+        padding: 4px;
+        box-sizing: border-box;
+        height: 22px;
+        font-size: 12px;
+        font-weight: 500;
+    }
+    .roles-body .rol span {
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+    .day-night {
+        position: absolute;
+        border: none;
+        color: var(--grey);
+        font-size: 20px;
+        cursor: pointer;
+        top: 136px;
+        right: 16px;
+    }
+    .day-night:hover {
+        color: var(--white);
+    }
+    .bot_column {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .teamcard {
+        border: 1.5px solid var(--dark);
+        box-shadow: transparent 0 2px 52px 0;
+        transition: all 0.3s;
+        margin: 0px 5px;
+        position: relative;
+        width: 270px;
+        height: 60px;
+        border-radius: 6px;
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+    .teamcard .user h1 {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-size: 1rem;
+        color: var(--white);
+        -webkit-box-orient: vertical;
+        font-weight: 600;
+        margin: 0 0 0 5px;
+    }
+    .teamcard .user h2 {
+        width: 98%;
+        font-size: 13.9px;
+        color: var(--gray);
+        font-weight: 700;
+        display: inline-block;
+        margin: 0 0 0 5px;
+    }
+    .teamcard .avatar img {
+        height: 50px;
+        border-radius: 50%;
+        margin-right: 8px;
+        margin-left: -5px;
+    }
+    #contact-form .form-control {
+        border-radius: 1rem;
+        border-color: var(--contactform);
+    }
+    #contact-form input, #contact-form textarea {
+        background-color: var(--contactform);
+        color: #fff;
+    }
+    #contact-form textarea {
+        resize: vertical;
+        min-height: 75px;
+    }
+    #contact-form button {
+        margin-top: 10px;
+        color: white;
+        width: 100%;
+    }
+    @keyframes slidein {
+        from {
+            opacity: 0;
+            transform: translateX(1em);
+        }
+        to   {
+            transform: translateX(0em);
+            opacity: 1;
+        }
+    }
+    @keyframes slideout {
+            from {
+            opacity: 1;
+            transform: translateX(0em);
+        }
+        to   {
+            transform: translateX(1em);
+            opacity: 0;
+        }
+    }
+    #server {
+        position: absolute;
+        border: none;
+        border-radius: 3px;
+        color: white;
+        height: 32px;
+        padding: 2px 16px;
+        font-size: 14px;
+        background-color: hsl(139,calc(1*47.3%),43.9%);
+        font-weight: 500;
+        cursor: pointer;
+        width: auto;
+        top: 136px;
+        right: 50px;
+    }
+    #server:hover {
+        background-color: #2d7d46;
+    }
+    .cookiealert {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        margin: 0 !important;
+        z-index: 999;
+        opacity: 0;
+        visibility: hidden;
+        border-radius: 0;
+        transform: translateY(100%);
+        transition: all 500ms ease-out;
+        color: var(--white);
+        background-color: var(--notblack);
+    }
+    .cookiealert.show {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0%);
+    }
+    .cookiealert .acceptcookies {
+        margin-left: 15px;
+        vertical-align: baseline;
+    }
+
+    @media (max-width: 1280px) {
+        .profile {
+            max-width: 100%;
+            margin: 5rem auto;
+        }
+        #server {
+            display: none;
+        }
+        .links {
+            grid-template-columns: 1fr;
+        }
+    }
