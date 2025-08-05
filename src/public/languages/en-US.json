@@ -1,0 +1,167 @@
+{
+    "header": {
+        "buttons": {
+            "tools": "Tools",
+            "projects": "Projects",
+            "connect": "LOG IN",
+            "disconnect": "LOG OUT"
+        },
+        "tools": {
+            "urlShortener": [ "URL Shortener", "With this tool, shorten a URL in one click to share it more easily." ],
+            "passwordGenerator": [ "Password Generator", "Allows to generate configurable and secure passwords in a fast way." ],
+            "api": [ "API for developers", "Easy to use, API with multiple image manipulation/generation." ],
+            "more": "Click here for more tools !",
+            "imageUploader": "Image Hosting",
+            "edNotes": "Ecole Directe Averages"
+        },
+        "lang": [ ["en", "EN"], ["fr", "French"], "antoinemcx.fr/", ["French", "English"] ],
+        "url": "antoinemcx.fr/en/",
+        "cookies": [ "Do you like cookies ?", "We use them for a better experience on our site.", "Read more", "Accept" ],
+        "wip_alert": [ "The site is being rebuilt", "It has not been modified since 2023 but a redesign is underway, it will be back soon!" ]
+    },
+    "errors": {
+        "admin": [ "You are not allowed !", "This page is for administrators only." ],
+        "errorPage": [ "HOME", "MY DISCORD SERVER" ]
+    },
+    "mainPage": {
+        "page": "Home",
+        "welcomeTxt_title": "Hi, I'm Antoine",
+        "welcomeTxt_body": [ "Young self-taught and passionate developer", "Also known on the web as Melio" ],
+        "buttons": {
+            "whoAmI": "WHO AM I ?",
+            "myProjects": "My projects",
+            "scrollDown": "Scroll down",
+            "skills": "Skills",
+            "contactMe": "Contact me"
+        },
+        "legalInformation": "Legal information",
+        "aboutMe": {
+            "title": "About me",
+            "text": [
+                "Passionate about everything that touches the IT world, I am a young French developer and self-taught.",
+                "I started developing a few years ago, starting with web development and then programming discord bots.",
+                "You will find below my main projects and thus some of my discord bots, coded in JavaScript with discord.js.",
+                "However, I am currently mainly \"known\" as the founder of two discord projects that are close to my heart :"
+            ]
+        },
+        "myProjects": [
+            "Meliodas is a multifunctional but easy to use bot discord. It is currently available in English (by default) and French.",
+            "Naybor is a music bot discord currently still in development, English and French.",
+            "StellarBotList.com is a discord bots referrer allowing you to find the bot of your dreams or to increase its visiblity.",
+            "A community discord server to help with development (for discord bots for example) and support my projects.",
+            "[French project] Website of a videogame helping financing the prom of my senior year in high school, with profiles, payments, etc."
+        ],
+        "contactMe": [
+            "Do not hesitate to contact me ; I am always available for new projects, suggestions, etc..",
+            "This form allows you to chat via email, but you can always contact me on my own", "discord server",
+            "Send", "Required fields", "Name", "Discord ID"
+        ]
+    },
+    "legalPage": {
+        "page": "Legal information",
+        "title": [ "Legal information", "Privacy Policy" ],
+        "intro": [ "This page is composed of the following", "and the", "Privacy Policy", "Last update: 02/27/2023." ],
+        "legalInfo": [
+            "According to the FRENCH Law for confidence in the digital economy (L.C.E.N), the following information is provided to you :",
+            { "title": "Website editor", "body": [ "Owner, editor and director of the publication : Antoine MARESCAUX", "Status : private individual" ] },
+            { "title": "Host", "body": "The website is hosted by CONTABO GMBH (location of the head office : GmbH Aschauer Strasse 32a 81549 Munich)." },
+            { "title": "Access to the website", "body": [
+                "The site is accessible for free at any location to any user with Internet access.",
+                "The registration of a user, except at special times, is done only by the Owner. Once the user has registered, he is responsible for the use of his account but can request its deletion by contacting the Owner.",
+                "When the user logs in, he/she will be asked for his/her email and password, which are strictly personal and therefore prohibited from being divulged.",
+                "Suspension or deletion of an account may be made by the Owner in case of non-compliance with these conditions.",
+                "In case of malfunction or interruption, the Owner shall not be held responsible.",
+                [ "The user can always contact the website or the Owner (more information :", "Section 4 of the Privacy Policy" ]
+            ]},
+            { "title": "Privacy", "body": [
+                [ "The processing of the information you provide to us is described in our", "Privacy Policy", "below." ],
+                "By using this site, you acknowledge your consent to the collection and use of the relevant information under the terms of the Privacy Policy."
+            ]}
+        ],
+        "privacyPolicy": [
+            [
+                "This section informs website visitors of our information collection and use policy.",
+                "If you choose to use our service, you consent to the collection and use of information as described in this policy.",
+                "The personal information we collect are used to improve the website. We will not share it with anyone."
+            ],
+            { "title": "Collection and use of information", "body": [
+                "The only information we collect is your login information when you have an account.",
+                "Thus, only the following information about you are stored :",
+                [ "Username", "Email adress", "Password (encrypted)" ],
+                "This personal information are associated with a unique identifier, the date the account was created and its permissions.",
+                "The forum uses the Flarum software. Your email and password (encrypted) and your interactions with the software are stored.",
+                "In addition, none of the indicated information will be transferred to other services, it remains only on this website."
+            ]},
+            { "title": "Information about the tools", "body": [
+                "The website being composed of tools useful to all, some data are stored to allow their proper functioning.",
+                "None of this information identifies you, but here is what is currently stored :",
+                "URL shortener : the shortened link and the link that the user has indicated are stored",
+                "Ecole Directe averages : your connection data is stored in a cookie, itself encrypted",
+                "The other tools on the site do not store any information or data."
+            ]},
+            { "title": "Cookies", "body": [
+                "We use cookies to keep you logged in and to display the site according to your preferences.",
+                "Cookies are stored on your computer's hard drive and not in our database."
+            ]},
+            { "title": "Contact me", "body": [
+                [ "If you have any questions about this privacy policy, please feel free to contact me", "here", "or on my", "Discord server" ],
+                [ "This is exactly the same if you have a question about the", "legal information", "higher." ],
+                "If however personal information about you are stored here, you have the right to request its deletion (contact me)."
+            ]}
+        ]
+    },
+    "toolsPage": {
+        "page": "Tools",
+        "titles": [ "Everyday tools", "Developer Tools" ],
+        "tools": {
+            "imageUploader": [ "Image Hosting", "Easily store images on Imgur, an image hosting company, and get a link to share quickly." ],
+            "edNotes": [ "Ecole Directe Averages", "Allows you to calculate your Ecole Directe averages (and GPA) according to the selected quarter." ]
+        }
+    },
+    "endpointsPage": {
+        "title": "My API for developers",
+        "subtitle": [ "Click on a category or endpoint for more information", "Base URL for all the endpoints : api.antoinemcx.fr/ (JSON)" ],
+        "categories": {
+            "table": [ "HTTP Method", "Response if successful :", "Response in case of error :", "Parameters", ["If successful, an", "image is displayed"] ],
+            "animals": [ "Animal images", "Displays a random image of a cat", "Displays a random image of a dog", "Displays a random image of a fox" ],
+            "canvasFilters": [ "Canvas : filters", "Apply a Gaussian blur to the image", "Applies a pixel effect to the image", "Displays the image in black and white" ],
+            "canvasManipulation": [ "Canvas : images manipulation", "Puts the image behind a character covering his face" ]
+        }
+    },
+    "loginPage": {
+        "title": "Connexion",
+        "form": [ "Indicate your email", "Indicate your passowrd", "Log in" ],
+        "signup": [ "No account on this website ?", "Sign up" ]
+    },
+    "toolsImageUploader": {
+        "page": "Imgur image uploader",
+        "title": "Stock and send your images",
+        "subtitle": "Select an image or insert a link and get an Imgur link to share !",
+        "form": [
+            "Select a file", "No file was selected, select one", "OR :", "Paste the image URL here",
+            "If you put a file and a URL, the URL will be taken", "Click on this button once the image is selected", "SEND"
+        ]
+    },
+    "imageUploaded": {
+        "errors": [ "The link provided is invalid. Please try again.", "An error has occurred, the link is invalid", "No files were loaded. Try again.",
+            "An error has occurred, the image is invalid" ],
+        "page": [ "The image has been uploaded", "Here is your permanent link : ", "Copy" ]
+    },
+    "toolsPasswordGenerator": {
+        "title": "Generate your secured password",
+        "subtitle": "Select the different options to have a password as you like.",
+        "settings": [ "Length", "Capital letters", "Numbers", "Symbols", "Generate the password" ],
+        "generatorInfo": [
+            "When only the password is used to access an account, it should be at least 12 characters long.",
+            "In the same way, it should be composed as well as possible of the types of characters listed opposite (capital letters, numbers, symbols).",
+            "When your password is secure enough, it is still advisable to activate double authentication when you can.",
+            "Finally, you can for example use a password manager that allows you to have a different and secure password by remembering only one."
+        ]
+    },
+    "toolsUrlShortener": {
+        "title": "URL Shortener",
+        "subtitle": "Insert the URL to be shortened, which you can share more easily !",
+        "placeholder": "Paste the URL to be shortened here",
+        "sendButton": "SEND"
+    }
+}

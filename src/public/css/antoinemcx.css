@@ -1,0 +1,63 @@
+:root {
+    --bg-card: #1b1b21; --darkest: #212129;
+    --background-alt: #202026; --background: #1d1d24;
+    --gray: #bcbcc4; --white: #efeff0; --hr: #363642;
+    --blurple: #7388DA; --darkblurple: #657cdb;
+    --text: #c0c0c4; --project-buttons: #c5c5c9;
+    --scrollbar: #30303b; --section-line: 60,62,66;
+    --back2top: rgba(71, 77, 85, 0.4); --contactform: #363642;
+    --endpoints-shadow: 0;
+}
+body.light {
+    --bg-card: #fff; --darkest: #e3e5e8;
+    --background-alt: #F7F6F7; --background: #F3F2F2;
+    --gray: #495058; --white: #000; --hr: #F3F2F2;
+    --blurple: #5865f2; --darkblurple: #4752c4;
+    --text: #74797e; --project-buttons: #8e949b;
+    --scrollbar: #cacbce; --section-line: 215,224,235;
+    --back2top: #6464645e; --contactform: #e3e5e8;
+    --endpoints-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* BACK TO TOP */
+#back2Top {
+    width: 40px; height: 40px; line-height: 40px;
+    overflow: hidden; z-index: 1005; display: none; cursor: pointer;
+    position: fixed; bottom: 50px; right: 30px;
+    border-radius: 50%; background-color: var(--back2top);
+    color: #fff; text-align: center; font-size: 25px;
+    text-decoration: none; padding-top: 5px;
+}
+#back2Top i { vertical-align: text-top; }
+
+/* REVEAL SIMPLE EFFECT */
+[class*="reveal"] { opacity: 0; transform: translateY(30px); }
+.reveal-visible { opacity: 1; transform: translateY(0); transition: 1s cubic-bezier(.5, 0, 0, 1); }
+.reveal-2 { transition-delay: .1s; } .reveal-3 { transition-delay: .2s; }
+
+/* MY BOOTSTRAP SYSTEM */
+.is-white { color: var(--white) }
+.is-text { color: var(--text) }
+.transition {
+    transition: all .3s ease;
+    -webkit-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+}
+
+.is-title {
+    font-size: 37px; color: var(--white); text-align: left; 
+    position: relative; padding-bottom: 8px; font-weight: 600;
+} .is-subtitle {
+    font-size: 25px; color: var(--white); text-align: left; 
+    position: relative; padding-bottom: 8px; font-weight: 300;
+}
+.section-line {
+    --tw-bg-opacity: 1; margin-left:1rem; width: 10rem; height: 2px;
+    background-color: rgba(var(--section-line),var(--tw-bg-opacity));
+}
+.heading { font-weight: 800; }
+.medium-heading { font-size: 30px; }
+
+.d-underline { text-decoration: underline!important; }

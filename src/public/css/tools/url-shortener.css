@@ -1,0 +1,23 @@
+/* SHORTENER */
+form .linkUrlDiv { width: 100%; }
+.linkUrl {
+    border-radius: 7px; background-color: var(--contactform); color: var(--gray); width: 100%;
+    padding: 0.37rem 0.75rem; font-size: 1rem; line-height: 1.5; border: 1px solid var(--contactform);
+}
+.shortener-form, .linkPreview  { display: -webkit-box!important; display: flex!important; }
+
+form .submit { position: relative; }
+.submit-button {
+    background: transparent; text-align-last: center;
+    border: 3px solid var(--darkblurple);
+    border-radius: 10px; color: var(--darkblurple);
+    padding: 4.5px 35px; font-size: 16px;
+    letter-spacing: 1px; font-weight: bold;
+    cursor: pointer; width: 255.6px;
+}
+
+
+@media (max-width: 575px) {
+    .shortener-form, .linkPreview { display: block!important; margin-bottom: 40px; }
+    form .submit { position: relative; margin-left: 0!important; top: 15px; }
+}

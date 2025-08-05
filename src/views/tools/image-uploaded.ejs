@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="<%= lang %>">
+    <head>
+        <meta charset="UTF-8">
+        <title>Imgur image uploader — Antoine Mcx</title>
+        <link rel="icon" href="/img/avatar.jpg" class="flavicon">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="/css/bootstrap/bootstrap.min.css">
+        <link rel="stylesheet" href="/css/main.css">
+        <link rel="stylesheet" href="/css/tools/image-uploader.css">
+        <link rel="stylesheet" href="/css/antoinemcx.css">
+        <link rel="stylesheet" media="screen and (max-width: 1250px)" href="/css/mobile.css">
+		
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css">
+        <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+        
+        <script src="https://kit.fontawesome.com/74ba3d64b1.js"></script>
+    </head>
+
+    <body class="light">
+        <header><%- include('../parts/header'); -%></header>
+
+        <div class="container">
+            <div class="pt-5 mt-5">
+                <div class="d-flex" style="align-items: center">
+                    <div class="is-title" style="margin-bottom: 0"><%= translate.imageUploaded.page[0] %></div>
+                    <div class="section-line"></div>
+                </div>
+
+                <div class="d-flex">
+                    <p class="is-text preview-link" style="flex-grow: 1; align-self: center;">
+                        <span><%= translate.imageUploaded.page[1] %></span>
+                        <a href="<%= link %>" target='_blank' style="margin: 0 4px;"> <%= link %></a>
+                        <span>(<%=width%> x <%=height%>)</span>
+                    </p>
+                    <button class="simple-button" onclick="copy(`<%= link %>`)" id="copy-button" style="margin-bottom: 1rem;"><%= translate.imageUploaded.page[2] %></button>
+                    </div>
+                </div>
+                <div class="uploaded-image-div"><img src="<%= link %>" class="uploaded-image"></div>
+            </div>
+        </div>
+        
+        <!-- JS FILES -->
+        <script src="/js/main.js"></script>
+        <script src="/js/image-uploader.js"></script>
+        <app-notification></app-notification>
+    </body>
+
+    <!-- <div class="cookiealert">
+        <div class="container m-auto">
+            <div class="pl-3 pr-3">
+                <div class="alert text-center cookiealert-content is-white w-100" role="alert">
+                    &#x1F36A; <b><%= translate.header.cookies[0] %></b> <%= translate.header.cookies[1] %> <a href="https://cookiesandyou.com/" target="_blank"><%= translate.header.cookies[2] %></a>
+                    <button type="button" class="btn btn-primary btn-sm acceptcookies"><%= translate.header.cookies[3] %></button>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <div class="cookiealert2" style="visibility: visible; opacity: 1;">
+        <div class="container m-auto">
+            <div class="pl-3 pr-3">
+                <div class="alert text-center cookiealert-content is-white w-100" role="alert" style="background-color: #FFF0B3; border: 2px solid #F19A1E;">
+                    ⚠️ <b><%= translate.header.wip_alert[0] %></b> <%= translate.header.wip_alert[1] %>
+                </div>
+            </div>
+        </div>
+    </div>
+</html>

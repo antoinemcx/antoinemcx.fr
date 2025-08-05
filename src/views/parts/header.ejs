@@ -1,0 +1,145 @@
+<div class="hamburger">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+</div>
+
+<a class="logo is-white" href="https://<%= translate.header.url %>">ANTOINE M</a>
+<div class="social day-night mobile" style="align-self:center"><i class="fas fa-regular"></i></div>
+
+<nav class="navbar">
+    <ul class="nav__links">
+        <li class="nav-item tools-dropdown"><a class="nav-link dropdown-opener" style="border-bottom: solid 5px transparent;"><%= translate.header.buttons.tools %> <i class="fa-solid fa-chevron-down"></i></a>
+            <div class="transition dropdown-menu">
+                <div class="dropdown-head">                    
+                    <div class="dropdown-item transition">
+                        <a href="https://tools.<%=translate.header.url%>url-shortener" class="nav-link d-flex">
+                            <i class="fa-solid fa-link dropdown-image"></i>
+                            <div class="ml-3">
+                                <%= translate.header.tools.urlShortener[0] %>
+                                <div class="is-text dropdown-description mt-1"><%= translate.header.tools.urlShortener[1] %></div>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <div class="dropdown-item transition">
+                        <a href="https://tools.<%=translate.header.url%>password-generator" class="nav-link d-flex">
+                            <i class="fa-solid fa-lock-open dropdown-image"></i>
+                            <div class="ml-3">
+                                <%= translate.header.tools.passwordGenerator[0] %>
+                                <div class="is-text dropdown-description mt-1"><%= translate.header.tools.passwordGenerator[1] %></div>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <div class="dropdown-item transition">
+                        <a href="https://api.<%=translate.header.url%>endpoints" class="nav-link d-flex">
+                            <i class="fa-solid fa-code dropdown-image"></i>
+                            <div class="ml-3">
+                                <%= translate.header.tools.api[0] %>
+                                <div class="is-text dropdown-description mt-1"><%= translate.header.tools.api[1] %></div>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <div class="dropdown-item transition">
+                        <a href="https://<%=translate.header.url%>tools" class="nav-link d-flex">
+                            <i class="fa-solid fa-folder-plus dropdown-image" style="font-size: 25px; margin-left: 2px"></i>
+                            <div class="ml-3"><%= translate.header.tools.more %></div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li class="nav-item"><a href="https://forum.antoinemcx.fr" class="nav-link nav-main">Forum</a></li>
+        <% if (req.get('host') === 'antoinemcx.fr') { %>
+            <li class="nav-item"><a href="#projects" class="nav-link nav-main"><%= translate.header.buttons.projects %></a></li>
+        <% } else { %>
+            <li class="nav-item"><a href="https://<%= translate.header.url %>" class="nav-link nav-main"><%= translate.header.buttons.projects %></a></li>
+        <% } %>
+        <li class="nav-item"><a href="#contact" class="nav-link nav-main">Contact</a></li>
+
+        <li class="nav-item mobile">
+            <hr>
+            <a href="https://<%=translate.header.url%>tools" class="nav-link nav-main"><%= translate.header.buttons.tools %></a>
+            <hr>
+        </li>
+
+        
+        <li class="nav-item mobile lang-list">
+            <% if (translate.header.lang[0][0] === 'fr') { %>
+                <a href="https://antoinemcx.fr/" class="nav-link nav-main d-underline"><%= translate.header.lang[3][0] %></a>
+                <a href="https://antoinemcx.fr/en/" class="nav-link nav-main"><%= translate.header.lang[3][1] %></a>
+            <% } else { %>
+                <a href="https://antoinemcx.fr/" class="nav-link nav-main"><%= translate.header.lang[3][0] %></a>
+                <a href="https://antoinemcx.fr/en/" class="nav-link nav-main d-underline"><%= translate.header.lang[3][1] %></a>
+            <% } %>
+            <hr>
+        </li><hr style="width: 100%" class="mobile">
+
+        <li class="nav-item tools-dropdown">
+            <a class="nav-link dropdown-opener" style="border-bottom: solid 5px transparent;">
+                <img src="/img/<%= translate.header.lang[0][0] %>.png" style="height: 15px; margin-top: -3px; padding-right: 5px">
+                <%= translate.header.lang[0][1] %> <i class="fa-solid fa-chevron-down"></i>
+            </a>
+
+            <div class="transition dropdown-menu" style="width: auto">
+                <div class="dropdown-head">
+                    <div class="dropdown-item transition" style="padding: 1rem">
+                        <a href="https://<%= translate.header.lang[2] %>" class="nav-link d-flex">
+                            <img src="/img/<%= translate.header.lang[1][0] %>.png" style="height: 25px;">
+                            <div class="ml-3"><%= translate.header.lang[1][1] %></div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </li>
+
+        <% if (req.isAuthenticated()) { %>
+            <li class="nav-item nav-button" style="padding-left: 5px"><a href="/logout" class="nav-link nav-login"><%= translate.header.buttons.disconnect %></a></li>
+        <% } else { %>
+            <li class="nav-item nav-button" style="padding-left: 5px"><a href="<%= translate.header.lang[0][0] === `en` ? `/en/login` : `/login` %>" class="nav-link nav-login"><%= translate.header.buttons.connect %></a></li>
+        <% } %>
+        
+        <div class="social day-night computer" style="align-self:center"><i class="fas fa-regular"></i></div>
+    </ul>
+</nav>
+
+<input type="hidden" id="progress_width" value="0">
+
+<body class="light">
+    <a id="back2Top" href="#"><i class="fas fa-chevron-up"></i></a>
+</body>
+
+<script>
+    window.addEventListener("load", function(event) {
+        const parent = document.getElementsByTagName('app-notification').item(0);
+        let inc = 0;
+
+        function createNotif (msg, status) {
+            inc++
+            
+            const notif = document.createElement('div');
+            notif.innerHTML = msg;
+            notif.id = `notif-${inc}`;
+            notif._timeout = setTimeout(() => {
+                setTimeout(() => {
+                    notif.remove();
+                }, 1000);
+                notif.style.animation = '.2s ease-in slideout';
+                notif.style.opacity = 0;
+            }, 3*1000);
+            notif.style.backgroundColor = status === 'error' ? '#ed4245' : '#28a745';
+
+            parent.appendChild(notif);
+        };
+        
+        var urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.has('success') && [`Message envoyé avec succès`, `Lien copié !`].includes(urlParams.get('success'))) {
+            createNotif (urlParams.get('success'), 'success');
+        }
+        if (urlParams.has('error') && ['Nom invalide', 'Email invalide', 'ID invalide', 'Message trop court', 'URL invalide', 'Une erreur est survenue'].includes(urlParams.get('error'))) {
+            createNotif (urlParams.get('error'), 'error');
+        }
+    });
+</script>

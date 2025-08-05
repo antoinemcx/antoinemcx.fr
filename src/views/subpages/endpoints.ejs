@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="<%= lang %>">
+    <head>
+        <meta charset="UTF-8">
+        <title>API Endpoints — Antoine Mcx</title>
+        <link rel="icon" href="/img/avatar.jpg" class="flavicon">
+        <meta name="theme-color" content="#5865f2">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="/css/bootstrap/bootstrap.min.css">
+        <link rel="stylesheet" href="/css/main.css">
+        <link rel="stylesheet" href="/css/tools/api.css">
+        <link rel="stylesheet" href="/css/antoinemcx.css">
+        <link rel="stylesheet" media="screen and (max-width: 1250px)" href="/css/mobile.css">
+		
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css">
+        <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+        
+        <script src="https://kit.fontawesome.com/74ba3d64b1.js"></script>
+    </head>
+
+    <body class="light">
+        <header><%- include('../parts/header'); -%></header>
+
+        <div class="main-section">
+            <div class="container">
+                <div class="d-flex" style="align-items: center">
+                    <div class="is-title" style="margin-bottom: 0"><%= translate.endpointsPage.title %></div>
+                    <div class="section-line"></div>
+                </div>
+                <div class="is-subtitle pb-5"><%= translate.endpointsPage.subtitle[0] %><br><%= translate.endpointsPage.subtitle[1] %></div>
+            </div>
+        </div>
+
+        <% var animals = ['🐱', '🐯', '🐺', '🐶', '🐷', '🐼', '🦊']; var animal = animals[Math.floor(Math.random()*animals.length)] %>
+
+        <div class="main-body">
+            <div class="container">
+                <div class="accordion">
+                    <div class="accordion-item">
+                        <div class="container accordion-title">
+                            <span class="mr-2"><%= animal %></span> <%= translate.endpointsPage.categories.animals[0] %>
+                        </div>
+                        <div class="container accordion-content">
+                            <div class="mobile-scroll-x">
+                                <table class="mb-4">
+                                    <thead>
+                                        <tr><th><%= translate.endpointsPage.categories.table[0] %></th><th>URL</th><th>Description</th></tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>GET</td>
+                                            <td><a href="https://api.antoinemcx.fr/animal/cat" class="api-url">/animal/cat</a></td>
+                                            <td><%= translate.endpointsPage.categories.animals[1] %></td>
+                                        </tr>
+                                        <tr>
+                                            <td>GET</td>
+                                            <td><a href="https://api.antoinemcx.fr/animal/cat" class="api-url">/animal/dog</a></td>
+                                            <td><%= translate.endpointsPage.categories.animals[2] %></td>
+                                        </tr>
+                                        <tr>
+                                            <td>GET</td>
+                                            <td><a href="https://api.antoinemcx.fr/animal/fox" class="api-url">/animal/fox</a></td>
+                                            <td><%= translate.endpointsPage.categories.animals[3] %></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                                <%= translate.endpointsPage.categories.table[1] %> <code>{ "status": true, "image": "THE_IMAGE_URL" }</code><br>
+                                <%= translate.endpointsPage.categories.table[2] %> <code>{ "status": false, "message": "THE_ERROR_MESSAGE" }</code>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <div class="container accordion-title">
+                            <span class="mr-2">🎨</span> <%= translate.endpointsPage.categories.canvasFilters[0] %>
+                        </div>
+                        <div class="container accordion-content">
+                            <div class="mobile-scroll-x">
+                                <table class="mb-4">
+                                    <thead>
+                                        <tr><th><%= translate.endpointsPage.categories.table[0] %></th><th>URL</th><th>Description</th><th><%= translate.endpointsPage.categories.table[3] %></th></tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>GET</td>
+                                            <td><a href="https://api.antoinemcx.fr/canvas/blur" class="api-url">/canvas/blur</a></td>
+                                            <td><%= translate.endpointsPage.categories.canvasFilters[1] %></td>
+                                            <td>image</td>
+                                        </tr>
+                                        <tr>
+                                            <td>GET</td>
+                                            <td><a href="https://api.antoinemcx.fr/canvas/pixelate" class="api-url">/canvas/pixelate</a></td>
+                                            <td><%= translate.endpointsPage.categories.canvasFilters[2] %></td>
+                                            <td>image</td>
+                                        </tr>
+                                        <tr>
+                                            <td>GET</td>
+                                            <td><a href="https://api.antoinemcx.fr/canvas/grayscale" class="api-url">/canvas/grayscale</a></td>
+                                            <td><%= translate.endpointsPage.categories.canvasFilters[3] %></td>
+                                            <td>image</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                                <%= translate.endpointsPage.categories.table[4][0] %> (<code>image/png</code>) <%= translate.endpointsPage.categories.table[4][1] %><br>
+                                <%= translate.endpointsPage.categories.table[2] %> <code>{ "status": false, "message": "THE_ERROR_MESSAGE" }</code>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <div class="container accordion-title">
+                            <span class="mr-2">🖌️</span> <%= translate.endpointsPage.categories.canvasManipulation[0] %>
+                        </div>
+                        <div class="container accordion-content">
+                            <div class="mobile-scroll-x">
+                                <table class="mb-4">
+                                    <thead>
+                                        <tr><th><%= translate.endpointsPage.categories.table[0] %></th><th>URL</th><th>Description</th><th><%= translate.endpointsPage.categories.table[3] %></th></tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>GET</td>
+                                            <td><a href="https://api.antoinemcx.fr/canvas/facepalm" class="api-url">/canvas/facepalm</a></td>
+                                            <td><%= translate.endpointsPage.categories.canvasManipulation[1] %></td>
+                                            <td>image</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                                <%= translate.endpointsPage.categories.table[4][0] %> (<code>image/png</code>) <%= translate.endpointsPage.categories.table[4][1] %><br>
+                                <%= translate.endpointsPage.categories.table[2] %> <code>{ "status": false, "message": "THE_ERROR_MESSAGE" }</code>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- JS FILES -->
+        <script src="/js/main.js"></script>
+        <script src="/js/api.js"></script>
+        <app-notification></app-notification>
+    </body>
+
+    <!-- <div class="cookiealert">
+        <div class="container m-auto">
+            <div class="pl-3 pr-3">
+                <div class="alert text-center cookiealert-content is-white w-100" role="alert">
+                    &#x1F36A; <b><%= translate.header.cookies[0] %></b> <%= translate.header.cookies[1] %> <a href="https://cookiesandyou.com/" target="_blank"><%= translate.header.cookies[2] %></a>
+                    <button type="button" class="btn btn-primary btn-sm acceptcookies"><%= translate.header.cookies[3] %></button>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <div class="cookiealert2" style="visibility: visible; opacity: 1;">
+        <div class="container m-auto">
+            <div class="pl-3 pr-3">
+                <div class="alert text-center cookiealert-content is-white w-100" role="alert" style="background-color: #FFF0B3; border: 2px solid #F19A1E;">
+                    ⚠️ <b><%= translate.header.wip_alert[0] %></b> <%= translate.header.wip_alert[1] %>
+                </div>
+            </div>
+        </div>
+    </div>
+</html>

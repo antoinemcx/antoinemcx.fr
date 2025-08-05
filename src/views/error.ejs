@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <title><%= code %> - Fichier introuvable</title>
+        <link rel="icon" href="/img/avatar.jpg" class="flavicon">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="/css/bootstrap/bootstrap.min.css">
+        <link rel="stylesheet" href="/css/main.css">
+        <link rel="stylesheet" href="/css/home.css">
+        <link rel="stylesheet" href="/css/antoinemcx.css">
+        <link rel="stylesheet" media="screen and (max-width: 1250px)" href="/css/mobile.css">
+		
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css">
+        <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+        
+        <script src="https://kit.fontawesome.com/74ba3d64b1.js"></script>
+    </head>
+
+    <body class="light">
+        <header><%- include('./parts/header'); -%></header>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <br><br><br><br>
+                    <div class="error_page">
+                        <% if (code === 404) { emote = "https://i.imgur.com/pb3vbgc.png" } else if (code === 403) { emote = "https://i.imgur.com/7QAb4Xz.png" } %>
+                        <img src="<%= emote %>" class="thinking_emote" draggable="false">
+                        <p class="has-text-white" style="font-size: 150px; font-weight: bold; margin-bottom: 0;"><%= code %></p>
+                        <p class="h3 has-text-gray"><%= message %></p>
+                        <p class="h4 has-text-gray" style="margin-bottom: 35px"><%= subMessage %></p>
+
+                        <div class="home__buttons">
+                            <a class="home__about-button-2" href="/"><%= translate.errors.errorPage[0] %></a>
+                            <a class="home__about-button-1" href="/discord" style="margin-left: 15px;"><%= translate.errors.errorPage[1] %></a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <style>
+            @media only screen and (max-width: 1280px) {
+                .home__about-button-2 { display: block!important }
+                .home__buttons { display: flex }
+            }
+            .home__about-button-1, .home__about-button-2 { padding: 9px 27.5px; font-size: 18px }
+        </style>
+        
+        <!-- JS FILES -->
+        <script src="/js/main.js"></script>
+        <app-notification></app-notification>
+    </body>
+
+    <!-- <div class="cookiealert">
+        <div class="container m-auto">
+            <div class="pl-3 pr-3">
+                <div class="alert text-center cookiealert-content is-white w-100" role="alert">
+                    &#x1F36A; <b><%= translate.header.cookies[0] %></b> <%= translate.header.cookies[1] %> <a href="https://cookiesandyou.com/" target="_blank"><%= translate.header.cookies[2] %></a>
+                    <button type="button" class="btn btn-primary btn-sm acceptcookies"><%= translate.header.cookies[3] %></button>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <div class="cookiealert2" style="visibility: visible; opacity: 1;">
+        <div class="container m-auto">
+            <div class="pl-3 pr-3">
+                <div class="alert text-center cookiealert-content is-white w-100" role="alert" style="background-color: #FFF0B3; border: 2px solid #F19A1E;">
+                    ⚠️ <b><%= translate.header.wip_alert[0] %></b> <%= translate.header.wip_alert[1] %>
+                </div>
+            </div>
+        </div>
+    </div>
+</html>

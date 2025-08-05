@@ -1,0 +1,48 @@
+@media screen and (max-width:1200px) {
+    .sorting .container { flex-direction: row; gap: 0.5rem; flex-wrap: wrap; display: flex; }
+    .legende { flex-direction: column; }
+}
+.sorting { padding: 20px 10px; margin-bottom: 30px; background-color: var(--bg-card); }
+.b-sorting {
+    padding: 6px 10px; background-color: var(--background); color: var(--white)!important;
+    border-radius: 5px; cursor: pointer; font-size: 20px; margin-right: 15px;
+}
+.sorting .active { background-color: var(--blurple); color: var(--bg-card)!important }
+.notes-table { background-color: var(--bg-card); padding: 20px 18px; margin-bottom: 25px; border-radius: 10px }
+.matiere-title { font-size: 20px; font-weight: 600; padding-bottom: 6px; }
+.note { padding: 2px; margin-right: 8px; font-size: 18px; background: none; border: none; }
+.end-nonSignificatif { margin-left: -5px; font-size: 18px }
+.moyenne { padding: 5px 10px; font-size: 20px; margin-right: 4px; border-radius: 5px; background-color: var(--background); }
+.best-note { color: var(--darkblurple)!important; }
+.bad-note { font-style: italic; }
+.new-note { text-decoration-line: underline; }
+.legende { justify-content: space-between }
+.noteSur { font-size: 70%; margin-left: -5px }
+.modal-header-note { min-width: 55px; font-weight: bold; font-size: 21px; margin-right: 10px; }
+sup { left: -0.2rem }
+
+.logout-ed { font-size:20px; color: var(--red) }
+
+[data-modal-target] { cursor: pointer; color: var(--white) }
+.modal {
+    position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(0); overflow: scroll;
+    border: 1px solid var(--gray); border-radius: 10px; z-index: 10; display: block; height: fit-content;
+    width: 475px; max-width: 90%; background-color: var(--bg-card); transition: 200ms ease-in-out;
+}
+.modal.active { transform: translate(-50%, -50%) scale(1); }
+.modal-header {
+    padding: 10px 15px; display: flex; justify-content: space-between;
+    align-items: center; border-bottom: 1px solid var(--gray);
+}
+.modal-header .title { font-size: 20px; font-weight: bold; }
+.modal-header .subtitle { font-size: 17px; margin-left: 5px; font-weight: 100; }
+.modal-header .close-button {
+    cursor: pointer; border: none; outline: none; margin-left: 15px;
+    background: none; font-size: 1.25rem; font-weight: bold; color: var(--white);
+}
+.modal-body { padding: 17px 15px; }
+#overlay {
+    position: fixed; opacity: 0; top: 0; left: 0; right: 0; bottom: 0;
+    background-color: rgba(0, 0, 0, .5); pointer-events: none; transition: 200ms ease-in-out;
+}
+#overlay.active { pointer-events: all; opacity: 1; }

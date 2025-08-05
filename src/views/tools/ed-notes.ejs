@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <title>ED Notes — Antoine Mcx</title>
+        <link rel="icon" href="/img/avatar.jpg" class="flavicon">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="/css/bootstrap/bootstrap.min.css">
+        <link rel="stylesheet" href="/css/main.css">
+        <link rel="stylesheet" href="/css/antoinemcx.css">
+        <link rel="stylesheet" href="/css/tools/ed-notes.css">
+        <link rel="stylesheet" media="screen and (max-width: 1250px)" href="/css/mobile.css">
+		
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css">
+        <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+        
+        <script src="https://kit.fontawesome.com/74ba3d64b1.js"></script>
+    </head>
+
+    <body class="light">
+        <header><%- include('../parts/header'); -%></header>
+
+        <div class="container mt-5">
+            <div class="sorting">
+                <div class="container">
+                    <div class="mb-5 d-flex" style="justify-content: space-between; width:100%">
+                        <span style="font-size: 20px;">Bonjour, <%= account.prenom %> <%= account.nom %> (<%= account.classe %>)</span>
+                        <a href="/ecole-directe/logout"><i class="fa-sharp fa-solid fa-right-from-bracket logout-ed"></i></a>
+                    </div>
+                    <a class="mr-5" style="font-size: 20px">Notes de</a>
+
+                    <a class="b-sorting <%= trimestre !== 2 && trimestre !== 3 ? 'active' : 'inactive' %>" href="/ecole-directe?trimestre=1">1er trimestre</a>
+                    <a class="b-sorting <%= trimestre !== 2 ? 'inactive' : 'active' %>" href="/ecole-directe?trimestre=2">2e trimestre</a>
+                    <a class="b-sorting <%= trimestre !== 3 ? 'inactive' : 'active' %>" href="/ecole-directe?trimestre=3">3e trimestre</a>
+                </div>
+            </div>
+
+            <div class="notes mb-5">
+                <%
+                    let quarter_notes = {};
+                    notes.filter(note => note.codePeriode.startsWith(`A00${trimestre}`)).forEach((note, i) => (i = note.libelleMatiere, quarter_notes[i] ? quarter_notes[i].push({
+                        devoir:note.devoir, typeDevoir:note.typeDevoir, coef:note.coef, noteSur:note.noteSur, valeur:note.valeur, nonSignificatif:note.nonSignificatif,
+                        date:note.date, dateSaisie:note.dateSaisie, moyenneClasse:note.moyenneClasse, minClasse:note.minClasse, maxClasse:note.maxClasse, codePeriode:note.codePeriode,
+                    }) : (quarter_notes[i] = [note])))
+        
+                    let moyenneGenerale = 0; let matiereSumCoeff = 0; let noteAmount = 0;
+                    let notesArray = Object.keys(quarter_notes); let se_dnl = false;
+                    if (notesArray.includes('SE Anglais') && notesArray.includes('')) { se_dnl = true }
+                    if (notesArray.includes('SE Anglais') && notesArray.includes('Discip.non linguist.')) { se_dnl = true }
+                %>
+                
+                <% notesArray.forEach((matiere) => { %>
+                    <%
+                        let sumNotes = 0; let sumCoeff = 0; let sumNotesClasse = 0;
+                        let coeffMatiere = 1;
+                        if (se_dnl === true) {
+                            if (matiere === "" || matiere === "SE Anglais" || matiere === "Discip.non linguist.") { coeffMatiere = 0.5 }
+                        }
+
+                        quarter_notes[matiere].forEach(note => {
+                            if (note.nonSignificatif || isNaN(note.valeur.replace(/,/g, '.'))) { return }
+                            sumNotes += ((parseFloat(note.valeur.replace(/,/g, '.'))/parseFloat(note.noteSur.replace(/,/g, '.')))*20) * parseFloat(note.coef ? note.coef.replace(/,/g, '.') : 1)
+                            sumNotesClasse += ((parseFloat(note.moyenneClasse.replace(/,/g, '.'))/parseFloat(note.noteSur.replace(/,/g, '.')))*20) * parseFloat(note.coef ? note.coef.replace(/,/g, '.') : 1)
+                            sumCoeff += parseFloat(note.coef ? note.coef.replace(/,/g, '.') : 1)
+                        })
+                        let moyenne = (sumNotes/sumCoeff).toFixed(2);
+                        let moyenneClasse = (sumNotesClasse/sumCoeff).toFixed(2);
+                        if (!isNaN(moyenne)) { moyenneGenerale = parseFloat(moyenneGenerale) + parseFloat(moyenne*coeffMatiere) }
+                        if (!isNaN(moyenne)) { matiereSumCoeff = parseFloat(matiereSumCoeff) + parseFloat(coeffMatiere) }
+                    %>
+
+                    <div class="container notes-table">
+                        <div class="matiere-title">
+                            <% if (!isNaN(moyenne)) { %>
+                                <span class="moyenne" style="color: <%= moyenne <= moyenneClasse ? `#c70215` : 'var(--white)' %>"><%= moyenne %></span>
+                            <% } %>
+                            <% if (matiere === '' || matiere === 'Discip.non linguist.') { %>
+                                <%= se_dnl === true ? `DNL (coef 0.5)` : 'DNL' %>
+                            <% } else { %>
+                                <% if (matiere === 'SE Anglais') { %>
+                                    <%= se_dnl === true ? `SE Anglais (coef 0.5)` : 'SE Anglais' %>
+                                <% } else { %>
+                                    <%= matiere %>
+                                <% } %>
+                            <% } %>
+                        </div>
+                        <% quarter_notes[matiere].forEach(note => { %>
+                            <% noteAmount += 1; %>
+
+                            <button data-modal-target="#modal<%=noteAmount.toString()%>" class="note <%= (parseFloat(note.valeur)).toFixed(2) === note.maxClasse ? `best-note` : '' %> <%= note.valeur <= note.moyenneClasse ? `bad-note` : '' %> <%= note.dateSaisie === actualDate ? `new-note` : '' %>">
+                                <%= note.nonSignificatif ? `(${note.valeur}` : note.valeur %>
+                                <% if (parseInt(note.noteSur) !== 20) { %> <span class="noteSur">/<%=note.noteSur%></span> <% } %>
+                                <% if (note.nonSignificatif) { %> <span class="end-nonSignificatif">)</span> <% } %>
+                                <% if (parseFloat(note.coef ? note.coef.replace(/,/g, '.') : 1) !== 1) { %>
+                                    <sup><%=note.coef%></sup> <%
+                                } %>
+                            </button>
+                            <div class="modal" id="modal<%=noteAmount.toString()%>">
+                                <div class="modal-header">
+                                    <div class="modal-header-note">
+                                        <%= note.valeur %>
+                                        <% if (parseInt(note.noteSur) !== 20) { %> <span class="noteSur" style="font-size: 60%">/<%=note.noteSur%></span> <% } %>
+                                        <% if (parseFloat(note.coef ? note.coef.replace(/,/g, '.') : 1) !== 1) { %>
+                                            <sup style="font-size: 60%"><%=note.coef%></sup> <%
+                                        } %>
+                                    </div>
+                                    <div class="title"><%=note.devoir%></div>
+                                    <button data-modal-close class="close-button">X</button>
+                                </div>
+                                <div class="modal-body">
+                                    <span class="subtitle"><%=note.typeDevoir%> du <%=note.date%> (date saisie : <%=note.dateSaisie%>)</span><br>
+                                    Note minimale : <%=note.minClasse%><br>Note maximale : <%=note.maxClasse%><br>Moyenne de la classe : <%=note.moyenneClasse%>
+                                </div>
+                            </div>
+                        <% }) %>
+                    </div>
+                <% }) %>
+                <div id="overlay"></div>
+
+                <div class="container notes-table" style="background-color: var(--darkest)">
+                    <div class="matiere-title pb-0" style="font-size: 21px;">
+                        <span class="moyenne" style="background-color: var(--bg-card); font-size: 21px;"><%= (moyenneGenerale/matiereSumCoeff).toFixed(2) %></span>
+                        Moyenne générale
+                    </div>
+                </div>
+
+                <div>
+                    <span style="font-weight: 600">Légende :</span><br>
+                    <div class="d-flex legende">
+                        <div>X<sup>x</sup> note coefficientée</div>
+                        <div>X<span style="font-size: 75%;">/x</span> sur x</div>
+                        <div>(X) non significative</div>
+                        <div><span class="bad-note">X</span> en dessous de la moyenne de classe</div>
+                        <div><span class="new-note">X</span> ajoutée aujourd'hui</div>
+                        <div><span class="best-note">X</span> meilleure note de la classe</div>
+                    </div>
+                </div>
+            </div>
+            <br>
+        </div>
+        
+        <!-- JS FILES -->
+        <script src="/js/main.js"></script>
+        <script src="/js/ed-notes.js"></script>
+        <app-notification></app-notification>
+    </body>
+
+    <!-- <div class="cookiealert">
+        <div class="container m-auto">
+            <div class="pl-3 pr-3">
+                <div class="alert text-center cookiealert-content is-white w-100" role="alert">
+                    &#x1F36A; <b><%= translate.header.cookies[0] %></b> <%= translate.header.cookies[1] %> <a href="https://cookiesandyou.com/" target="_blank"><%= translate.header.cookies[2] %></a>
+                    <button type="button" class="btn btn-primary btn-sm acceptcookies"><%= translate.header.cookies[3] %></button>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <div class="cookiealert2" style="visibility: visible; opacity: 1;">
+        <div class="container m-auto">
+            <div class="pl-3 pr-3">
+                <div class="alert text-center cookiealert-content is-white w-100" role="alert" style="background-color: #FFF0B3; border: 2px solid #F19A1E;">
+                    ⚠️ <b><%= translate.header.wip_alert[0] %></b> <%= translate.header.wip_alert[1] %>
+                </div>
+            </div>
+        </div>
+    </div>
+</html>

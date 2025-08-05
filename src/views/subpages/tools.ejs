@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="<%= lang %>">
+    <head>
+        <meta charset="UTF-8">
+        <title><%= translate.toolsPage.page %> — Antoine Mcx</title>
+        <link rel="icon" href="/img/avatar.jpg" class="flavicon">
+        <meta name="theme-color" content="#5865f2">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="/css/bootstrap/bootstrap.min.css">
+        <link rel="stylesheet" href="/css/main.css">
+        <link rel="stylesheet" href="/css/home.css">
+        <link rel="stylesheet" href="/css/antoinemcx.css">
+        <link rel="stylesheet" media="screen and (max-width: 1250px)" href="/css/mobile.css">
+		
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css">
+        <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+        <script src="https://kit.fontawesome.com/74ba3d64b1.js"></script>
+    </head>
+
+    <body class="light">
+        <header><%- include('../parts/header'); -%></header>
+
+        <div class="container pt-5 pb-3">
+            <div class="d-flex" style="align-items: center">
+                <h2 class="heading medium-heading"><%= translate.toolsPage.titles[0] %></h2>
+                <div class="section-line"></div>
+            </div>
+            
+            <div class="row pb-5">
+                <div class="col-md-4 project-card-main" onclick="location.href = 'https://tools.<%=translate.header.url%>image-uploader';">
+                    <div class="project-card" style="height: 215px">
+                        <i class="fa-solid fa-images card-icon"></i>
+                        <div>
+                            <a class="project-title" style="font-size: 20px"><%= translate.toolsPage.tools.imageUploader[0] %></a>
+                            <a href="https://tools.<%=translate.header.url%>image-uploader" target="_blank" class="project-button"><i class="fa-solid fa-link card-link"></i></a>
+                        </div>
+                        <p class="is-text pt-3"> <%= translate.toolsPage.tools.imageUploader[1] %></p>
+                    </div>
+                </div>
+
+                <div class="col-md-4 project-card-main" onclick="location.href = 'https://tools.<%=translate.header.url%>url-shortener';">
+                    <div class="project-card" style="height: 215px">
+                        <i class="fa-solid fa-link card-icon"></i>
+                        <div>
+                            <a class="project-title" style="font-size: 20px"><%= translate.header.tools.urlShortener[0] %></a>
+                            <a href="https://tools.<%=translate.header.url%>url-shortener" target="_blank" class="project-button"><i class="fa-solid fa-link card-link"></i></a>
+                        </div>
+                        <p class="is-text pt-3"><%= translate.header.tools.urlShortener[1] %></p>
+                    </div>
+                </div>
+
+                <div class="col-md-4 project-card-main" onclick="location.href = 'https://tools.<%=translate.header.url%>password-generator';">
+                    <div class="project-card" style="height: 215px">
+                        <i class="fa-solid fa-lock-open card-icon"></i>
+                        <div>
+                            <a class="project-title" style="font-size: 20px"><%= translate.header.tools.passwordGenerator[0] %></a>
+                            <a href="https://tools.<%=translate.header.url%>password-generator" target="_blank" class="project-button"><i class="fa-solid fa-link card-link"></i></a>
+                        </div>
+                        <p class="is-text pt-3"><%= translate.header.tools.passwordGenerator[1] %></p>
+                    </div>
+                </div>
+
+                <div class="col-md-4 project-card-main" onclick="location.href = 'https://tools.antoinemcx.fr/ecole-directe';">
+                    <div class="project-card" style="height: 215px">
+                        <i class="fa-solid fa-graduation-cap card-icon"></i>
+                        <div>
+                            <a class="project-title" style="font-size: 20px"><%= translate.toolsPage.tools.edNotes[0] %></a>
+                            <a href="https://tools.antoinemcx.fr/ecole-directe" target="_blank" class="project-button"><i class="fa-solid fa-link card-link"></i></a>
+                        </div>
+                        <p class="is-text pt-3"><%= translate.toolsPage.tools.edNotes[1] %></p>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="d-flex pt-5" style="align-items: center">
+                <h2 class="heading medium-heading"><%= translate.toolsPage.titles[1] %></h2>
+                <div class="section-line"></div>
+            </div>
+
+            <div class="row pb-2">
+                <div class="col-md-4 project-card-main" onclick="location.href = 'https://api.<%=translate.header.url%>endpoints';">
+                    <div class="project-card" style="height: 215px">
+                        <i class="fa-solid fa-code card-icon"></i>
+                        <div>
+                            <a class="project-title" style="font-size: 20px"><%= translate.header.tools.api[0] %></a>
+                            <a href="https://api.<%=translate.header.url%>endpoints" target="_blank" class="project-button"><i class="fa-solid fa-link card-link"></i></a>
+                        </div>
+                        <p class="is-text pt-3">
+                            <%= translate.header.tools.api[1] %>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- JS FILES -->
+        <script src="/js/main.js"></script>
+        <script src="/js/url-shortener.js"></script>
+        <app-notification></app-notification>
+
+        <style>
+            .card-icon {
+                font-size: 35px; position: absolute; top: 0; margin-top: -22.5px; z-index: 3;
+                background-color: var(--background-alt); color: var(--darkblurple); padding: 15px; border-radius: .75rem;
+                --tw-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),0 4px 6px -2px rgba(0, 0, 0, 0.05);
+                box-shadow: var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow);
+            }
+            .card-link { font-size: 17.5px; }
+        </style>
+    </body>
+
+    <!-- <div class="cookiealert">
+        <div class="container m-auto">
+            <div class="pl-3 pr-3">
+                <div class="alert text-center cookiealert-content is-white w-100" role="alert">
+                    &#x1F36A; <b><%= translate.header.cookies[0] %></b> <%= translate.header.cookies[1] %> <a href="https://cookiesandyou.com/" target="_blank"><%= translate.header.cookies[2] %></a>
+                    <button type="button" class="btn btn-primary btn-sm acceptcookies"><%= translate.header.cookies[3] %></button>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <div class="cookiealert2" style="visibility: visible; opacity: 1;">
+        <div class="container m-auto">
+            <div class="pl-3 pr-3">
+                <div class="alert text-center cookiealert-content is-white w-100" role="alert" style="background-color: #FFF0B3; border: 2px solid #F19A1E;">
+                    ⚠️ <b><%= translate.header.wip_alert[0] %></b> <%= translate.header.wip_alert[1] %>
+                </div>
+            </div>
+        </div>
+    </div>
+</html>

@@ -1,0 +1,167 @@
+{
+    "header": {
+        "buttons": {
+            "tools": "Outils",
+            "projects": "Projets",
+            "connect": "SE CONNECTER",
+            "disconnect": "SE DECONNECTER"
+        },
+        "tools": {
+            "urlShortener": [ "Raccourcisseur d'URL", "Avec cet outil, raccourcissez une URL en un clic pour la partager plus facilement." ],
+            "passwordGenerator": [ "Générateur de mots de passe", "Permet de générer des mots de passe forts et sécurisés de façon rapide." ],
+            "api": [ "API pour développeurs", "Simple d'utilisation, API avec de multiples manipulations/générations d'images" ],
+            "more": "Cliquez ici pour plus d'outils !",
+            "imageUploader": "Hébergeur d'images",
+            "edNotes": "Moyennes Ecole Directe"
+        },
+        "lang": [ ["fr", "FR"], ["en", "Anglais"], "antoinemcx.fr/en/", ["Français", "Anglais"] ],
+        "url": "antoinemcx.fr/",
+        "cookies": [ "Tu aimes les cookies ?", "Nous en utilisons pour une meilleure expérience sur notre site.", "En savoir plus", "Accepter" ],
+        "wip_alert": [ "Le site est en cours de refonte.", "Il n'a pas été modifié depuis 2023 mais une refonte est en cours, il sera bientôt de retour !" ]
+    },
+    "errors": {
+        "admin": [ "Vous n'êtes pas autorisé(e) !", "Page est réservée aux administrateurs." ],
+        "errorPage": [ "ACCUEIL", "MON DISCORD" ]
+    },
+    "mainPage": {
+        "page": "Accueil",
+        "welcomeTxt_title": "Salut, moi c'est Antoine",
+        "welcomeTxt_body": [ "Jeune développeur autodidacte et passionné", "Aussi connu sur le web sous le pseudo Melio" ],
+        "buttons": {
+            "whoAmI": "QUI SUIS-JE ?",
+            "myProjects": "Mes projets",
+            "scrollDown": "Faire défiler vers le bas",
+            "skills": "Compétences",
+            "contactMe": "Me contacter"
+        },
+        "legalInformation": "Informations légales",
+        "aboutMe": {
+            "title": "A propos de moi",
+            "text": [
+                "Passionné par tout ce qui touche au monde de l'informatique, je suis un jeune développeur français et autodidacte.",
+                "Je me suis lancé dans le développement il y a quelques années, en m'initiant avec le développement web puis à la programmation de bots discord.",
+                "Vous trouverez en dessous mes principaux projets et donc certains de mes bots discord, codés d'ailleurs en JavaScript avec discord.js.",
+                "Cependant, je suis actuellement principalement \"connu\" comme le fondateur de deux projets discord qui me tiennent à cœur :"
+            ]
+        },
+        "myProjects": [
+            "Méliodas est un bot discord multifonction mais simple d'usage. Il est actuellement disponible en Anglais (par défaut) et Français.",
+            "Naybor est un bot discord de musique actuellement toujours en développement, Anglais et Français.",
+            "StellarBotList.com est un référenceur de bots discord vous permettant de trouver le bot de vos rêves ou d'augmenter sa visiblité.",
+            "Un serveur Discord communautaire d'entraide au développement (pour les bots discord par exemple) et support de mes projets.",
+            "Site internet open-source d'un jeu aidant pour financer le bal de promo de mon année de Terminale au lycée (profils, paiements, etc)"
+        ],
+        "contactMe": [
+            "Hésitez pas à prendre contact avec moi ; je suis toujours disponible pour de nouveaux projets, des suggestions, etc..",
+            "Ce formulaire permet de discuter par mail, mais vous pouvez toujours me contacter sur mon propre", "serveur discord",
+            "Envoyer", "Champs obligatoires", "Nom", "ID Discord"
+        ]
+    },
+    "legalPage": {
+        "page": "Mentions légales",
+        "title": [ "Mentions légales", "Politique de confidentialité" ],
+        "intro": [ "Cette page est composée des présentes", "et de la", "Politique de confidentialité", "Dernière mise à jour : 27/02/2023." ],
+        "legalInfo": [
+            "Conformément à la Loi pour la confiance dans l'économie numérique (L.C.E.N), les informations suivantes vous sont indiquées :",
+            { "title": "Editeur du site", "body": [ "Propriétaire, éditeur et directeur de la publication : Antoine MARESCAUX", "Statut : particulier" ] },
+            { "title": "Hébergeur", "body": "Le site est hébergé par CONTABO GMBH (localisation du siège social : GmbH Aschauer Strasse 32a 81549 Munich)." },
+            { "title": "Accès au site", "body": [
+                "Le site est accessible gratuitement en tout lieu à tout utilisateur ayant un accès à Internet.",
+                "L'inscription d'un utilisateur, sauf moment particulier, se fait uniquement par le Propriétaire. Dès lors que l'inscription de l'utilisateur est effectuée, il est responsable de l'usage qui est fait de son compte mais peut en demander la suppression en contactant le Propriétaire.",
+                "Lors de la connexion de l'utilisateur, son email et mot de passe seront demandés et qui sont strictement personnels et de ce fait interdit de toute divulgation.",
+                "La suspension ou suppression d'un compte peut être effectuée par le Propriétaire en cas de non-respect de ces conditions.",
+                "En cas de dysfonctionnement ou d'interruption, le Propriétaire ne saura être tenu responsable.",
+                [ "L'utilisateur peut toujours contacter le site ou le Propriétaire (plus d'informations :", "Article 4 de la Politique de confidentialité" ]
+            ]},
+            { "title": "Confidentialité", "body": [
+                [ "Le traitement des informations que vous nous fournissez est décrit dans notre", "Politique de confidentialité", "ci-dessous." ],
+                "Vous reconnaissez donc en utilisant ce site votre accord à la collecte et utilisation des informations utiles, selon les termes de la Politique de confidentialité."
+            ]}
+        ],
+        "privacyPolicy": [
+            [
+                "Cette section informe les visiteurs du site de notre politique en matière de collecte et d'utilisation des informations.",
+                "Si vous choisissez d'utiliser notre service, vous acceptez la collecte et l'utilisation des informations selon les modalités décrites dans la présente politique.",
+                "Les informations personnelles que nous recueillons sont utilisées pour améliorer le site web. Nous ne les partagerons avec quiconque."
+            ],
+            { "title": "Collecte et utilisation des informations", "body": [
+                "Les seules informations que nous collectons sont vos informations de connexion lorsque vous avez un compte.",
+                "Ainsi, sont uniquement stockées les informations suivantes vous concernant :",
+                [ "Nom d'utilisateur", "Adresse email", "Mot de passe (chiffré)" ],
+                "Ces informations personnelles sont d'ailleurs associés à un identifiant unique, la date de création du compte ainsi que ses permissions.",
+                "Le forum utilise le logiciel Flarum. Sont donc stockés votre email et mot de passe (chiffré) et vos interactions avec le logiciel.",
+                "De plus, aucune des informations indiquées seront transférées vers d'autres services, elles restent uniquement sur ce site."
+            ]},
+            { "title": "Informations relatives aux outils", "body": [
+                "Le site étant composé d'outils utiles à tous, quelques données sont stockées pour permettre leur bon fonctionnement.",
+                "Aucune de ces informations ne permet de vous identifier mais voici ce qui est pour l'instant stocké :",
+                "Raccourcisseur d'URL : sont stockés le lien raccourci et le lien que l'utilisateur a indiqué",
+                "Moyennes Ecole Directe : sont stockées vos données de connexion dans un cookie, lui-même chiffré",
+                "Les autres outils du site ne stockent donc aucune informations ou données."
+            ]},
+            { "title": "Cookies", "body": [
+                "Nous utilisons des cookies pour vous permettre de rester connecté et d'afficher le site selon vos préférences.",
+                "Les cookies sont stockés sur le disque dur de votre ordinateur et non sur notre base de données."
+            ]},
+            { "title": "Me contacter", "body": [
+                [ "Si vous avez une quelconque question concernant cette politique de confidentialité, n'hésitez pas à me contacter", "ici", "ou sur mon", "serveur Discord" ],
+                [ "Cela est d'ailleurs exactement pareil si vous avez une question concernant les", "mentions légales", "plus haut." ],
+                "Si toutefois des informations personnelles vous concernant sont stockées ici, vous êtes en droit de demander leur suppression (me contacter)."
+            ]}
+        ]
+    },
+    "toolsPage": {
+        "page": "Outils",
+        "titles": [ "Outils de tous les jours", "Outils pour les développeurs" ],
+        "tools": {
+            "imageUploader": [ "Hébergeur d'images", "Stockez facilement des images sur Imgur, hébergeur d'images, et obtenez un lien à partager rapidement." ],
+            "edNotes": [ "Moyennes Ecole Directe", "Permet de calculer vos moyennes (et moyenne générales) Ecole Directe suivant le trimestre choisi." ]
+        }
+    },
+    "endpointsPage": {
+        "title": "Mon API pour les développeurs",
+        "subtitle": [ "Cliquez sur une catégorie ou un endpoint pour plus d'informations", "Base URL pour tous les endpoints : api.antoinemcx.fr/ (JSON)" ],
+        "categories": {
+            "table": [ "Méthode HTTP", "Réponse en cas de succès :", "Réponse en cas d'échec :", "Paramètres", ["En cas de succès, une image", "s'affiche"] ],
+            "animals": [ "Images d'animaux", "Affiche une image aléatoire de chat", "Affiche une image aléatoire de chien", "Affiche une image aléatoire de renard" ],
+            "canvasFilters": [ "Canvas : filtres", "Applique un flou gaussien à l'image", "Applique un effet pixel à l'image", "Affiche l'image en noir et blanc" ],
+            "canvasManipulation": [ "Canvas : manipulation d'images", "Met l'image derrière un personnage se couvrant le visage" ]
+        }
+    },
+    "loginPage": {
+        "title": "Connexion",
+        "form": [ "Indiquez votre email", "Indiquez votre mot de passe", "Se connecter" ],
+        "signup": [ "Pas de compte sur ce site ?", "Inscrivez-vous" ]
+    },
+    "toolsImageUploader": {
+        "page": "Imgur image uploader",
+        "title": "Stockez et envoyez vos images",
+        "subtitle": "Sélectionnez une image ou insérez un lien et récupérez un lien Imgur à partager !",
+        "form": [
+            "Sélectionnez un fichier", "Aucun fichier n'a été sélectionné, selectionnez-en un", "OU :", "Collez l'URL de l'image ici",
+            "Si vous mettez un fichier et une URL, c'est l'URL qui sera prise", "Cliquez sur ce bouton une fois l'image sélectionnée", "ENVOYER"
+        ]
+    },
+    "imageUploaded": {
+        "errors": [ "Le lien fourni est invalide. Ré-essayez.", "Une erreur est survenue, le lien est invalide", "Aucun fichier n'a été chargé. Ré-essayez.",
+            "Une erreur est survenue, l'image est invalide" ],
+        "page": [ "L'image a été upload", "Voici votre lien permanent : ", "Copier" ]
+    },
+    "toolsPasswordGenerator": {
+        "title": "Générez votre mot de passe sécurisé",
+        "subtitle": "Sélectionnez les différentes options pour avoir un mot de passe comme vous l'entendez.",
+        "settings": [ "Longueur", "Lettres majuscules", "Chiffres", "Symboles", "Générer le mot de passe" ],
+        "generatorInfo": [
+            "Lorsque uniquement le mot de passe permet d'accéder à un compte, celui-ci devrait comporter au moins 12 caractères.",
+            "De même, il est devrait se composer au mieux des différents types de caractères ci-contre (majuscules, chiffres, symboles).",
+            "Quand votre mot de passe est assez sécurisé, il reste conseillé d'activer la double authentification lorsque vous le pouvez.",
+            "Enfin, vous pouvez par exemple utiliser un gestionnaire de mots de passe qui vous permet d'avoir un mot de passe toujours différent et surtout sécurisé en n'en retenant qu'un."
+        ]
+    },
+    "toolsUrlShortener": {
+        "title": "Raccourcisseur d'URL",
+        "subtitle": "Insérez l'URL à raccourcir, que vous pourrez partager plus facilement !",
+        "placeholder": "Collez l'URL à raccourcir ici",
+        "sendButton": "ENVOYER"
+    }
+}

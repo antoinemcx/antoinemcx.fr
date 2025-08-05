@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html translate="<%=lang%>">
+    <head>
+        <meta charset="UTF-8">
+        <title><%= translate.mainPage.page %> — Antoine Mcx</title>
+        <link rel="icon" href="<%= avatar %>" class="flavicon">
+        <meta name="description" content="Salut moi c'est Antoine, jeune développeur autodidacte passionné d'informatique. Tu dois sûrement me connaître sous le pseudo Melio.">
+        <meta name="author" content="Melio">
+        <meta name="theme-color" content="#5865f2">
+        <meta name="og:image" content="<%= avatar %>">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="/css/bootstrap/bootstrap.min.css">
+        <link rel="stylesheet" href="/css/main.css">
+        <link rel="stylesheet" href="/css/home.css">
+        <link rel="stylesheet" href="/css/antoinemcx.css">
+        <link rel="stylesheet" media="screen and (max-width: 1250px)" href="/css/mobile.css">
+		
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css">
+        <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+        
+        <script src="https://kit.fontawesome.com/74ba3d64b1.js"></script>
+    </head>
+
+    <body class="light">
+        <div class="main-top">
+            <header><%- include('./parts/header'); -%></header>
+
+            <div class="container home__container">
+                <div class="home">
+                    <div class="home__text">
+                        <h1 class="reveal home__text-title"><%= translate.mainPage.welcomeTxt_title %></h1>
+                        <p class="reveal-2 home__text-body"><%= translate.mainPage.welcomeTxt_body[0] %><br><%= translate.mainPage.welcomeTxt_body[1] %></p>
+
+                        <div class="home__buttons reveal-3" style="margin-top: 50px">
+                            <a class="home__about-button-1" href="#about"><%= translate.mainPage.buttons.whoAmI %></a>
+                            <a class="home__about-button-2" href="#projects" style="margin-left: 15px; margin-right:5px;"><%= translate.mainPage.buttons.myProjects %></a>
+                            
+                            <a href="/discord" target="_blank" class="social-icon"><i class="fa-brands fa-discord"></i></a>
+                            <a href="https://github.com/antoinemcx" target="_blank" class="social-icon"><i class="fa-brands fa-github"></i></a>
+                            <a href="mailto:contact@antoinemcx.fr" target="_blank" class="social-icon"><i class="fa-solid fa-envelope"></i></a>
+                            <a href="https://twitter.com/melio_off" target="_blank" class="social-icon"><i class="fa-brands fa-twitter"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="home__image reveal-2" style="position: relative;">
+                        <img src="/img/coding.png" draggable="false">
+                    </div>
+                </div>
+
+                <a class="scroll-down is-white transition" href="#about"><span></span><s-txt style="padding-left: 32px;"><%= translate.mainPage.buttons.scrollDown %></s-txt></a>
+                <a class="copyright is-white" href="https://<%=translate.header.url%>legal">Antoine © 2023 • <span style="color:var(--darkblurple)"><%= translate.mainPage.legalInformation %></span></a>
+            </div>
+        </div>
+
+        <main style="background: var(--background-alt)">
+            <section id="about" class="container reveal">
+                <br><div class="row d-flex about-section">
+                    <div class="d-flex skeleton bio-avatar">
+                        <img src="<%= avatar %>" draggable="false">
+                    </div>
+                    <div class="col-md-6 col-lg-7 pl-md-5">
+                        <div class="row pb-3" style="margin-left: 10px">
+                            <div class="d-flex" style="align-items: center">
+                                <div class="is-title"><%= translate.mainPage.aboutMe.title %></div>
+                                <div class="section-line"></div>
+                            </div>
+                            <p class="is-text">
+                                <%= translate.mainPage.aboutMe.text[0] %><br>
+                                <%= translate.mainPage.aboutMe.text[1] %>
+                                <br><br><%= translate.mainPage.aboutMe.text[2] %>
+                                <br><%= translate.mainPage.aboutMe.text[3] %>
+                                <a target="_BLANK" href="https://meliodas.antoinemcx.fr/">@Méliodas</a> et <a target="_BLANK" href="https://stellarbotlist.com">StellarBotList</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="container mob-pl">
+                <div class="row">
+                    <div class="col-md-3">
+                        <nav id="h-navigation" class="reveal">
+                            <li><a href="#skills" id="one" class="current is-white" onclick="active('one')"><%= translate.mainPage.buttons.skills %></a></li>
+                            <li><a href="#projects" id="two" class="is-white" onclick="active('two')"><%= translate.mainPage.buttons.myProjects %></a></li>
+                            <li><a href="#contact" id="three" class="is-white" onclick="active('three')"><%= translate.mainPage.buttons.contactMe %></a></li>
+                        </nav>
+                    </div>
+
+                    <div class="col-md-9">
+                        <section id="skills" class="page reveal">
+                            <div class="d-flex" style="align-items: center">
+                                <h2 class="heading medium-heading"><%= translate.mainPage.buttons.skills %></h2>
+                                <div class="section-line"></div>
+                            </div>
+
+                            <div class="row skills-bar">
+                                <div class="col-md-6">
+                                    <label><i class="fa-brands fa-css3-alt"></i> CSS3</label>
+                                    <div class="progressbar__bar"><div class="progressbar" style="width: 75%;"></div></div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label><i class="fa fa-html5" aria-hidden="true"></i> HTML5</label>
+                                    <div class="progressbar__bar"><div class="progressbar" style="width: 86%;"></div></div>
+                                </div>
+                                    
+                                <div class="col-md-6">
+                                    <label><i class="fa-solid fa-database"></i> SQL</label>
+                                    <div class="progressbar__bar"><div class="progressbar" style="width: 60%;"></div></div>
+                                </div>
+                                    
+                                <div class="col-md-6">
+                                    <label><i class="fa-brands fa-python"></i> Python</label>
+                                    <div class="progressbar__bar"><div class="progressbar" style="width: 45%;"></div></div>
+                                </div>
+                                    
+                                <div class="col-md-6">
+                                    <label><i class="fa-brands fa-js-square"></i> JavaScript</label>
+                                    <div class="progressbar__bar"><div class="progressbar" style="width: 78%;"></div></div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label><i class="fa-solid fa-fill"></i> Photoshop</label>
+                                    <div class="progressbar__bar"><div class="progressbar" style="width: 80%;"></div></div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section id="projects" class="page reveal">
+                            <div class="d-flex" style="align-items: center">
+                                <h2 class="heading medium-heading"><%= translate.mainPage.buttons.myProjects %></h2>
+                                <div class="section-line"></div>
+                            </div>
+                            
+                            <div class="row pt-3 pb-2">
+                                <div class="col-md-6 project-card-main">
+                                    <div class="project-card">
+                                        <img src="<%= meliodas %>" class="project-img" onclick="location.href = 'https://meliodas.antoinemcx.fr';">
+                                        <div>
+                                            <a class="project-title">Méliodas</a>
+                                            <a href="https://meliodas.antoinemcx.fr" target="_blank" class="project-button"><i class="fa-solid fa-globe" style="font-size: 20px"></i></a>
+                                            <a href="https://meliodas.antoinemcx.fr/support" target="_blank" class="project-button"><i class="fa-brands fa-discord" style="font-size: 20px"></i></a>
+                                        </div>
+                                        <p class="is-text pt-3"><%= translate.mainPage.myProjects[0] %></p>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-6 project-card-main">
+                                    <div class="project-card">
+                                        <img src="<%= naybor %>" class="project-img" onclick="location.href = 'https://discord.com/oauth2/authorize?client_id=793213992910585898&permissions=8&scope=bot+applications.commands';">
+                                        <div>
+                                            <a class="project-title">Naybor</a>
+                                            <a href="https://github.com/antoinemcx/naybor" target="_blank" class="project-button"><i class="fa-brands fa-github" style="font-size: 20px"></i></a>
+                                            <a href="/discord" target="_blank" class="project-button"><i class="fa-brands fa-discord" style="font-size: 20px"></i></a>
+                                        </div>
+                                        <p class="is-text pt-3"><%= translate.mainPage.myProjects[1] %></p>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-6 project-card-main" style="margin-top: 65px">
+                                    <div class="project-card">
+                                        <img src="/img/stellarbotlist.png" class="project-img" onclick="location.href = 'https://stellarbotlist.com';">
+                                        <div>
+                                            <a class="project-title">StellarBotList</a>
+                                            <a href="https://stellarbotlist.com" target="_blank" class="project-button"><i class="fa-solid fa-globe" style="font-size: 20px"></i></a>
+                                            <a href="https://stellarbotlist.com/discord" target="_blank" class="project-button"><i class="fa-brands fa-discord" style="font-size: 20px"></i></a>
+                                        </div>
+                                        <p class="is-text pt-3"><%= translate.mainPage.myProjects[2] %></p>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-6 project-card-main" style="margin-top: 65px">
+                                    <div class="project-card">
+                                        <img src="https://cdn.discordapp.com/icons/738122381062832180/5ccd2bfda77fe14330e2746f9f017f70.webp" class="project-img" onclick="location.href = 'https://antoinemcx.fr/discord';">
+                                        <div>
+                                            <a class="project-title">Melio's coding world</a>
+                                            <a href="https://discord.gg/Wa8x8WUFSF" target="_blank" class="project-button"><i class="fa-brands fa-discord" style="font-size: 20px"></i></a>
+                                        </div>
+                                        <p class="is-text pt-3"><%= translate.mainPage.myProjects[3] %></p>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-6 project-card-main" style="margin-top: 65px">
+                                    <div class="project-card">
+                                        <img src="https://projet-amboise.fr/img/logo.png" class="project-img" onclick="location.href = 'https://projet-amboise.fr';">
+                                        <div>
+                                            <a class="project-title">Projet Amboise</a>
+                                            <a href="https://projet-amboise.fr" target="_blank" class="project-button"><i class="fa-solid fa-globe" style="font-size: 20px"></i></a>
+                                            <a href="https://github.com/antoinemcx/projet-amboise" target="_blank" class="project-button"><i class="fa-brands fa-github" style="font-size: 20px"></i></a>
+                                            <a href="https://projet-amboise.fr/discord" target="_blank" class="project-button"><i class="fa-brands fa-discord" style="font-size: 20px"></i></a>
+                                        </div>
+                                        <p class="is-text pt-3"><%= translate.mainPage.myProjects[4] %></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        
+                        <section id="contact" class="page reveal">
+                            <div class="d-flex" style="align-items: center">
+                                <h2 class="heading medium-heading"><%= translate.mainPage.buttons.contactMe %></h2>
+                                <div class="section-line"></div>
+                            </div>
+                            <p class="is-text pt-3 pb-2">
+                                <%= translate.mainPage.contactMe[0] %>
+                                <br><%= translate.mainPage.contactMe[1] %> <a style="color:var(--white)" href="/discord"><%= translate.mainPage.contactMe[2] %></a>.
+                            </p>
+
+                            <form method="POST" class="contact-form">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input type="text" name="name" id="inputName" class="form-control" placeholder="<%= translate.mainPage.contactMe[5] %> *" value="">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" name="email" id="inputEmail" class="form-control" placeholder="Email *" required value="">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" name="discordId" id="inputDiscordId" class="form-control" placeholder="<%= translate.mainPage.contactMe[6] %>" value="">
+                                        </div>
+
+                                        <button type="submit" name="submitBtn" class="contactBtn"><%= translate.mainPage.contactMe[3] %></button>
+                                        <span style="color:var(--gray)">*</span> : <%= translate.mainPage.contactMe[4] %>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <textarea name="message" id="inputMessage" class="form-control" placeholder="Message *" style="width: 100%; height: 150px;" minlength="25"></textarea>
+                                        </div>
+
+                                        <div style="padding-top: 30px;">
+                                            <a href="/discord" target="_blank" class="social-icon"><i class="fa-brands fa-discord"></i></a>
+                                            <a href="https://github.com/antoinemcx" target="_blank" class="social-icon"><i class="fa-brands fa-github"></i></a>
+                                            <a href="mailto:contact@antoinemcx.fr" target="_blank" class="social-icon"><i class="fa-solid fa-envelope"></i></a>
+                                            <a href="https://twitter.com/melio_off" target="_blank" class="social-icon"><i class="fa-brands fa-twitter"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+        
+        <!-- JS FILES -->
+        <script src="/js/main.js"></script>
+        <script src="/js/home.js"></script>
+        <app-notification class="app-notification"></app-notification>
+    </body>
+
+    <div class="copyrights" style="position: absolute; bottom: 0; padding: 10px; width: 100%; display: block;">Copyright 2023 ©. All rights reserved.</div>
+
+    <!-- <div class="cookiealert">
+        <div class="container m-auto">
+            <div class="pl-3 pr-3">
+                <div class="alert text-center cookiealert-content is-white w-100" role="alert">
+                    &#x1F36A; <b><%= translate.header.cookies[0] %></b> <%= translate.header.cookies[1] %> <a href="https://cookiesandyou.com/" target="_blank"><%= translate.header.cookies[2] %></a>
+                    <button type="button" class="btn btn-primary btn-sm acceptcookies"><%= translate.header.cookies[3] %></button>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <div class="cookiealert2" style="visibility: visible; opacity: 1;">
+        <div class="container m-auto">
+            <div class="pl-3 pr-3">
+                <div class="alert text-center cookiealert-content is-white w-100" role="alert" style="background-color: #FFF0B3; border: 2px solid #F19A1E;">
+                    ⚠️ <b><%= translate.header.wip_alert[0] %></b> <%= translate.header.wip_alert[1] %>
+                </div>
+            </div>
+        </div>
+    </div>
+</html>

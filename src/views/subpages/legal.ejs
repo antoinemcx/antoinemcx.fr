@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html translate="<%=lang%>">
+    <head>
+        <meta charset="UTF-8">
+        <title><%= translate.legalPage.page %> — Antoine Mcx</title>
+        <link rel="icon" href="/img/avatar.jpg" class="flavicon">
+        <meta name="theme-color" content="#5865f2">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="/css/bootstrap/bootstrap.min.css">
+        <link rel="stylesheet" href="/css/main.css">
+        <link rel="stylesheet" href="/css/antoinemcx.css">
+        <link rel="stylesheet" media="screen and (max-width: 1250px)" href="/css/mobile.css">
+		
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css">
+        <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+        <script src="https://kit.fontawesome.com/74ba3d64b1.js"></script>
+    </head>
+
+    <body class="light">
+        <header><%- include('../parts/header'); -%></header>
+
+        <div class="container">
+            <div class="home" style="align-items: normal; padding-top: 4.5rem">
+                <div>
+                    <div class="pb-5"><%= translate.legalPage.intro[0] %> <a href="#mentions-legales"><%= translate.legalPage.title[0] %></a> <%= translate.legalPage.intro[1] %> <a href="#privacy"><%= translate.legalPage.intro[2] %></a>. <%= translate.legalPage.intro[3] %></div>
+                    <div class="d-flex pb-2" style="align-items: center">
+                        <div class="is-title" style="margin-bottom: 0; font-size: 35px"><%= translate.legalPage.title[0] %></div>
+                        <div class="section-line"></div>
+                    </div>
+                    <section id="mentions-legales">
+                        <p class="is-text"><%= translate.legalPage.legalInfo[0] %></p>
+
+                        <h5 class="pt-2 font-weight-bold">1. <%= translate.legalPage.legalInfo[1].title %></h5>
+                        <p class="is-text"><%= translate.legalPage.legalInfo[1].body[0] %><br><%= translate.legalPage.legalInfo[1].body[1] %><br>Email : antoine.marescaux81@gmail.com</p>
+                        
+                        <h5 class="pt-2 font-weight-bold">2. <%= translate.legalPage.legalInfo[2].title %></h5>
+                        <p class="is-text"><%= translate.legalPage.legalInfo[2].body %></p>
+                        
+                        <h5 class="pt-2 font-weight-bold">3. <%= translate.legalPage.legalInfo[3].title %></h5>
+                        <p class="is-text"><%= translate.legalPage.legalInfo[3].body[0] %>
+                        <br><br><%= translate.legalPage.legalInfo[3].body[1] %>
+                        <br><%= translate.legalPage.legalInfo[3].body[2] %>
+                        <br><%= translate.legalPage.legalInfo[3].body[3] %>
+                        <br><br><%= translate.legalPage.legalInfo[3].body[4] %>
+                        <br><%= translate.legalPage.legalInfo[3].body[5][0] %> <a href="#privacy4"><%= translate.legalPage.legalInfo[3].body[5][1] %></a>).</p>
+                        
+                        <h5 class="pt-2 font-weight-bold">4. <%= translate.legalPage.legalInfo[4].title %></h5>
+                        <p class="is-text"><%= translate.legalPage.legalInfo[4].body[0][0] %> <a href="#privacy"><%= translate.legalPage.legalInfo[4].body[0][1] %></a> <%= translate.legalPage.legalInfo[4].body[0][2] %>
+                        <br><%= translate.legalPage.legalInfo[4].body[1] %></p>
+                    </section>
+
+                    
+                    <div class="d-flex pt-5" style="align-items: center">
+                        <div class="is-title" style="margin-bottom: 0; font-size: 35px"><%= translate.legalPage.title[1] %></div>
+                        <div class="section-line"></div>
+                    </div>
+                    <section id="privacy" style="padding-bottom: 5rem">
+                        <p class="is-text"><%= translate.legalPage.privacyPolicy[0][0] %>
+                        <br><%= translate.legalPage.privacyPolicy[0][1] %>
+                        <br><br><%= translate.legalPage.privacyPolicy[0][2] %></p>
+
+                        <h5 class="pt-2 font-weight-bold">1. <%= translate.legalPage.privacyPolicy[1].title %></h5>
+                        <p class="is-text"><%= translate.legalPage.privacyPolicy[1].body[0] %>
+                        <br><%= translate.legalPage.privacyPolicy[1].body[1] %></p>
+                        <ul class="is-text">
+                            <li><%= translate.legalPage.privacyPolicy[1].body[2][0] %></li>
+                            <li><%= translate.legalPage.privacyPolicy[1].body[2][1] %></li>
+                            <li><%= translate.legalPage.privacyPolicy[1].body[2][2] %></li>
+                        </ul>
+                        <p class="is-text"><%= translate.legalPage.privacyPolicy[1].body[3] %>
+                        <br><br><%= translate.legalPage.privacyPolicy[1].body[4] %>
+                        <br><%= translate.legalPage.privacyPolicy[1].body[5] %></p>
+
+                        <h5 class="pt-2 font-weight-bold">2. <%= translate.legalPage.privacyPolicy[2].title %></h5>
+                        <p class="is-text"><%= translate.legalPage.privacyPolicy[2].body[0] %>
+                        <br><%= translate.legalPage.privacyPolicy[2].body[1] %></p>
+                        <ul class="is-text">
+                            <li><%= translate.legalPage.privacyPolicy[2].body[2] %></li>
+                            <li><%= translate.legalPage.privacyPolicy[2].body[3] %></li>
+                        </ul>
+                        <p class="is-text"><%= translate.legalPage.privacyPolicy[2].body[4] %></p>
+
+                        <h5 class="pt-2 font-weight-bold">3. <%= translate.legalPage.privacyPolicy[3].title %></h5>
+                        <p class="is-text"><%= translate.legalPage.privacyPolicy[3].body[0] %>
+                        <br><%= translate.legalPage.privacyPolicy[3].body[1] %></p>
+
+                        <h5 class="pt-2 font-weight-bold" id="privacy4">4. <%= translate.legalPage.privacyPolicy[4].title %></h5>
+                        <p class="is-text"><%= translate.legalPage.privacyPolicy[4].body[0][0] %> <a href="https://antoinemcx.fr/#contact"><%= translate.legalPage.privacyPolicy[4].body[0][1] %></a> <%= translate.legalPage.privacyPolicy[4].body[0][2] %> <a href="/discord"><%= translate.legalPage.privacyPolicy[4].body[0][3] %></a>.
+                        <br><%= translate.legalPage.privacyPolicy[4].body[1][0] %> <a href="#mentions-legales"><%= translate.legalPage.privacyPolicy[4].body[1][1] %></a> <%= translate.legalPage.privacyPolicy[4].body[1][3] %>
+                        <br><%= translate.legalPage.privacyPolicy[4].body[2] %></p>
+                    </section>
+                </div>
+            </div>
+        </div>
+        
+        <!-- JS FILES -->
+        <script src="/js/main.js"></script>
+        <script src="/js/url-shortener.js"></script>
+        <app-notification></app-notification>
+    </body>
+
+    <div class="cookiealert">
+        <div class="container m-auto">
+            <div class="pl-3 pr-3">
+                <div class="alert text-center cookiealert-content is-white w-100" role="alert">
+                    &#x1F36A; <b><%= translate.header.cookies[0] %></b> <%= translate.header.cookies[1] %> <a href="https://cookiesandyou.com/" target="_blank"><%= translate.header.cookies[2] %></a>
+                    <button type="button" class="btn btn-primary btn-sm acceptcookies"><%= translate.header.cookies[3] %></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</html>

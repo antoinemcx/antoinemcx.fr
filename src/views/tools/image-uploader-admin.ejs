@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <title>Imgur image uploader — Antoine Mcx</title>
+        <link rel="icon" href="/img/avatar.jpg" class="flavicon">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="/css/bootstrap/bootstrap.min.css">
+        <link rel="stylesheet" href="/css/main.css">
+        <link rel="stylesheet" href="/css/tools/image-uploader.css">
+        <link rel="stylesheet" href="/css/antoinemcx.css">
+        <link rel="stylesheet" media="screen and (max-width: 1250px)" href="/css/mobile.css">
+		
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css">
+        <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+        
+        <script src="https://kit.fontawesome.com/74ba3d64b1.js"></script>
+    </head>
+
+    <body class="light">
+        <header><%- include('../parts/header'); -%></header>
+
+        <div class="container">
+            <div class="home">
+                <div>
+                    <div class="d-flex" style="align-items: center">
+                        <div class="is-title" style="margin-bottom: 0">Stockez et envoyez vos images</div>
+                        <div class="section-line"></div>
+                    </div>
+                    <div class="is-subtitle pb-5">Sélectionnez une image ou insérez un lien et récupérez un lien à partager !</div>
+
+                    <form method="post" action="https://tools.antoinemcx.fr/upload_admin" enctype="multipart/form-data" id="uploadForm">
+                        <div class="row">
+                            <div style="padding-left: 15px; color: #fff">
+                                <label for="image_uploads"><i class="fa-solid fa-file-image" style="margin-right: 8px;"></i> Sélectionnez un fichier</label>
+                                <input type="file" id="image_uploads" name="sampleFile" class="input">
+                            </div>
+
+                            <div class="preview preview-z">
+                                <p class="is-text">Aucun fichier n'a été sélectionné, selectionnez-en un</p>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div style="padding-left: 15px"><input type="submit" value="ENVOYER"style="
+                                background-color: transparent;
+                                border: 3px solid var(--darkblurple);
+                                border-radius: 10px; color: var(--darkblurple);
+                                padding: 4.5px 40px; font-size: 16px;
+                                letter-spacing: 1px; font-weight: 600;
+                                cursor: pointer; width: 255.6px"
+                            class="submit-button mt-5"></div>
+
+                            <div class="preview mt-5"><p class="is-text">Cliquez sur ce bouton une fois l'image sélectionnée</p></div>
+                        </div>
+                    </form>
+
+                    <% if (req.user && req.user.role === 'admin') { %> 
+                        <br><br>Version classique : <a href="/image-uploader">https://antoinemcx.fr/image-uploader</a></div>
+                    <% } %>
+                </div>
+            </div>
+        </div>
+        
+        <!-- JS FILES -->
+        <script src="/js/main.js"></script>
+        <script src="/js/image-uploader.js"></script>
+        <app-notification></app-notification>
+    </body>
+
+    <!-- <div class="cookiealert">
+        <div class="container m-auto">
+            <div class="pl-3 pr-3">
+                <div class="alert text-center cookiealert-content is-white w-100" role="alert">
+                    &#x1F36A; <b><%= translate.header.cookies[0] %></b> <%= translate.header.cookies[1] %> <a href="https://cookiesandyou.com/" target="_blank"><%= translate.header.cookies[2] %></a>
+                    <button type="button" class="btn btn-primary btn-sm acceptcookies"><%= translate.header.cookies[3] %></button>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <div class="cookiealert2" style="visibility: visible; opacity: 1;">
+        <div class="container m-auto">
+            <div class="pl-3 pr-3">
+                <div class="alert text-center cookiealert-content is-white w-100" role="alert" style="background-color: #FFF0B3; border: 2px solid #F19A1E;">
+                    ⚠️ <b><%= translate.header.wip_alert[0] %></b> <%= translate.header.wip_alert[1] %>
+                </div>
+            </div>
+        </div>
+    </div>
+</html>
