@@ -1,17 +1,24 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  compatibilityDate: '2025-07-15',
+  compatibilityDate: "2025-07-15",
   devtools: { enabled: true },
+  colorMode: {
+    preference: "system",
+    fallback: "light",
+    storageKey: "app-theme",
+  },
 
   modules: [
-    '@nuxt/eslint',
-    '@nuxt/image',
-    '@nuxt/test-utils',
-    '@nuxt/ui',
-    '@nuxtjs/i18n',
+    "@nuxt/eslint",
+    "@nuxt/image",
+    "@nuxt/test-utils",
+    "@nuxt/ui",
+    "@nuxtjs/i18n",
   ],
+  css: ["~/assets/main.css"],
 
   i18n: {
+    strategy: "no_prefix",
     locales: [
       { code: "en", iso: "en-US", file: "en.json" },
       { code: "fr", iso: "fr-FR", file: "fr.json" },
