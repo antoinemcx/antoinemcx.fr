@@ -4,3 +4,7 @@
 :root {
     --ui-bg: #fcfdff;
 }
+
+.dark {
+    --ui-bg: var(--color-slate-950);
+}

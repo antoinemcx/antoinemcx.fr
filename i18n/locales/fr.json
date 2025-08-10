@@ -1,3 +1,9 @@
 {
-
+  "navbar": {
+    "home": "Accueil",
+    "about": "À propos",
+    "projects": "Projets",
+    "githubProfile": "Profil GitHub",
+    "viewSource": "Voir le code source"
+  }
 }
