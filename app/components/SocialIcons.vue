@@ -32,7 +32,7 @@ const icons = [
       :to="icon.link"
       target="_blank"
       class="flex items-center gap-2 text-muted/75 hover:text-highlighted
-      hover:rotate-6 transition-all duration-200"
+      hover:rotate-6 transition-all duration-200 cursor-pointer"
     >
       <Icon :name="icon.icon" class="size-4.5" />
       <span class="sr-only">{{ icon.name }}</span>
