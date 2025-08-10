@@ -5,5 +5,10 @@
     "projects": "Projects",
     "githubProfile": "Visit GitHub profile",
     "viewSource": "View the source code"
+  },
+  "footer": {
+    "allRightReserved": "All rights reserved.",
+    "madeWith": "Website made with",
+    "using": "using"
   }
 }
