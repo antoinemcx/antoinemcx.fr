@@ -15,7 +15,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div class="min-h-screen flex flex-col">
+  <div class="min-h-screen flex flex-col scroll-smooth">
     <!-- Navigation bar fixed at the top -->
     <div
       class="fixed top-0 left-0 right-0 z-50 bg-[var(--ui-bg)] transition-shadow duration-300"
