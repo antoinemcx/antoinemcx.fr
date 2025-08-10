@@ -1,14 +1,15 @@
 <script setup lang="ts">
+const { discordServer, github } = useRuntimeConfig();
 const icons = [
   {
     name: "GitHub",
     icon: "simple-icons:github",
-    link: "https://github.com/antoinemcx",
+    link: github,
   },
   {
     name: "Discord",
     icon: "simple-icons:discord",
-    link: "/discord",
+    link: discordServer,
   },
   {
     name: "X",

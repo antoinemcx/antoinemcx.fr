@@ -2,6 +2,7 @@
 import type { DropdownMenuItem } from "@nuxt/ui";
 
 const { t } = useI18n();
+const { github, githubRepo } = useRuntimeConfig();
 
 const isMobileMenuOpen = ref(false);
 
@@ -17,13 +18,13 @@ const githubLinks = computed<DropdownMenuItem[][]>(() => [
   [
     {
       label: t("navbar.githubProfile"),
-      to: "https://github.com/antoinemcx",
+      to: github,
       target: "_blank",
       trailingIcon: "i-lucide-external-link",
     },
     {
       label: t("navbar.viewSource"),
-      to: "https://github.com/antoinemcx/antoinemcx.fr",
+      to: githubRepo,
       target: "_blank",
       trailingIcon: "i-lucide-external-link",
     },

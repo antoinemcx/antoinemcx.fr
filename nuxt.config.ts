@@ -26,6 +26,12 @@ export default defineNuxtConfig({
     defaultLocale: "en",
   },
 
+  runtimeConfig: {
+    discordApiToken: "", // to override
+    discordServer: "https://discord.gg/G6WQsMQShZ",
+    github: "https://github.com/antoinemcx",
+    githubRepo: "https://github.com/antoinemcx/antoinemcx.fr",
+  },
   routeRules: {
     "/discord": { redirect: "https://discord.gg/G6WQsMQShZ" },
     "/github": { redirect: "https://github.com/antoinemcx" },
