@@ -3,11 +3,11 @@ const { t } = useI18n();
 </script>
 
 <template>
-  <div class="flex flex-col gap-2 px-2 py-3">
-    <div class="flex justify-between items-center gap-2 md:gap-4">
-      <div class="text-lg font-bold text-neutral-900">
+  <div class="flex flex-col gap-3 md:gap-2 px-2 py-3">
+    <div class="flex justify-between md:items-center flex-col md:flex-row md:gap-4">
+      <a class="text-lg font-bold" href="/github" target="_blank">
         Antoine M.
-      </div>
+      </a>
 
       <div>
         {{ t("footer.madeWith") }}
@@ -17,15 +17,16 @@ const { t } = useI18n();
       </div>
     </div>
 
-    <div class="flex justify-between items-center gap-2 md:gap-4">
-      <div class="font-normal text-neutral-900">
+    <div class="flex justify-between md:items-center flex-col md:flex-row gap-2 md:gap-4">
+      <!-- Copyright -->
+      <div class="font-normal">
         ©
         {{ new Date().getFullYear() }}
         Antoine Marescaux.
         {{ t("footer.allRightReserved") }}
       </div>
 
-      <div>TODO</div>
+      <SocialIcons />
     </div>
   </div>
 </template>

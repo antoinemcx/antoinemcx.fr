@@ -25,4 +25,9 @@ export default defineNuxtConfig({
     ],
     defaultLocale: "en",
   },
+
+  routeRules: {
+    "/discord": { redirect: "https://discord.gg/G6WQsMQShZ" },
+    "/github": { redirect: "https://github.com/antoinemcx" },
+  },
 });
