@@ -3,6 +3,8 @@ import type { DropdownMenuItem } from "@nuxt/ui";
 
 const { t } = useI18n();
 
+const isMobileMenuOpen = ref(false);
+
 const navItems = computed<DropdownMenuItem[][]>(() => [
   [
     { to: "/", label: t("navbar.home") },
@@ -70,7 +72,20 @@ const githubLinks = computed<DropdownMenuItem[][]>(() => [
         </UDropdownMenu>
 
         <!-- Links inside a dropdown menu for smaller devices -->
-        <!-- TODO -->
+        <UDropdownMenu
+          v-model:open="isMobileMenuOpen"
+          :items="navItems"
+          class="md:hidden"
+        >
+          <UButton
+            :icon="isMobileMenuOpen ? 'i-lucide-x' : 'i-lucide-menu'"
+            variant="subtle"
+            color="neutral"
+            size="sm"
+            class="rounded-full transition-transform"
+            :class="isMobileMenuOpen ? 'rotate-90 duration-250' : 'rotate-0 duration-200'"
+          />
+        </UDropdownMenu>
       </div>
     </div>
   </div>
