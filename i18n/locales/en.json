@@ -10,5 +10,18 @@
     "allRightReserved": "All rights reserved.",
     "madeWith": "Website made with",
     "using": "using"
+  },
+  "home": {
+    "hero": {
+      "title": "Hi, I'm Antoine",
+      "description": {
+        "intro": "I'm a French software engineer student focused on developing human-centered appslications.",
+        "interests": "Interested in software architecture and web development, I'm currently studying at",
+        "enseeiht": "ENSEEIHT",
+        "workingAt": "and working at",
+        "enseeihtWebsite": "https://enseeiht.fr/en/index.html",
+        "sbsWebsite": "https://sbs-software.com"
+      }
+    }
   }
 }

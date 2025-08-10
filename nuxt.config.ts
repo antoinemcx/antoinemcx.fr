@@ -27,7 +27,6 @@ export default defineNuxtConfig({
   },
 
   runtimeConfig: {
-    discordApiToken: "", // to override
     discordServer: "https://discord.gg/G6WQsMQShZ",
     github: "https://github.com/antoinemcx",
     githubRepo: "https://github.com/antoinemcx/antoinemcx.fr",

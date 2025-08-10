@@ -10,5 +10,18 @@
     "allRightReserved": "Tous droits réservés.",
     "madeWith": "Site réalisé avec",
     "using": "en utilisant"
+  },
+  "home": {
+    "hero": {
+      "title": "Salut, moi c'est Antoine",
+      "description": {
+        "intro": "Je suis un étudiant en génie logiciel qui se focalise sur le développement d'applications centrées humain.",
+        "interests": "Intéressé par l'architecture logicielle et le développement web, j'étudie à",
+        "enseeiht": "l'ENSEEIHT",
+        "workingAt": "et je travaille chez",
+        "enseeihtWebsite": "https://enseeiht.fr/fr/index.html",
+        "sbsWebsite": "https://sbs-software.com/fr"
+      }
+    }
   }
 }
