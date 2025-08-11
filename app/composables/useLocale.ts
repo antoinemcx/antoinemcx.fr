@@ -11,8 +11,8 @@ export function useLanguage() {
   const { setLocale } = useI18n();
 
   const languages: LanguageConfig[] = [
-    { code: "en", name: "English", flag: "🇺🇸" },
-    { code: "fr", name: "Français", flag: "🇫🇷" },
+    { code: "en", name: "English", flag: "circle-flags:us" },
+    { code: "fr", name: "Français", flag: "circle-flags:fr" },
   ];
 
   /* Handle language storage */

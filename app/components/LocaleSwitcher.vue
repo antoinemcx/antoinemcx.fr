@@ -8,7 +8,7 @@ const { currentLanguage, switchToNextLanguage } = useLanguage();
     color="neutral"
     size="sm"
     class="rounded-full"
-    :label="currentLanguage?.flag"
+    :icon="currentLanguage?.flag"
     :aria-label="currentLanguage?.name"
     @click="switchToNextLanguage"
   />
