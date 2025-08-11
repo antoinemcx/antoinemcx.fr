@@ -8,6 +8,7 @@ export default defineNuxtConfig({
     "@nuxt/test-utils",
     "@nuxt/ui",
     "@nuxtjs/i18n",
+    "@nuxt/content",
   ],
 
   app: { // seo data

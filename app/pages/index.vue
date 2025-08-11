@@ -2,7 +2,6 @@
   <div class="flex flex-col gap-8">
     <HeroSection />
 
-    <!-- TODO Projects w/ Nuxt Content -->
-    <div>TODO</div>
+    <FeaturedProjectsSection />
   </div>
 </template>
