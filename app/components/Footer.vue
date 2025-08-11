@@ -26,7 +26,7 @@ const { t } = useI18n();
         {{ t("footer.allRightReserved") }}
       </div>
 
-      <SocialIcons />
+      <SocialIcons icon-size="sm" />
     </div>
   </div>
 </template>
