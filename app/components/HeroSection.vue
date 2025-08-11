@@ -50,8 +50,6 @@ const { t } = useI18n();
         />
       </a>.
     </p>
-
-    <SocialIcons icon-size="md" class="mt-4" />
   </div>
 </template>
 

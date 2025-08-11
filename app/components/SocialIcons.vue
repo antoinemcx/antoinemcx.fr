@@ -1,8 +1,4 @@
 <script setup lang="ts">
-defineProps<{
-  iconSize: "sm" | "md";
-}>();
-
 const config = useRuntimeConfig();
 const icons = [
   {
@@ -40,7 +36,7 @@ const icons = [
     >
       <Icon
         :name="icon.icon"
-        :class="iconSize === 'sm' ? 'size-4.5' : 'size-5.5'"
+        class="size-4.5"
       />
       <span class="sr-only">{{ icon.name }}</span>
     </NuxtLink>
