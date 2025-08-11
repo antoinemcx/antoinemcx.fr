@@ -10,6 +10,9 @@ const props = defineProps<{
 
 const { locale, t } = useI18n();
 
+/* Extract locale code from Nuxt Content path */
+const projectPath = props.project.path.replace(`/${locale.value}/`, "/");
+
 const status = computed(() => {
   let label = "";
   let color: typeof UBadge["color"] = "";
@@ -26,9 +29,6 @@ const status = computed(() => {
   }
   return { label, color };
 });
-
-/* Extract locale code from Nuxt Content path */
-const projectPath = props.project.path.replace(`/${locale.value}/`, "/");
 </script>
 
 <template>
@@ -51,10 +51,15 @@ const projectPath = props.project.path.replace(`/${locale.value}/`, "/");
       <div class="flex flex-col gap-2 mt-auto">
         <div
           v-if="(project.status && project.status !== ProjectStatus.ACTIVE)
+            || project.github
             || project.isCollaborator"
           class="flex flex-col gap-2 mt-4"
         >
-          <!-- TODO GH stars -->
+          <!-- GitHub stars count -->
+          <ProjectGithubStarCount
+            v-if="project.github"
+            :github-repository-url="project.github"
+          />
 
           <!-- Status and collaborator badge -->
           <div
