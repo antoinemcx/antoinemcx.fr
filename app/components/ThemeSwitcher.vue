@@ -12,7 +12,7 @@ function toggleColorMode() {
     variant="subtle"
     color="neutral"
     size="sm"
-    class="rounded-full"
+    class="rounded-full active:translate-y-0.5 transition-transform duration-200"
     @click="toggleColorMode"
   />
 </template>
