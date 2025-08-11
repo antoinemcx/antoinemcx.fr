@@ -27,12 +27,13 @@ const icons = [
 <template>
   <div class="flex items-center gap-3">
     <NuxtLink
-      v-for="icon in icons"
-      :key="icon.name"
+      v-for="(icon, index) in icons"
+      :key="index"
       :to="icon.link"
       target="_blank"
       class="flex items-center gap-2 text-muted/75 hover:text-highlighted
-      hover:rotate-6 transition-all duration-200 cursor-pointer"
+      transition-all duration-200 cursor-pointer"
+      :class="index % 2 === 0 ? 'hover:rotate-6' : 'hover:-rotate-6'"
     >
       <Icon
         :name="icon.icon"
