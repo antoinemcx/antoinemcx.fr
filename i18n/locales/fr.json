@@ -22,6 +22,15 @@
         "enseeihtWebsite": "https://enseeiht.fr/fr/index.html",
         "sbsWebsite": "https://sbs-software.com/fr"
       }
+    },
+    "featuredProjects": {
+      "title": "Projets phares",
+      "description": "Mes principaux projets et outils, open-source ou non, que j'ai développés.",
+      "viewAll": "Tout afficher",
+      "empty": "Aucun projet trouvé."
     }
+  },
+  "projects": {
+    "notFound": "Ce projet est introuvable."
   }
 }
