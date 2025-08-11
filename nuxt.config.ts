@@ -2,12 +2,6 @@
 export default defineNuxtConfig({
   compatibilityDate: "2025-07-15",
   devtools: { enabled: true },
-  colorMode: {
-    preference: "system",
-    fallback: "light",
-    storageKey: "app-theme",
-  },
-
   modules: [
     "@nuxt/eslint",
     "@nuxt/image",
@@ -15,6 +9,21 @@ export default defineNuxtConfig({
     "@nuxt/ui",
     "@nuxtjs/i18n",
   ],
+
+  app: { // seo data
+    head: {
+      title: "Antoine M.",
+      link: [
+        { rel: "icon", type: "image/x-icon", href: "/logo.ico" },
+      ],
+    },
+  },
+
+  colorMode: {
+    preference: "system",
+    fallback: "light",
+    storageKey: "app-theme",
+  },
   css: ["~/assets/main.css"],
 
   i18n: {
