@@ -3,10 +3,10 @@ const { t } = useI18n();
 </script>
 
 <template>
-  <div class="flex flex-col gap-2 py-10">
-    <NuxtImg src="/photo.jpg" class="size-[4.5rem] rounded-full" draggable="false" />
+  <div class="flex flex-col gap-2 py-18">
+    <NuxtImg src="/photo.jpg" class="size-20 rounded-full" draggable="false" />
 
-    <h1 class="text-2xl font-bold text-highlighted mt-1">
+    <h1 class="text-3xl font-bold text-highlighted mt-1">
       {{ t("home.hero.title") }}
       <span class="cursor-default inline-block wave">👋</span>
     </h1>
