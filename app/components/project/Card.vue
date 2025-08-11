@@ -103,7 +103,7 @@ const projectPath = props.project.path.replace(`/${locale.value}/`, "/");
         <UIcon
           name="i-lucide-move-right"
           class="size-5 text-muted transition-transform duration-500
-        group-hover:translate-x-1 group-hover:text-[var(--ui-text)]"
+        group-hover:translate-x-1 group-hover:text-default"
         />
       </div>
     </UCard>

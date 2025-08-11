@@ -18,7 +18,7 @@ onUnmounted(() => {
   <div class="min-h-screen flex flex-col scroll-smooth">
     <!-- Navigation bar fixed at the top -->
     <div
-      class="fixed top-0 left-0 right-0 z-50 bg-[var(--ui-bg)] transition-shadow duration-300"
+      class="fixed top-0 left-0 right-0 z-50 bg-default transition-shadow duration-300"
       :class="{
         'shadow-sm dark:shadow-md shadow-neutral-200/75 dark:shadow-neutral-800/25': isScrolled,
       }"
