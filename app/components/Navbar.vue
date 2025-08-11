@@ -2,7 +2,7 @@
 import type { DropdownMenuItem } from "@nuxt/ui";
 
 const { t } = useI18n();
-const { github, githubRepo } = useRuntimeConfig();
+const config = useRuntimeConfig();
 
 const isMobileMenuOpen = ref(false);
 
@@ -14,22 +14,24 @@ const navItems = computed<DropdownMenuItem[][]>(() => [
   ],
 ]);
 
-const githubLinks = computed<DropdownMenuItem[][]>(() => [
+const githubLinks: DropdownMenuItem[][] = [
   [
     {
       label: t("navbar.githubProfile"),
-      to: github,
+      to: config.public.github,
       target: "_blank",
+      class: "cursor-pointer",
       trailingIcon: "i-lucide-external-link",
     },
     {
       label: t("navbar.viewSource"),
-      to: githubRepo,
+      to: config.public.githubRepo,
       target: "_blank",
+      class: "cursor-pointer",
       trailingIcon: "i-lucide-external-link",
     },
   ],
-]);
+];
 </script>
 
 <template>

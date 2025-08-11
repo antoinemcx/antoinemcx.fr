@@ -36,9 +36,11 @@ export default defineNuxtConfig({
   },
 
   runtimeConfig: {
-    discordServer: "https://discord.gg/G6WQsMQShZ",
-    github: "https://github.com/antoinemcx",
-    githubRepo: "https://github.com/antoinemcx/antoinemcx.fr",
+    public: {
+      discordServer: "https://discord.gg/G6WQsMQShZ",
+      github: "https://github.com/antoinemcx",
+      githubRepo: "https://github.com/antoinemcx/antoinemcx.fr",
+    },
   },
   routeRules: {
     "/discord": { redirect: "https://discord.gg/G6WQsMQShZ" },
