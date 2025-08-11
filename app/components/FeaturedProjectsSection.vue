@@ -45,7 +45,7 @@ const { data: featuredProjects }
         color="neutral"
         variant="outline"
         trailing-icon="i-lucide-arrow-right"
-        class="group w-fit"
+        class="group w-fit active:translate-y-0.5 transition-transform duration-200"
         :ui="{
           trailingIcon: 'group-hover:translate-x-0.5 transition-transform duration-200',
         }"

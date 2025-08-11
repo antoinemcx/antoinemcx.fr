@@ -33,7 +33,7 @@ const projectPath = props.project.path.replace(`/${locale.value}/`, "/");
 
 <template>
   <!-- TODO same height cards -->
-  <a :href="projectPath">
+  <a :href="projectPath" class="active:translate-y-0.5 transition-transform duration-200">
     <UCard class="group cursor-pointer">
       <!-- Header -->
       <div class="flex gap-2 items-center text-lg font-bold mb-1">
