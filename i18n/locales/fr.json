@@ -27,10 +27,17 @@
       "title": "Projets phares",
       "description": "Mes principaux projets et outils, open-source ou non, que j'ai développés.",
       "viewAll": "Tout afficher",
-      "empty": "Aucun projet trouvé."
+      "empty": "Aucun projet trouvé.",
+      "readMore": "Lire plus"
     }
   },
   "projects": {
-    "notFound": "Ce projet est introuvable."
+    "notFound": "Ce projet est introuvable.",
+    "status": {
+      "soon": "À venir",
+      "active": "Actif",
+      "archived": "Archivé"
+    },
+    "isCollaborator": "Collaborateur"
   }
 }

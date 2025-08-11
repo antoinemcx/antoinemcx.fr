@@ -32,11 +32,12 @@ const { data: featuredProjects }
     </div>
 
     <div v-else class="flex flex-col gap-5">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-1">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
         <ProjectCard
           v-for="project in featuredProjects"
           :key="project.id"
           :project="project"
+          :is-large-card="false"
         />
       </div>
 

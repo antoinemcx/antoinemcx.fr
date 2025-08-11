@@ -27,10 +27,17 @@
       "title": "Featured Projects",
       "description": "My main projects and tools, open-source or not, that I have developed.",
       "viewAll": "View all",
-      "empty": "No projects found."
+      "empty": "No projects found.",
+      "readMore": "Read more"
     }
   },
   "projects": {
-    "notFound": "This project could not be found."
+    "notFound": "This project could not be found.",
+    "status": {
+      "soon": "Coming Soon",
+      "active": "Active",
+      "archived": "Archived"
+    },
+    "isCollaborator": "Collaborator"
   }
 }

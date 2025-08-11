@@ -1,4 +1,5 @@
 import { defineCollection, defineContentConfig, z } from "@nuxt/content";
+import { ProjectStatus } from "./app/types/content";
 
 const commonProjectSchema = z.object({
   name: z.string().nonempty(),
@@ -18,7 +19,8 @@ const commonProjectSchema = z.object({
   endYear: z.string().optional(),
   isFeatured: z.boolean().optional(), // displays on home page
   isCollaborator: z.boolean().optional(),
-  tags: z.array(z.string().nonempty()),
+  status: z.nativeEnum(ProjectStatus).optional(), // active default
+  tags: z.array(z.string().nonempty()).optional(),
 });
 
 export default defineContentConfig({
