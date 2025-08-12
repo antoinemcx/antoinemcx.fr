@@ -38,6 +38,7 @@
     "notFound": "Ce projet est introuvable.",
     "viewMore": "Voir plus",
     "viewLess": "Voir moins",
+    "noMatchingProjects": "Aucun projet ne correspond à votre recherche.",
     "status": {
       "soon": "À venir",
       "active": "Actif",
@@ -45,6 +46,7 @@
       "discontinued": "Abandonné"
     },
     "isContributor": "Contributeur",
-    "isContributorTooltip": "Projet en tant que contributeur et non propriétaire"
+    "isContributorTooltip": "Projet en tant que contributeur et non propriétaire",
+    "tagsFilter": "Catégories :"
   }
 }

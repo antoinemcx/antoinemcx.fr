@@ -6,30 +6,94 @@ const displayAllProjects = ref(false);
 
 /* Fetch all projects data */
 const { data: projects, status } = await useProjectsContent();
+const tags = computed<string[]>(() => {
+  const allTags = new Set<string>();
+  projects.value?.forEach((project) => {
+    project.tags?.forEach(tag => allTags.add(tag));
+  });
+  return Array.from(allTags);
+});
+
+/* Tags filter */
+const selectedTags = ref<string[]>([]);
+const filteredProjects = computed(() =>
+  selectedTags.value.length === 0
+    ? projects.value // no filter
+    : projects.value?.filter(project =>
+        project.tags?.some(tag => selectedTags.value.includes(tag)),
+      ),
+);
+
+function toggleTag(tag: string) {
+  if (selectedTags.value.includes(tag)) {
+    selectedTags.value = selectedTags.value.filter(t => t !== tag);
+  } else {
+    selectedTags.value.push(tag);
+  }
+}
 </script>
 
 <template>
   <h1 class="text-2xl text-highlighted font-bold">
     {{ t("projects.title") }}
   </h1>
-  <p class="text-muted mb-5">
+  <p class="text-muted mb-3">
     {{ t("projects.description") }}
   </p>
+
+  <!-- Tags filter -->
+  <div v-if="tags.length > 0" class="flex items-center gap-2 mb-4">
+    <span class="text-muted font-semibold">
+      {{ t("projects.tagsFilter") }}
+    </span>
+    <div class="flex flex-wrap gap-1.5">
+      <UBadge
+        v-for="tag in tags"
+        :key="tag"
+        :label="tag"
+        color="neutral"
+        variant="subtle"
+        class="h-fit cursor-pointer rounded-full hover:bg-accented/75 transition-colors duration-200"
+        :class="selectedTags.length === 0 || selectedTags.includes(tag)
+          ? 'bg-accented/75' : 'bg-accented/25'"
+        :is-active="selectedTags.length === 0 || selectedTags.includes(tag)"
+        @click="toggleTag(tag)"
+      />
+    </div>
+
+    <!-- Clear filter button -->
+    <UButton
+      v-if="selectedTags.length > 0"
+      size="sm"
+      color="error"
+      variant="ghost"
+      icon="lucide:trash"
+      class="rounded-4xl p-1!"
+      @click="selectedTags = []"
+    />
+  </div>
 
   <div v-if="status === 'pending'" class="grid grid-cols-1 md:grid-cols-2 gap-3">
     <UCard v-for="n in initialProjectsCount" :key="n">
       <USkeleton class="h-40" />
     </UCard>
   </div>
-  <div v-else-if="!projects || projects.length === 0" class="text-muted">
+  <div
+    v-else-if="!projects || projects.length === 0 || !filteredProjects"
+    class="text-muted"
+  >
     {{ t("projects.empty") }}
+  </div>
+
+  <div v-else-if="filteredProjects.length === 0" class="text-muted">
+    {{ t("projects.noMatchingProjects") }}
   </div>
 
   <div v-else>
     <!-- Initial list of initialProjectsCount projects -->
     <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
       <ProjectCard
-        v-for="project in projects.slice(0, initialProjectsCount)"
+        v-for="project in filteredProjects.slice(0, initialProjectsCount)"
         :key="project.id"
         :project="project"
         is-large-card
@@ -39,7 +103,7 @@ const { data: projects, status } = await useProjectsContent();
     <!-- Other projects with a "view more" button -->
     <div v-if="displayAllProjects" class="grid grid-cols-1 md:grid-cols-2 gap-3 mt-3">
       <ProjectCard
-        v-for="project in projects.slice(initialProjectsCount)"
+        v-for="project in filteredProjects.slice(initialProjectsCount)"
         :key="project.id"
         :project="project"
         is-large-card
@@ -48,7 +112,7 @@ const { data: projects, status } = await useProjectsContent();
 
     <div class="flex justify-center mt-4">
       <UButton
-        v-if="projects && projects.length > initialProjectsCount"
+        v-if="filteredProjects && filteredProjects.length > initialProjectsCount"
         color="neutral"
         variant="outline"
         :trailing-icon="displayAllProjects ? 'lucide:arrow-up' : 'lucide:arrow-down'"

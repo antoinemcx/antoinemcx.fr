@@ -38,6 +38,7 @@
     "notFound": "This project could not be found.",
     "viewMore": "View more",
     "viewLess": "View less",
+    "noMatchingProjects": "No projects match your search.",
     "status": {
       "soon": "Coming Soon",
       "active": "Active",
@@ -45,6 +46,7 @@
       "discontinued": "Discontinued"
     },
     "isContributor": "Contributor",
-    "isContributorTooltip": "Project as a contributor and not owner"
+    "isContributorTooltip": "Project as a contributor and not owner",
+    "tagsFilter": "Categories:"
   }
 }
