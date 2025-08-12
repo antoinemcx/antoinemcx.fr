@@ -20,6 +20,7 @@ const commonProjectSchema = z.object({
   isFeatured: z.boolean().optional(), // displays on home page
   isContributor: z.boolean().optional(),
   status: z.nativeEnum(ProjectStatus).optional(), // active default
+  technologies: z.array(z.string().nonempty()),
   tags: z.array(z.string().nonempty()).optional(),
 });
 

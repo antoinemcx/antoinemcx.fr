@@ -54,13 +54,12 @@ const status = computed(() => {
       </div>
 
       <!-- Description -->
-      <p class="text-muted">
-        {{ project.description }}
-      </p>
+      <p class="text-muted">{{ project.description }}</p>
 
-      <div class="flex flex-col gap-2 mt-auto">
+      <div class="mt-auto">
         <div
           v-if="(isLargeCard && project.tags && project.tags.length > 0)
+            || (isLargeCard && project.technologies && project.technologies.length > 0)
             || project.isContributor
             || project.github"
           class="flex flex-col gap-2 mt-4"
@@ -103,7 +102,21 @@ const status = computed(() => {
             </UBadge>
           </div>
 
-          <!-- TODO technos (light blue) -->
+          <!-- Used technologies for large cards -->
+          <div
+            v-if="isLargeCard && project.technologies && project.technologies.length > 0"
+            class="flex flex-wrap gap-1"
+          >
+            <UBadge
+              v-for="techno in project.technologies"
+              :key="techno"
+              color="primary"
+              variant="soft"
+              class="rounded-full"
+            >
+              {{ techno }}
+            </UBadge>
+          </div>
         </div>
 
         <!-- View more button -->
@@ -114,7 +127,7 @@ const status = computed(() => {
           <UIcon
             name="i-lucide-move-right"
             class="size-5 text-muted transition-all duration-500
-          group-hover:translate-x-1 group-hover:text-default"
+            group-hover:translate-x-1 group-hover:text-default"
           />
         </div>
       </div>
