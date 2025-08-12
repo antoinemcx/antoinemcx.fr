@@ -33,7 +33,7 @@
   },
   "projects": {
     "title": "Projects",
-    "description": "The projects and tools that I have developed.",
+    "description": "Some of the projects and tools that I have developed.",
     "empty": "No projects found.",
     "notFound": "This project could not be found.",
     "viewMore": "View more",

@@ -34,7 +34,8 @@ const status = computed(() => {
 <template>
   <a :href="projectPath" class="active:translate-y-0.5 transition-transform duration-200">
     <UCard
-      class="group cursor-pointer hover:ring-accented transition-all duration-500 h-full"
+      class="group bg-muted/50 hover:bg-muted dark:bg-muted/25 dark:hover:bg-muted/50
+      cursor-pointer hover:ring-accented transition-all duration-500 h-full"
       :ui="{ body: 'h-full flex flex-col' }"
     >
       <!-- Header -->
@@ -103,7 +104,7 @@ const status = computed(() => {
               :key="tag"
               color="neutral"
               variant="soft"
-              class="rounded-full"
+              class="rounded-full bg-accented/50"
             >
               {{ tag }}
             </UBadge>
