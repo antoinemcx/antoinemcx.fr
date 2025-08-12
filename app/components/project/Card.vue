@@ -41,6 +41,16 @@ const status = computed(() => {
       <div class="flex gap-2 items-center text-lg font-bold mb-1">
         <NuxtImg :src="project.logo" :alt="project.name" class="size-7 rounded-full" />
         {{ project.name }}
+
+        <!-- Status badge -->
+        <UBadge
+          v-if="project.status && project.status !== ProjectStatus.ACTIVE"
+          :color="status.color"
+          variant="soft"
+          class="rounded-full"
+        >
+          {{ status.label }}
+        </UBadge>
       </div>
 
       <!-- Description -->
@@ -50,22 +60,15 @@ const status = computed(() => {
 
       <div class="flex flex-col gap-2 mt-auto">
         <div
-          v-if="(project.status && project.status !== ProjectStatus.ACTIVE)
-            || project.github
-            || project.isCollaborator"
+          v-if="(isLargeCard && project.tags && project.tags.length > 0)
+            || project.isCollaborator
+            || project.github"
           class="flex flex-col gap-2 mt-4"
         >
-          <!-- GitHub stars and forks count -->
-          <ProjectGithubMetrics
-            v-if="project.github"
-            :github-repository-url="project.github"
-          />
-
-          <!-- Status and collaborator badge -->
+          <!-- Collaborator badge and Github metrics count -->
           <div
-            v-if="(project.status && project.status !== ProjectStatus.ACTIVE)
-              || project.isCollaborator"
-            class="flex gap-1"
+            v-if="project.isCollaborator || project.github"
+            class="flex gap-2 items-center"
           >
             <UBadge
               v-if="project.isCollaborator"
@@ -76,17 +79,11 @@ const status = computed(() => {
               {{ t("projects.isCollaborator") }}
             </UBadge>
 
-            <UBadge
-              v-if="project.status && project.status !== ProjectStatus.ACTIVE"
-              :color="status.color"
-              variant="soft"
-              class="rounded-full"
-            >
-              {{ status.label }}
-            </UBadge>
+            <ProjectGithubMetrics
+              v-if="project.github"
+              :github-repository-url="project.github"
+            />
           </div>
-
-          <!-- TODO technos -->
 
           <!-- Tags for large cards -->
           <div
@@ -103,6 +100,8 @@ const status = computed(() => {
               {{ tag }}
             </UBadge>
           </div>
+
+          <!-- TODO technos (light blue) -->
         </div>
 
         <!-- View more button -->
