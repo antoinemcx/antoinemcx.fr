@@ -39,7 +39,7 @@ const status = computed(() => {
     >
       <!-- Header -->
       <div class="flex gap-2 items-center text-lg font-bold mb-1">
-        <NuxtImg :src="project.logo" :alt="project.name" class="size-7 rounded-full" />
+        <NuxtImg :src="project.logo" :alt="project.name" class="size-6.5 rounded-full" />
         {{ project.name }}
 
         <!-- Status badge -->
