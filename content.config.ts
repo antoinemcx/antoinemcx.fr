@@ -18,7 +18,7 @@ const commonProjectSchema = z.object({
   startYear: z.string().nonempty(),
   endYear: z.string().optional(),
   isFeatured: z.boolean().optional(), // displays on home page
-  isCollaborator: z.boolean().optional(),
+  isContributor: z.boolean().optional(),
   status: z.nativeEnum(ProjectStatus).optional(), // active default
   tags: z.array(z.string().nonempty()).optional(),
 });

@@ -61,23 +61,23 @@ const status = computed(() => {
       <div class="flex flex-col gap-2 mt-auto">
         <div
           v-if="(isLargeCard && project.tags && project.tags.length > 0)
-            || project.isCollaborator
+            || project.isContributor
             || project.github"
           class="flex flex-col gap-2 mt-4"
         >
-          <!-- Collaborator badge and Github metrics count -->
+          <!-- Contributor badge and Github metrics count -->
           <div
-            v-if="project.isCollaborator || project.github"
+            v-if="project.isContributor || project.github"
             class="flex gap-2 items-center"
           >
             <UTooltip
-              v-if="project.isCollaborator"
-              :text="t('projects.isCollaboratorTooltip')"
+              v-if="project.isContributor"
+              :text="t('projects.isContributorTooltip')"
               arrow
               :content="{ sideOffset: 1 }"
             >
               <UBadge color="warning" variant="soft" class="rounded-full">
-                {{ t("projects.isCollaborator") }}
+                {{ t("projects.isContributor") }}
               </UBadge>
             </UTooltip>
 

@@ -38,7 +38,7 @@
       "active": "Actif",
       "archived": "Archivé"
     },
-    "isCollaborator": "Contributeur",
-    "isCollaboratorTooltip": "Projet en tant que contributeur et non propriétaire"
+    "isContributor": "Contributeur",
+    "isContributorTooltip": "Projet en tant que contributeur et non propriétaire"
   }
 }
