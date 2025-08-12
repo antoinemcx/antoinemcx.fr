@@ -70,14 +70,16 @@ const status = computed(() => {
             v-if="project.isCollaborator || project.github"
             class="flex gap-2 items-center"
           >
-            <UBadge
+            <UTooltip
               v-if="project.isCollaborator"
-              color="warning"
-              variant="soft"
-              class="rounded-full"
+              :text="t('projects.isCollaboratorTooltip')"
+              arrow
+              :content="{ sideOffset: 1 }"
             >
-              {{ t("projects.isCollaborator") }}
-            </UBadge>
+              <UBadge color="warning" variant="soft" class="rounded-full">
+                {{ t("projects.isCollaborator") }}
+              </UBadge>
+            </UTooltip>
 
             <ProjectGithubMetrics
               v-if="project.github"

@@ -38,6 +38,7 @@
       "active": "Active",
       "archived": "Archived"
     },
-    "isCollaborator": "Collaborator"
+    "isCollaborator": "Contributor",
+    "isCollaboratorTooltip": "Project as a contributor and not owner"
   }
 }

@@ -16,7 +16,7 @@ useSeoMeta({
 
 <template>
   <NuxtLayout>
-    <UApp>
+    <UApp :tooltip="{ delayDuration: 300 }">
       <NuxtPage />
     </UApp>
   </NuxtLayout>
