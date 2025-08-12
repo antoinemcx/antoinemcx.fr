@@ -55,8 +55,8 @@ const status = computed(() => {
             || project.isCollaborator"
           class="flex flex-col gap-2 mt-4"
         >
-          <!-- GitHub stars count -->
-          <ProjectGithubStarCount
+          <!-- GitHub stars and forks count -->
+          <ProjectGithubMetrics
             v-if="project.github"
             :github-repository-url="project.github"
           />
