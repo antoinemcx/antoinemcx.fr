@@ -3,7 +3,7 @@ const { t } = useI18n();
 </script>
 
 <template>
-  <div class="flex flex-col gap-2 pt-10 pb-18">
+  <div class="flex flex-col gap-2 pt-1 lg:pt-4 pb-18">
     <NuxtImg src="/photo.jpg" class="size-20 rounded-full" draggable="false" />
 
     <h1 class="text-3xl font-bold text-highlighted mt-1">

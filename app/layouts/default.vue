@@ -29,7 +29,7 @@ onUnmounted(() => {
     </div>
 
     <!-- Page content -->
-    <div class="flex-1 pt-18 pb-5 max-w-5xl mx-auto px-4 md:px-6 w-full">
+    <div class="flex-1 pt-24 pb-5 max-w-5xl mx-auto px-4 md:px-6 w-full">
       <slot />
     </div>
 
