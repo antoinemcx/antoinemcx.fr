@@ -32,6 +32,7 @@
     }
   },
   "projects": {
+    "empty": "No projects found.",
     "notFound": "This project could not be found.",
     "status": {
       "soon": "Coming Soon",

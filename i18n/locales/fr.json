@@ -32,6 +32,7 @@
     }
   },
   "projects": {
+    "empty": "Aucun projet trouvé.",
     "notFound": "Ce projet est introuvable.",
     "status": {
       "soon": "À venir",
