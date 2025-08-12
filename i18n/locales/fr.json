@@ -33,8 +33,11 @@
   },
   "projects": {
     "title": "Projets",
+    "description": "Les projets et outils que j'ai développés.",
     "empty": "Aucun projet trouvé.",
     "notFound": "Ce projet est introuvable.",
+    "viewMore": "Voir plus",
+    "viewLess": "Voir moins",
     "status": {
       "soon": "À venir",
       "active": "Actif",

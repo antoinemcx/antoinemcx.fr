@@ -33,8 +33,11 @@
   },
   "projects": {
     "title": "Projects",
+    "description": "The projects and tools that I have developed.",
     "empty": "No projects found.",
     "notFound": "This project could not be found.",
+    "viewMore": "View more",
+    "viewLess": "View less",
     "status": {
       "soon": "Coming Soon",
       "active": "Active",
