@@ -16,6 +16,7 @@ const tags = computed<string[]>(() => {
 
 /* Tags filter */
 const selectedTags = ref<string[]>([]);
+const hoveredTag = ref<string | null>(null);
 const filteredProjects = computed(() =>
   selectedTags.value.length === 0
     ? projects.value // no filter
@@ -53,11 +54,15 @@ function toggleTag(tag: string) {
         :label="tag"
         color="neutral"
         variant="subtle"
-        class="h-fit cursor-pointer rounded-full hover:bg-accented/75 transition-colors duration-200"
-        :class="selectedTags.length === 0 || selectedTags.includes(tag)
-          ? 'bg-accented/75' : 'bg-accented/25'"
-        :is-active="selectedTags.length === 0 || selectedTags.includes(tag)"
+        class="h-fit cursor-pointer rounded-full hover:bg-accented/75 transition-colors duration-300"
+        :class="selectedTags.length === 0
+          ? (hoveredTag === null || hoveredTag === tag
+            ? 'bg-accented/75' : 'bg-accented/25')
+          : (selectedTags.includes(tag)
+            ? 'bg-accented/75' : 'bg-accented/25')"
         @click="toggleTag(tag)"
+        @mouseenter="hoveredTag = tag"
+        @mouseleave="hoveredTag = null"
       />
     </div>
 
