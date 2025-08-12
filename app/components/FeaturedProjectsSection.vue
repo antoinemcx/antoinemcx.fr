@@ -6,7 +6,7 @@ const { locale, t } = useI18n();
 
 /* Fetch featured projects data */
 const { data: featuredProjects }
-= await useAsyncData(`projects-${locale.value}`, async () => {
+= await useAsyncData(`featured-projects-${locale.value}`, async () => {
   const collection = (`projects_${locale.value}`) as keyof Collections;
   return await queryCollection(collection)
     .where("isFeatured", "=", true)
