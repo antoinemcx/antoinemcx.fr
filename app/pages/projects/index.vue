@@ -1,18 +1,8 @@
 <script setup lang="ts">
-import type { Collections } from "@nuxt/content";
-import type { ProjectsCollectionItem } from "~/types/content";
+const { t } = useI18n();
 
-const { locale, t } = useI18n();
-
-/* Fetch projects data */
-const { data: projects, status }
-= await useAsyncData(`projects-${locale.value}`, async () => {
-  const collection = (`projects_${locale.value}`) as keyof Collections;
-  return await queryCollection(collection)
-    .all() as ProjectsCollectionItem[];
-}, {
-  watch: [locale],
-});
+/* Fetch all projects data */
+const { data: projects, status } = await useProjectsContent();
 </script>
 
 <template>

@@ -1,19 +1,8 @@
 <script setup lang="ts">
-import type { Collections } from "@nuxt/content";
-import type { ProjectsCollectionItem } from "~/types/content";
-
-const { locale, t } = useI18n();
+const { t } = useI18n();
 
 /* Fetch featured projects data */
-const { data: featuredProjects }
-= await useAsyncData(`featured-projects-${locale.value}`, async () => {
-  const collection = (`projects_${locale.value}`) as keyof Collections;
-  return await queryCollection(collection)
-    .where("isFeatured", "=", true)
-    .all() as ProjectsCollectionItem[];
-}, {
-  watch: [locale],
-});
+const { data: featuredProjects } = await useProjectsContent(true);
 </script>
 
 <template>
@@ -41,6 +30,7 @@ const { data: featuredProjects }
         />
       </div>
 
+      <!-- Redirect to all projects button -->
       <UButton
         color="neutral"
         variant="outline"
