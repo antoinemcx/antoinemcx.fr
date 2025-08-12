@@ -7,4 +7,5 @@ export enum ProjectStatus {
   SOON = "soon",
   ACTIVE = "active", // supposedly default
   ARCHIVED = "archived",
+  DISCONTINUED = "discontinued",
 }

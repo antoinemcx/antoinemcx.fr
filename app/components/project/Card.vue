@@ -26,6 +26,9 @@ const status = computed(() => {
   } else if (props.project.status === ProjectStatus.ARCHIVED) {
     label = t("projects.status.archived");
     color = "error";
+  } else if (props.project.status === ProjectStatus.DISCONTINUED) {
+    label = t("projects.status.discontinued");
+    color = "error";
   }
   return { label, color };
 });

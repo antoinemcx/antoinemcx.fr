@@ -41,7 +41,8 @@
     "status": {
       "soon": "Coming Soon",
       "active": "Active",
-      "archived": "Archived"
+      "archived": "Archived",
+      "discontinued": "Discontinued"
     },
     "isContributor": "Contributor",
     "isContributorTooltip": "Project as a contributor and not owner"

@@ -41,7 +41,8 @@
     "status": {
       "soon": "À venir",
       "active": "Actif",
-      "archived": "Archivé"
+      "archived": "Archivé",
+      "discontinued": "Abandonné"
     },
     "isContributor": "Contributeur",
     "isContributorTooltip": "Projet en tant que contributeur et non propriétaire"
