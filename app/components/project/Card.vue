@@ -49,7 +49,7 @@ const status = computed(() => {
           :alt="project.name"
           class="size-6.5 rounded-full"
         />
-        <div v-else class="size-6.5 rounded-full bg-accented" />
+        <div v-else class="size-6.5 rounded-full bg-accented dark:bg-elevated" />
 
         {{ project.name }}
 
