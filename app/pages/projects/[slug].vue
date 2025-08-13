@@ -30,21 +30,22 @@ if (!project.value) {
     :initial="{ y: 30, opacity: 0 }"
     :animate="{ y: 0, opacity: 1 }"
     :transition="{ duration: 0.6, ease: 'easeOut', delay: 0.1 }"
-    class="flex flex-col gap-8"
+    class="flex flex-col gap-4"
   >
-    <motion.h1
-      :initial="{ y: 15, opacity: 0 }"
+    <Motion
+      :initial="{ y: 20, opacity: 0 }"
       :animate="{ y: 0, opacity: 1 }"
-      :transition="{ duration: 0.5, ease: 'easeOut', delay: 0.2 }"
-      class="text-4xl font-bold text-highlighted"
+      :transition="{ duration: 0.5, ease: 'easeOut', delay: 0.25 }"
+      as-child
+      class="mb-4"
     >
-      {{ project.title }}
-    </motion.h1>
+      <ProjectHeader :project="project" size="lg" />
+    </Motion>
 
     <motion.div
-      :initial="{ y: 25, opacity: 0 }"
+      :initial="{ y: 10, opacity: 0 }"
       :animate="{ y: 0, opacity: 1 }"
-      :transition="{ duration: 0.55, ease: 'easeOut', delay: 0.25 }"
+      :transition="{ duration: 0.5, ease: 'easeOut', delay: 0.3 }"
     >
       <ContentRenderer :value="project" />
     </motion.div>

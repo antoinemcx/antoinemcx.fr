@@ -1,7 +1,5 @@
 <script setup lang="ts">
-import type { UBadge } from "#components";
 import type { ProjectsCollectionItem } from "~/types/content";
-import { ProjectStatus } from "~/types/content";
 
 const props = defineProps<{
   isLargeCard: boolean;
@@ -12,26 +10,6 @@ const { locale, t } = useI18n();
 
 /* Extract locale code from Nuxt Content path */
 const projectPath = props.project.path.replace(`/${locale.value}/`, "/");
-
-const status = computed(() => {
-  let label = "";
-  let color: typeof UBadge["color"] = "";
-
-  if (props.project.status === ProjectStatus.SOON) {
-    label = t("projects.status.soon");
-    color = "info";
-  } else if (props.project.status === ProjectStatus.ACTIVE) {
-    label = t("projects.status.active");
-    color = "success";
-  } else if (props.project.status === ProjectStatus.ARCHIVED) {
-    label = t("projects.status.archived");
-    color = "error";
-  } else if (props.project.status === ProjectStatus.DISCONTINUED) {
-    label = t("projects.status.discontinued");
-    color = "error";
-  }
-  return { label, color };
-});
 </script>
 
 <template>
@@ -41,28 +19,7 @@ const status = computed(() => {
       cursor-pointer hover:ring-accented transition-all duration-500 h-full"
       :ui="{ body: 'h-full flex flex-col' }"
     >
-      <!-- Header -->
-      <div class="flex gap-2 items-center text-lg font-bold mb-1">
-        <NuxtImg
-          v-if="project.logo"
-          :src="project.logo"
-          :alt="project.name"
-          class="size-6.5 rounded-full"
-        />
-        <div v-else class="size-6.5 rounded-full bg-accented dark:bg-elevated" />
-
-        {{ project.name }}
-
-        <!-- Status badge -->
-        <UBadge
-          v-if="project.status && project.status !== ProjectStatus.ACTIVE"
-          :color="status.color"
-          variant="soft"
-          class="rounded-full"
-        >
-          {{ status.label }}
-        </UBadge>
-      </div>
+      <ProjectHeader :project="project" class="mb-1" />
 
       <!-- Description -->
       <p class="text-muted">{{ project.description }}</p>
