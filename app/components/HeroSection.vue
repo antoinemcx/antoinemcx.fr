@@ -9,7 +9,7 @@ const { t } = useI18n();
     :initial="{ y: 25, opacity: 0 }"
     :animate="{ y: 0, opacity: 1 }"
     :transition="{ duration: 0.7, ease: 'easeOut', delay: 0.25 }"
-    class="flex flex-col gap-2 pt-1 lg:pt-4 pb-18"
+    class="flex flex-col gap-2 pt-1 md:pt-2 pb-11 hlg:pb-18"
   >
     <!-- Header -->
     <motion.div
@@ -86,3 +86,11 @@ const { t } = useI18n();
     </motion.p>
   </motion.div>
 </template>
+
+<style scoped>
+@media (height >= 59.5rem) {
+  .hlg\:pb-18 { /* guarantees not to exceed the height of desktop screen */
+    padding-bottom: calc(var(--spacing) * 18)!important;
+  }
+}
+</style>
