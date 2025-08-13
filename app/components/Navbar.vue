@@ -40,7 +40,7 @@ const githubLinks: DropdownMenuItem[][] = [
       <NuxtImg
         src="/logo.png"
         alt="Logo with an A"
-        class="h-8 dark:invert dark:brightness-200"
+        class="h-8 dark:invert dark:brightness-200 select-none"
       />
     </NuxtLink>
 
