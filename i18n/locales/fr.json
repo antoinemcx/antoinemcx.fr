@@ -47,7 +47,8 @@
     },
     "isContributor": "Contributeur",
     "isContributorTooltip": "Projet en tant que contributeur et non propriétaire",
-    "tagsFilter": "Catégories :",
+    "tags": "Catégories :",
+    "technologies": "Technologies :",
     "backHome": "Retourner à l'accueil",
     "backToProjects": "Retourner aux projets"
   }

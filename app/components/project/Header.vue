@@ -34,7 +34,7 @@ const status = computed(() => {
 <template>
   <div
     class="flex items-center font-bold"
-    :class="size === 'lg' ? 'text-4xl gap-3 text-highlighted' : 'text-lg gap-2'"
+    :class="size === 'lg' ? 'text-3xl gap-3 text-highlighted' : 'text-lg gap-2'"
   >
     <!-- Logo or placeholder -->
     <NuxtImg
@@ -59,7 +59,6 @@ const status = computed(() => {
       variant="soft"
       class="rounded-full"
       :class="{ 'mt-1.5 ml-1': size === 'lg' }"
-      size="lg"
     >
       {{ status.label }}
     </UBadge>

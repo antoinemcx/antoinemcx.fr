@@ -41,7 +41,7 @@ if (!project.value) {
     :initial="{ y: 30, opacity: 0 }"
     :animate="{ y: 0, opacity: 1 }"
     :transition="{ duration: 0.6, ease: 'easeOut', delay: 0.1 }"
-    class="flex flex-col gap-6"
+    class="flex flex-col gap-3"
   >
     <!-- Back Button -->
     <Motion
@@ -72,11 +72,26 @@ if (!project.value) {
       <ProjectHeader :project="project" size="lg" />
     </Motion>
 
+    <!-- Project badges -->
+    <Motion
+      :initial="{ y: 15, opacity: 0 }"
+      :animate="{ y: 0, opacity: 1 }"
+      :transition="{ duration: 0.4, ease: 'easeOut', delay: 0.35 }"
+      as-child
+    >
+      <ProjectBadges
+        :project="project"
+        display-tags-and-technos
+        display-labels
+      />
+    </Motion>
+
     <!-- Project content rendering -->
     <motion.div
       :initial="{ y: 10, opacity: 0 }"
       :animate="{ y: 0, opacity: 1 }"
-      :transition="{ duration: 0.5, ease: 'easeOut', delay: 0.35 }"
+      :transition="{ duration: 0.5, ease: 'easeOut', delay: 0.4 }"
+      class="mt-8"
     >
       <ContentRenderer :value="project" />
     </motion.div>

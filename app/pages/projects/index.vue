@@ -59,7 +59,7 @@ function toggleTag(tag: string) {
     class="flex items-center gap-2 mb-4"
   >
     <span class="text-muted font-semibold">
-      {{ t("projects.tagsFilter") }}
+      {{ t("projects.tags") }}
     </span>
     <div class="flex flex-wrap gap-1.5">
       <UBadge

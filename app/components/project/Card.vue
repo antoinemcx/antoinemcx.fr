@@ -25,67 +25,11 @@ const projectPath = props.project.path.replace(`/${locale.value}/`, "/");
       <p class="text-muted">{{ project.description }}</p>
 
       <div class="mt-auto">
-        <div
-          v-if="(isLargeCard && project.tags && project.tags.length > 0)
-            || (isLargeCard && project.technologies && project.technologies.length > 0)
-            || project.isContributor
-            || project.github"
-          class="flex flex-col gap-2 mt-4"
-        >
-          <!-- Contributor badge and Github metrics count -->
-          <div
-            v-if="project.isContributor || project.github"
-            class="flex gap-2 items-center"
-          >
-            <UTooltip
-              v-if="project.isContributor"
-              :text="t('projects.isContributorTooltip')"
-              arrow
-              :content="{ sideOffset: 1 }"
-            >
-              <UBadge color="warning" variant="soft" class="rounded-full">
-                {{ t("projects.isContributor") }}
-              </UBadge>
-            </UTooltip>
-
-            <ProjectGithubMetrics
-              v-if="project.github"
-              :github-repository-url="project.github"
-            />
-          </div>
-
-          <!-- Tags for large cards -->
-          <div
-            v-if="isLargeCard && project.tags && project.tags.length > 0"
-            class="flex flex-wrap gap-1"
-          >
-            <UBadge
-              v-for="tag in project.tags"
-              :key="tag"
-              color="neutral"
-              variant="soft"
-              class="rounded-full bg-accented/50"
-            >
-              {{ tag }}
-            </UBadge>
-          </div>
-
-          <!-- Used technologies for large cards -->
-          <div
-            v-if="isLargeCard && project.technologies && project.technologies.length > 0"
-            class="flex flex-wrap gap-1"
-          >
-            <UBadge
-              v-for="techno in project.technologies"
-              :key="techno"
-              color="primary"
-              variant="soft"
-              class="rounded-full"
-            >
-              {{ techno }}
-            </UBadge>
-          </div>
-        </div>
+        <!-- Project data -->
+        <ProjectBadges
+          :project="project"
+          :display-tags-and-technos="isLargeCard"
+        />
 
         <!-- View more button -->
         <div class="w-full flex justify-end items-center">
