@@ -1,5 +1,4 @@
 import type { Locale } from "vue-i18n";
-import { useLocalStorage } from "@vueuse/core";
 
 export interface LanguageConfig {
   code: "en" | "fr";
@@ -16,7 +15,11 @@ export function useLanguage() {
   ];
 
   /* Handle language storage */
-  const storage = useLocalStorage<Locale>("selectedLanguage", "en");
+  const storage = useCookie<Locale>("selectedLanguage", {
+    default: () => "en",
+    sameSite: "lax",
+    maxAge: 60 * 60 * 24 * 365, // one year to guarantee persistence
+  });
   watch(storage, (newValue) => {
     setLocale(newValue);
   }, { immediate: true });
