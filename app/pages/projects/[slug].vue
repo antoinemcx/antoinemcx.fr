@@ -48,7 +48,6 @@ if (!project.value) {
       :initial="{ y: 20, opacity: 0 }"
       :animate="{ y: 0, opacity: 1 }"
       :transition="{ duration: 0.5, ease: 'easeOut', delay: 0.15 }"
-      as-child
     >
       <UButton
         color="neutral"
@@ -57,8 +56,9 @@ if (!project.value) {
         :to="referrer === '/' ? '/' : '/projects'"
         :label="referrer === '/'
           ? t('projects.backHome') : t('projects.backToProjects')"
-        class="w-fit mb-10"
-        :ui="{ leadingIcon: 'hover:-translate-x-1 transition-transform duration-200' }"
+        class="group w-fit active:translate-y-0.5 transition-transform duration-200 mb-10"
+        :ui="{
+          leadingIcon: 'group-hover:-translate-x-0.5 transition-transform duration-200' }"
       />
     </Motion>
 
