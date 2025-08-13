@@ -15,6 +15,7 @@ const { data, status } = await useLazyFetch<{
   stargazers_count: number;
   forks_count: number; // other fields are not useful here
 }>(`https://api.github.com/repos/${repoUrl.join("/")}`, {
+  server: false,
   transform(input) {
     return { ...input, fetchedAt: new Date() };
   },
