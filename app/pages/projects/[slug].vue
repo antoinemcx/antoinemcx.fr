@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import type { Collections } from "@nuxt/content";
 import type { ProjectsCollectionItem } from "~/types/content";
+import { motion } from "motion-v";
 
 const route = useRoute();
 const { locale, t } = useI18n();
@@ -24,11 +25,28 @@ if (!project.value) {
 </script>
 
 <template>
-  <div v-if="project">
-    <h1 class="text-4xl font-bold text-highlighted mb-5">
+  <motion.div
+    v-if="project"
+    :initial="{ y: 30, opacity: 0 }"
+    :animate="{ y: 0, opacity: 1 }"
+    :transition="{ duration: 0.6, ease: 'easeOut', delay: 0.1 }"
+    class="flex flex-col gap-8"
+  >
+    <motion.h1
+      :initial="{ y: 15, opacity: 0 }"
+      :animate="{ y: 0, opacity: 1 }"
+      :transition="{ duration: 0.5, ease: 'easeOut', delay: 0.2 }"
+      class="text-4xl font-bold text-highlighted"
+    >
       {{ project.title }}
-    </h1>
+    </motion.h1>
 
-    <ContentRenderer :value="project" />
-  </div>
+    <motion.div
+      :initial="{ y: 25, opacity: 0 }"
+      :animate="{ y: 0, opacity: 1 }"
+      :transition="{ duration: 0.55, ease: 'easeOut', delay: 0.25 }"
+    >
+      <ContentRenderer :value="project" />
+    </motion.div>
+  </motion.div>
 </template>
