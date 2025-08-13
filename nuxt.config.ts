@@ -9,6 +9,7 @@ export default defineNuxtConfig({
     "@nuxt/ui",
     "@nuxtjs/i18n",
     "@nuxt/content",
+    "motion-v/nuxt",
   ],
 
   app: { // seo data

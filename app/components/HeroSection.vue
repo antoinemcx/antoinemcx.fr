@@ -1,18 +1,41 @@
 <script setup lang="ts">
+import { motion } from "motion-v";
+
 const { t } = useI18n();
 </script>
 
 <template>
-  <div class="flex flex-col gap-2 pt-1 lg:pt-4 pb-18">
-    <NuxtImg src="/photo.jpg" class="size-20 rounded-full" draggable="false" />
+  <motion.div
+    :initial="{ y: 25, opacity: 0 }"
+    :animate="{ y: 0, opacity: 1 }"
+    :transition="{ duration: 0.7, ease: 'easeOut', delay: 0.25 }"
+    class="flex flex-col gap-2 pt-1 lg:pt-4 pb-18"
+  >
+    <motion.div
+      :initial="{ y: -5, opacity: 0 }"
+      :animate="{ y: 0, opacity: 1 }"
+      :transition="{ duration: 0.6, ease: 'easeOut', delay: 0.3 }"
+    >
+      <NuxtImg src="/photo.jpg" class="size-20 rounded-full" draggable="false" />
+    </motion.div>
 
-    <h1 class="text-3xl font-bold text-highlighted mt-1">
+    <motion.h1
+      :initial="{ y: 15, opacity: 0 }"
+      :animate="{ y: 0, opacity: 1 }"
+      :transition="{ duration: 0.6, ease: 'easeOut', delay: 0.55 }"
+      class="text-3xl font-bold text-highlighted mt-1"
+    >
       {{ t("home.hero.title") }}
       <span class="cursor-default inline-block wave">👋</span>
-    </h1>
+    </motion.h1>
 
     <!-- Short introduction -->
-    <p class="text-lg">
+    <motion.p
+      :initial="{ y: 15, opacity: 0 }"
+      :animate="{ y: 0, opacity: 1 }"
+      :transition="{ duration: 0.6, ease: 'easeOut', delay: 0.75 }"
+      class="text-lg"
+    >
       {{ t("home.hero.description.intro") }}
       <br>
       {{ t("home.hero.description.interests") }}
@@ -49,8 +72,8 @@ const { t } = useI18n();
           class="shrink-0 size-6 rounded-full"
         />
       </a>.
-    </p>
-  </div>
+    </motion.p>
+  </motion.div>
 </template>
 
 <style scoped>

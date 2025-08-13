@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { AnimatePresence, motion } from "motion-v";
+
 const { t } = useI18n();
 
 const initialProjectsCount = 8;
@@ -35,15 +37,27 @@ function toggleTag(tag: string) {
 </script>
 
 <template>
-  <h1 class="text-2xl text-highlighted font-bold">
-    {{ t("projects.title") }}
-  </h1>
-  <p class="text-muted mb-3">
-    {{ t("projects.description") }}
-  </p>
+  <motion.div
+    :initial="{ y: 20, opacity: 0 }"
+    :animate="{ y: 0, opacity: 1 }"
+    :transition="{ duration: 0.6, ease: 'easeOut', delay: 0.1 }"
+  >
+    <h1 class="text-2xl text-highlighted font-bold">
+      {{ t("projects.title") }}
+    </h1>
+    <p class="text-muted mb-3">
+      {{ t("projects.description") }}
+    </p>
+  </motion.div>
 
   <!-- Tags filter -->
-  <div v-if="tags.length > 0" class="flex items-center gap-2 mb-4">
+  <motion.div
+    v-if="tags.length > 0"
+    :initial="{ y: 15, opacity: 0 }"
+    :animate="{ y: 0, opacity: 1 }"
+    :transition="{ duration: 0.5, ease: 'easeOut', delay: 0.25 }"
+    class="flex items-center gap-2 mb-4"
+  >
     <span class="text-muted font-semibold">
       {{ t("projects.tagsFilter") }}
     </span>
@@ -54,12 +68,12 @@ function toggleTag(tag: string) {
         :label="tag"
         color="neutral"
         variant="subtle"
-        class="h-fit cursor-pointer rounded-full hover:bg-accented/75 transition-colors duration-300"
+        class="h-fit cursor-pointer rounded-full transition-colors duration-300"
         :class="selectedTags.length === 0
           ? (hoveredTag === null || hoveredTag === tag
-            ? 'bg-accented/75' : 'bg-accented/25')
+            ? 'bg-accented/75' : 'bg-accented/25 hover:bg-accented/75')
           : (selectedTags.includes(tag)
-            ? 'bg-accented/75' : 'bg-accented/25')"
+            ? 'bg-accented/75' : 'bg-accented/25 hover:bg-accented/75')"
         @click="toggleTag(tag)"
         @mouseenter="hoveredTag = tag"
         @mouseleave="hoveredTag = null"
@@ -76,59 +90,122 @@ function toggleTag(tag: string) {
       class="rounded-4xl p-1!"
       @click="selectedTags = []"
     />
-  </div>
+  </motion.div>
 
-  <div v-if="status === 'pending'" class="grid grid-cols-1 md:grid-cols-2 gap-3">
+  <motion.div
+    v-if="status === 'pending'"
+    :initial="{ y: 20, opacity: 0 }"
+    :animate="{ y: 0, opacity: 1 }"
+    :transition="{ duration: 0.6, ease: 'easeOut', delay: 0.4 }"
+    class="grid grid-cols-1 md:grid-cols-2 gap-3"
+  >
     <UCard v-for="n in initialProjectsCount" :key="n">
       <USkeleton class="h-40" />
     </UCard>
-  </div>
-  <div
+  </motion.div>
+
+  <motion.div
     v-else-if="!projects || projects.length === 0 || !filteredProjects"
+    :initial="{ opacity: 0 }"
+    :animate="{ opacity: 1 }"
+    :transition="{ duration: 0.5, delay: 0.4 }"
     class="text-muted"
   >
     {{ t("projects.empty") }}
-  </div>
+  </motion.div>
 
-  <div v-else-if="filteredProjects.length === 0" class="text-muted">
+  <motion.div
+    v-else-if="filteredProjects.length === 0"
+    :initial="{ opacity: 0 }"
+    :animate="{ opacity: 1 }"
+    :transition="{ duration: 0.5 }"
+    class="text-muted"
+  >
     {{ t("projects.noMatchingProjects") }}
-  </div>
+  </motion.div>
 
   <div v-else>
     <!-- Initial list of initialProjectsCount projects -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
-      <ProjectCard
-        v-for="project in filteredProjects.slice(0, initialProjectsCount)"
-        :key="project.id"
-        :project="project"
-        is-large-card
-      />
-    </div>
+    <motion.div
+      :initial="{ y: 25, opacity: 0 }"
+      :animate="{ y: 0, opacity: 1 }"
+      :transition="{ duration: 0.6, ease: 'easeOut', delay: 0.4 }"
+      class="grid grid-cols-1 md:grid-cols-2 gap-3"
+    >
+      <AnimatePresence>
+        <motion.div
+          v-for="(project, index) in filteredProjects.slice(0, initialProjectsCount)"
+          :key="project.id"
+          :initial="{ y: 20, opacity: 0 }"
+          :animate="{ y: 0, opacity: 1 }"
+          :exit="{ y: -20, opacity: 0 }"
+          :transition="{
+            duration: 0.4,
+            ease: 'easeOut',
+            delay: 0.1 + (index * 0.04),
+          }"
+          layout
+        >
+          <ProjectCard
+            :project="project"
+            is-large-card
+          />
+        </motion.div>
+      </AnimatePresence>
+    </motion.div>
 
     <!-- Other projects with a "view more" button -->
-    <div v-if="displayAllProjects" class="grid grid-cols-1 md:grid-cols-2 gap-3 mt-3">
-      <ProjectCard
-        v-for="project in filteredProjects.slice(initialProjectsCount)"
-        :key="project.id"
-        :project="project"
-        is-large-card
-      />
-    </div>
-
-    <div class="flex justify-center mt-4">
-      <UButton
-        v-if="filteredProjects && filteredProjects.length > initialProjectsCount"
-        color="neutral"
-        variant="outline"
-        :trailing-icon="displayAllProjects ? 'lucide:arrow-up' : 'lucide:arrow-down'"
-        class="group w-fit active:translate-y-0.5 transition-transform duration-200"
-        :ui="{
-          trailingIcon: 'group-hover:scale-105 transition-transform duration-200',
-        }"
-        @click="displayAllProjects = !displayAllProjects"
+    <AnimatePresence>
+      <motion.div
+        v-if="displayAllProjects"
+        :initial="{ y: 30, opacity: 0 }"
+        :animate="{ y: 0, opacity: 1 }"
+        :exit="{ y: -30, opacity: 0 }"
+        :transition="{ duration: 0.6, ease: 'easeOut' }"
+        class="grid grid-cols-1 md:grid-cols-2 gap-3 mt-3"
       >
-        {{ displayAllProjects ? t("projects.viewLess") : t("projects.viewMore") }}
-      </UButton>
-    </div>
+        <AnimatePresence>
+          <motion.div
+            v-for="(project, index) in filteredProjects.slice(initialProjectsCount)"
+            :key="`additional-${project.id}`"
+            :initial="{ y: 20, opacity: 0 }"
+            :animate="{ y: 0, opacity: 1 }"
+            :exit="{ y: -20, opacity: 0 }"
+            :transition="{
+              duration: 0.4,
+              ease: 'easeOut',
+              delay: index * 0.04,
+            }"
+            layout
+          >
+            <ProjectCard
+              :project="project"
+              is-large-card
+            />
+          </motion.div>
+        </AnimatePresence>
+      </motion.div>
+
+      <motion.div
+        v-if="filteredProjects && filteredProjects.length > initialProjectsCount"
+        :initial="{ y: 15, opacity: 0 }"
+        :animate="{ y: 0, opacity: 1 }"
+        :transition="{ duration: 0.5, ease: 'easeOut', delay: 0.7 }"
+        class="flex justify-center mt-4"
+      >
+        <UButton
+          color="neutral"
+          variant="outline"
+          :trailing-icon="displayAllProjects ? 'lucide:arrow-up' : 'lucide:arrow-down'"
+          class="group w-fit active:translate-y-0.5 transition-transform duration-200"
+          :ui="{
+            trailingIcon: 'group-hover:scale-105 transition-transform duration-200',
+          }"
+          @click="displayAllProjects = !displayAllProjects"
+        >
+          {{ displayAllProjects ? t("projects.viewLess") : t("projects.viewMore") }}
+        </UButton>
+      </motion.div>
+    </animatepresence>
   </div>
 </template>
