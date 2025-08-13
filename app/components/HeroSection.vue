@@ -24,9 +24,10 @@ const { t } = useI18n();
       :initial="{ y: 15, opacity: 0 }"
       :animate="{ y: 0, opacity: 1 }"
       :transition="{ duration: 0.6, ease: 'easeOut', delay: 0.55 }"
-      class="text-3xl font-bold text-highlighted mt-1"
+      class="flex gap-1.5 text-3xl font-bold text-highlighted mt-1"
     >
-      {{ t("home.hero.title") }}
+      <span class="tracking-[-0.015em] mr-1">{{ t("home.hero.title") }}</span>
+      <span class="heading-font">Antoine</span>
 
       <!-- Animated wave emoji -->
       <motion.span
@@ -92,5 +93,10 @@ const { t } = useI18n();
   .hlg\:pb-18 { /* guarantees not to exceed the height of desktop screen */
     padding-bottom: calc(var(--spacing) * 18)!important;
   }
+}
+
+.heading-font {
+  font-family: Lora, serif;
+  font-style: italic;
 }
 </style>
