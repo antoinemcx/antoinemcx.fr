@@ -47,6 +47,8 @@
     },
     "isContributor": "Contributor",
     "isContributorTooltip": "Project as a contributor and not owner",
-    "tagsFilter": "Categories:"
+    "tagsFilter": "Categories:",
+    "backHome": "Back to home",
+    "backToProjects": "Back to projects"
   }
 }
