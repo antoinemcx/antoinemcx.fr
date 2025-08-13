@@ -11,6 +11,7 @@ const { t } = useI18n();
     :transition="{ duration: 0.7, ease: 'easeOut', delay: 0.25 }"
     class="flex flex-col gap-2 pt-1 lg:pt-4 pb-18"
   >
+    <!-- Header -->
     <motion.div
       :initial="{ y: -5, opacity: 0 }"
       :animate="{ y: 0, opacity: 1 }"
@@ -26,7 +27,17 @@ const { t } = useI18n();
       class="text-3xl font-bold text-highlighted mt-1"
     >
       {{ t("home.hero.title") }}
-      <span class="cursor-default inline-block wave">👋</span>
+
+      <!-- Animated wave emoji -->
+      <motion.span
+        class="cursor-default inline-block"
+        :while-hover="{
+          rotate: [0, 14, -7, 12, -3, 9, 0, 0, 0, 0],
+          transition: { duration: 1.25, ease: 'easeInOut', repeat: Infinity },
+        }"
+      >
+        👋
+      </motion.span>
     </motion.h1>
 
     <!-- Short introduction -->
@@ -75,33 +86,3 @@ const { t } = useI18n();
     </motion.p>
   </motion.div>
 </template>
-
-<style scoped>
-.wave:hover {
-  animation: wave 1.25s normal infinite;
-}
-
-@keyframes wave {
-  0%, 10% {
-    transform: rotate(0deg);
-  }
-  20% {
-    transform: rotate(14deg);
-  }
-  30% {
-    transform: rotate(-7deg);
-  }
-  40% {
-    transform: rotate(12deg);
-  }
-  50% {
-    transform: rotate(-3deg);
-  }
-  60% {
-    transform: rotate(9deg);
-  }
-  70%, 80%, 90%, 100% {
-    transform: rotate(0deg);
-  }
-}
-</style>
