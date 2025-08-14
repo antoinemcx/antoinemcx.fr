@@ -25,7 +25,7 @@
     },
     "featuredProjects": {
       "title": "Projets phares",
-      "description": "Mes principaux projets et outils, open-source ou non, que j'ai développés.",
+      "description": "Mes principaux projets et outils, open-source ou non, que j'ai développés sur mon temps libre.",
       "viewAll": "Tout afficher",
       "empty": "Aucun projet trouvé.",
       "readMore": "Lire plus"
@@ -33,7 +33,7 @@
   },
   "projects": {
     "title": "Projets",
-    "description": "Certains des projets et outils que j'ai développés.",
+    "description": "Certains des projets et outils que j'ai développés sur mon temps libre.",
     "empty": "Aucun projet trouvé.",
     "notFound": "Ce projet est introuvable.",
     "viewMore": "Voir plus",

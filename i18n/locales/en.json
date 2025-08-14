@@ -25,7 +25,7 @@
     },
     "featuredProjects": {
       "title": "Featured Projects",
-      "description": "My main projects and tools, open-source or not, that I have developed.",
+      "description": "My main projects and tools, open-source or not, that I have developed on my free time.",
       "viewAll": "View all",
       "empty": "No projects found.",
       "readMore": "Read more"
@@ -33,7 +33,7 @@
   },
   "projects": {
     "title": "Projects",
-    "description": "Some of the projects and tools that I have developed.",
+    "description": "Some of the projects and tools that I have developed on my free time.",
     "empty": "No projects found.",
     "notFound": "This project could not be found.",
     "viewMore": "View more",
