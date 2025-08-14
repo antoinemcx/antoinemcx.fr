@@ -10,6 +10,6 @@ const { currentLanguage, switchToNextLanguage } = useLanguage();
     class="rounded-full active:translate-y-0.5 transition-transform duration-200"
     :icon="currentLanguage?.flag"
     :aria-label="currentLanguage?.name"
-    @click="switchToNextLanguage"
+    @click="() => useAnimateAppearance(switchToNextLanguage)"
   />
 </template>
