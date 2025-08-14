@@ -62,7 +62,9 @@ if (!project.value) {
       />
     </Motion>
 
-    <!-- Project header -->
+    <!-- TODO faded banner -->
+
+    <!-- Header -->
     <Motion
       :initial="{ y: 20, opacity: 0 }"
       :animate="{ y: 0, opacity: 1 }"
@@ -72,7 +74,17 @@ if (!project.value) {
       <ProjectHeader :project="project" size="lg" />
     </Motion>
 
-    <!-- Project badges -->
+    <!-- Links -->
+    <Motion
+      :initial="{ y: 15, opacity: 0 }"
+      :animate="{ y: 0, opacity: 1 }"
+      :transition="{ duration: 0.4, ease: 'easeOut', delay: 0.3 }"
+      as-child
+    >
+      <ProjectLinks :project="project" />
+    </Motion>
+
+    <!-- Badges -->
     <Motion
       :initial="{ y: 15, opacity: 0 }"
       :animate="{ y: 0, opacity: 1 }"
@@ -86,7 +98,7 @@ if (!project.value) {
       />
     </Motion>
 
-    <!-- Project content rendering -->
+    <!-- Content rendering -->
     <motion.div
       :initial="{ y: 10, opacity: 0 }"
       :animate="{ y: 0, opacity: 1 }"

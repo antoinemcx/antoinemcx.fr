@@ -7,14 +7,14 @@ const commonProjectSchema = z.object({
   logo: z.string().url(),
   banner: z.string().url().optional(),
   github: z.string().url().optional(),
-  links: z.array(
+  website: z.string().url().optional(),
+  discord: z.string().url().optional(),
+  otherLinks: z.array(
     z.object({
-      name: z.string().nonempty(), // for screen readers
-      icon: z.string().nonempty(),
+      name: z.string().nonempty(),
       link: z.string().url(),
     }),
-  ),
-  release: z.string().nonempty(),
+  ).optional(),
   startYear: z.string().nonempty(),
   endYear: z.string().optional(),
   isFeatured: z.boolean().optional(), // displays on home page

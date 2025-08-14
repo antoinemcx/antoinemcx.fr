@@ -49,6 +49,8 @@
     "isContributorTooltip": "Project as a contributor and not owner",
     "tags": "Categories:",
     "technologies": "Technologies:",
+    "links": "Links:",
+    "website": "Website",
     "backHome": "Back to home",
     "backToProjects": "Back to projects"
   }
