@@ -31,6 +31,17 @@
       "readMore": "Read more"
     }
   },
+  "about": {
+    "im": "I'm",
+    "jobTitle": "a software engineering apprentice",
+    "intro": {
+      "currentPlace": "I am currently in Toulouse",
+      "studies": "for my studies at",
+      "educationDepartment": "in the Computer Sciences department, for a degree in Computer Science and Networks, as a work-study program.",
+      "company": "Thus, alongside my studies, I work at",
+      "work": "working on softwares for banking institutions."
+    }
+  },
   "projects": {
     "title": "Projects",
     "description": "Some of the projects and tools that I have developed on my free time.",

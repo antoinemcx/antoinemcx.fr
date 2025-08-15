@@ -31,6 +31,17 @@
       "readMore": "Lire plus"
     }
   },
+  "about": {
+    "im": "Je suis",
+    "jobTitle": "un apprenti ingénieur logiciel",
+    "intro": {
+      "currentPlace": "Je suis actuellement à Toulouse",
+      "studies": "pour mes études à",
+      "educationDepartment": "dans le département Sciences du Numérique, pour une formation en Informatique et Réseaux, en alternance.",
+      "company": "Ainsi, en parallèle de mes études, je travaille à",
+      "work": "autour de logiciels pour des institutions bancaires."
+    }
+  },
   "projects": {
     "title": "Projets",
     "description": "Certains des projets et outils que j'ai développés sur mon temps libre.",
