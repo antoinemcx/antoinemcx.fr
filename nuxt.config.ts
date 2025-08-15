@@ -25,7 +25,7 @@ export default defineNuxtConfig({
     preference: "system",
     fallback: "light",
     classSuffix: "",
-    storage: "cookie", // using cookie will force reseting to system after session
+    storage: "sessionStorage", // will force resetting to system after session
     storageKey: "app-theme",
   },
   css: ["~/assets/main.css"],
