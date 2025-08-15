@@ -35,11 +35,23 @@
     "im": "Je suis",
     "jobTitle": "un apprenti ingénieur logiciel",
     "intro": {
-      "currentPlace": "Je suis actuellement à Toulouse",
+      "currentlyIn": "Je suis actuellement à",
       "studies": "pour mes études à",
       "educationDepartment": "dans le département Sciences du Numérique, pour une formation en Informatique et Réseaux, en alternance.",
       "company": "Ainsi, en parallèle de mes études, je travaille à",
       "work": "autour de logiciels pour des institutions bancaires."
+    },
+    "whyComputerScience": {
+      "intro": "C'est à seulement 13 ans que j'ai commencé à m'intéresser au développement web et à écrire mes premières balises HTML. S'en est alors suivi de nombreux",
+      "projects": "projets personnels",
+      "around": "autour d'applications web ou de bots Discord – comme",
+      "thatFollowedMe": "qui m'a suivi pendant plusieurs années.",
+      "moreThanHobby": "Plus qu'un hobbie, la programmation est devenue une passion et j'ai donc décidé de poursuivre mes études dans ce domaine."
+    },
+    "whatILike": {
+      "intro": "Aujourd'hui, à {age} ans, j'aime développer des applications de qualité, en mettant l'accent sur la performance et l'expérience utilisateur – sans oublier bien sûr",
+      "developerExperience": "l'expérience développeur",
+      "onGoing": "Sur mon temps libre, je continue toujours à développer des projets personnels, que ce soit pour apprendre de nouvelles technologies ou pour le plaisir de créer des outils utiles à tous."
     }
   },
   "projects": {
