@@ -39,19 +39,19 @@
       "studies": "for my studies at",
       "educationDepartment": "in the Computer Sciences department, for a degree in Computer Science and Networks, as a work-study program.",
       "company": "Thus, alongside my studies, I work at",
-      "work": "working on softwares for banking institutions."
+      "work": "around softwares for financial institutions."
     },
     "whyComputerScience": {
-      "intro": "It was only at the age of 13 that I became interested in web development and started writing my first HTML tags. This was followed by several",
+      "intro": "It was at the end of middle school that I became interested in web development and started writing my first HTML tags. This was followed by several",
       "projects": "personal projects",
-      "around": "around web applications and Discord bots – such as",
+      "around": "around web applications and Discord bots – like",
       "thatFollowedMe": "which followed me for several years.",
       "moreThanHobby": "More than a hobby, programming has become a passion and I decided to pursue my studies in this field."
     },
     "whatILike": {
       "intro": "Today, at {age} years old, I enjoy developing quality applications, focusing on performance and user experience – not forgetting, of course,",
       "developerExperience": "developer experience",
-      "onGoing": "In my spare time, I continue to develop personal projects, whether to learn new technologies or simply for the sheer pleasure of creating tools that are useful to everyone."
+      "onGoing": "In my spare time, I still continue to develop personal projects, whether to learn new technologies or simply for the sheer pleasure of creating tools that are useful to everyone."
     }
   },
   "projects": {
