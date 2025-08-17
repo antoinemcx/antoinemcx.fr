@@ -45,7 +45,7 @@ const showAllDescription = ref(false);
       >
         {{ other }}
         <UButton
-          v-if="index === description.length - 1"
+          v-if="index === description.slice(1).length - 1"
           color="neutral"
           variant="ghost"
           class="rounded-lg py-0"
