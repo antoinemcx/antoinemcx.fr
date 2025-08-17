@@ -4,7 +4,7 @@ const { experiences, status } = useWorkExperiencesContent();
 </script>
 
 <template>
-  <div v-if="status === 'pending'" class="flex flex-col gap-4">
+  <div v-if="status === 'pending'" class="flex flex-col gap-8">
     <AboutCompanyExperiences v-for="n in 3" :key="n" />
   </div>
 

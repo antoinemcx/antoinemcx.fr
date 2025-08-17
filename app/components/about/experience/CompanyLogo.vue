@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import type { ExperiencesCollectionItem } from "~/types/content";
+import type { EducationCollectionItem, ExperiencesCollectionItem } from "~/types/content";
 
 defineProps<{
-  experience: ExperiencesCollectionItem;
+  experience: ExperiencesCollectionItem | EducationCollectionItem;
 }>();
 </script>
 

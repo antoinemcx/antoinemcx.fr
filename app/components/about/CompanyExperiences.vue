@@ -27,7 +27,7 @@ defineProps<{
 
       <!-- Single experience -->
       <AboutExperienceDetails
-        :experience="experiences[0]"
+        :experience="{ type: 'work', data: experiences[0] }"
         display-company
       />
     </div>
@@ -60,7 +60,7 @@ defineProps<{
 
         <!-- Experience details -->
         <AboutExperienceDetails
-          :experience="experience"
+          :experience="{ type: 'work', data: experiences[0] }"
           class="-mt-2"
           :class="{ 'pb-8': index < experiences.length - 1 }"
         />

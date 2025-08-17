@@ -80,7 +80,7 @@ const { t } = useI18n();
       :initial="{ y: 20, opacity: 0 }"
       :animate="{ y: 0, opacity: 1 }"
       :transition="{ duration: 0.6, ease: 'easeOut', delay: 1.15 }"
-      class="flex flex-col gap-3 mb-3"
+      class="flex flex-col gap-3.5 mb-5 md:mb-10"
     >
       <motion.h1
         :initial="{ y: 20, opacity: 0 }"
@@ -94,10 +94,8 @@ const { t } = useI18n();
 
       <Motion
         :initial="{ y: 15, opacity: 0 }"
-        :while-in-view="{ y: 0, opacity: 1 }"
-        :in-view-options="{ once: true }"
+        :animate="{ y: 0, opacity: 1 }"
         :transition="{ duration: 0.5, ease: 'easeOut', delay: 0.1 }"
-        as-child
       >
         <AboutEducationExperiences />
       </Motion>
