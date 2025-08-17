@@ -34,6 +34,7 @@
   "about": {
     "im": "Je suis",
     "jobTitle": "un apprenti ingénieur logiciel",
+    "mostUsedTechnologies": "Technologies les plus utilisées",
     "intro": {
       "currentlyIn": "Je suis actuellement à",
       "studies": "pour mes études à",
@@ -52,6 +53,12 @@
       "intro": "Aujourd'hui, à {age} ans, j'aime développer des applications de qualité, en mettant l'accent sur la performance et l'expérience utilisateur – sans oublier bien sûr",
       "developerExperience": "l'expérience développeur",
       "onGoing": "Sur mon temps libre, je continue toujours à développer des projets personnels, que ce soit pour apprendre de nouvelles technologies ou pour le plaisir de créer des outils utiles à tous."
+    },
+    "experience": {
+      "title": "Expérience"
+    },
+    "education": {
+      "title": "Éducation"
     }
   },
   "projects": {

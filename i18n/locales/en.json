@@ -34,6 +34,7 @@
   "about": {
     "im": "I'm",
     "jobTitle": "a software engineering apprentice",
+    "mostUsedTechnologies": "Most used technologies",
     "intro": {
       "currentlyIn": "I am currently in",
       "studies": "for my studies at",
@@ -52,6 +53,12 @@
       "intro": "Today, at {age} years old, I enjoy developing quality applications, focusing on performance and user experience – not forgetting, of course,",
       "developerExperience": "developer experience",
       "onGoing": "In my spare time, I still continue to develop personal projects, whether to learn new technologies or simply for the sheer pleasure of creating tools that are useful to everyone."
+    },
+    "experience": {
+      "title": "Experience"
+    },
+    "education": {
+      "title": "Education"
     }
   },
   "projects": {

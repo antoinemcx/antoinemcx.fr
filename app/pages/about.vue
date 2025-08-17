@@ -1,26 +1,104 @@
 <script setup lang="ts">
 import { motion } from "motion-v";
+
+const { t } = useI18n();
 </script>
 
 <template>
   <motion.div
     :initial="{ y: 20, opacity: 0 }"
     :animate="{ y: 0, opacity: 1 }"
-    :transition="{ duration: 0.6, ease: 'easeOut', delay: 0.1 }"
-    class="flex flex-col gap-6"
+    :transition="{ duration: 0.65, ease: 'easeOut', delay: 0.1 }"
+    class="flex flex-col gap-12 md:gap-14 lg:gap-20"
   >
     <!-- Intro -->
-    <AboutIntroduction />
+    <div class="flex flex-col gap-3">
+      <motion.h1
+        :initial="{ y: 20, opacity: 0 }"
+        :animate="{ y: 0, opacity: 1 }"
+        :transition="{ duration: 0.6, ease: 'easeOut', delay: 0.1 }"
+        class="flex flex-wrap items-baseline gap-x-1.5 gap-y-0.5 text-2xl font-bold text-highlighted"
+      >
+        <span class="tracking-[-0.015em] mr-1">{{ t("about.im") }}</span>
+        <span class="heading-font mt-0.5">Antoine Marescaux,</span>
+        <span class="tracking-[-0.015em] ml-1">{{ t("about.jobTitle") }}</span>
+      </motion.h1>
+
+      <Motion
+        :initial="{ y: 15, opacity: 0 }"
+        :animate="{ y: 0, opacity: 1 }"
+        :transition="{ duration: 0.55, ease: 'easeOut', delay: 0.3 }"
+        as-child
+      >
+        <AboutIntroduction />
+      </Motion>
+    </div>
 
     <!-- Skills -->
-    <!-- TODO -->
+    <div class="flex flex-col gap-3">
+      <motion.h1
+        :initial="{ y: 20, opacity: 0 }"
+        :animate="{ y: 0, opacity: 1 }"
+        :transition="{ duration: 0.6, ease: 'easeOut', delay: 0.45 }"
+        class="text-2xl font-bold text-highlighted"
+      >
+        {{ t("about.mostUsedTechnologies") }}
+      </motion.h1>
+
+      <Motion
+        :initial="{ y: 15, opacity: 0 }"
+        :animate="{ y: 0, opacity: 1 }"
+        :transition="{ duration: 0.5, ease: 'easeOut', delay: 0.5 }"
+        as-child
+      >
+        <AboutTechnologies />
+      </Motion>
+    </div>
 
     <!-- Experience -->
-    <!-- TODO -->
+    <!-- TODO component -->
     <div class="flex flex-col gap-3">
-      <h1 class="text-2xl font-bold text-highlighted">
-        TODO
-      </h1>
+      <motion.h1
+        :initial="{ y: 20, opacity: 0 }"
+        :animate="{ y: 0, opacity: 1 }"
+        :transition="{ duration: 0.6, ease: 'easeOut', delay: 0.6 }"
+        class="text-2xl font-bold text-highlighted"
+      >
+        {{ t("about.experience.title") }}
+      </motion.h1>
+
+      <Motion
+        :initial="{ y: 15, opacity: 0 }"
+        :animate="{ y: 0, opacity: 1 }"
+        :transition="{ duration: 0.5, ease: 'easeOut', delay: 0.65 }"
+        as-child
+      >
+        <!-- TODO -->
+        <p>TODO</p>
+      </Motion>
+    </div>
+
+    <!-- Education -->
+    <!-- TODO component -->
+    <div class="flex flex-col gap-3 mb-3">
+      <motion.h1
+        :initial="{ y: 20, opacity: 0 }"
+        :animate="{ y: 0, opacity: 1 }"
+        :transition="{ duration: 0.6, ease: 'easeOut', delay: 0.75 }"
+        class="text-2xl font-bold text-highlighted"
+      >
+        {{ t("about.education.title") }}
+      </motion.h1>
+
+      <Motion
+        :initial="{ y: 15, opacity: 0 }"
+        :animate="{ y: 0, opacity: 1 }"
+        :transition="{ duration: 0.5, ease: 'easeOut', delay: 0.8 }"
+        as-child
+      >
+        <!-- TODO -->
+        <p>TODO</p>
+      </Motion>
     </div>
   </motion.div>
 </template>
