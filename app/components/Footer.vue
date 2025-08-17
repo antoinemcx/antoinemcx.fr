@@ -6,7 +6,7 @@ const { t } = useI18n();
   <div class="flex flex-col gap-3 md:gap-2 px-2 pt-3 pb-4">
     <div class="flex justify-between md:items-center flex-col md:flex-row md:gap-4">
       <a class="text-lg font-bold text-highlighted" href="/github" target="_blank">
-        <TextWaveEffect text="Antoine M." :duration="0.75" />
+        Antoine M.
       </a>
 
       <div>

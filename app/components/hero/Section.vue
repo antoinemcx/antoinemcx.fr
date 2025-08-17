@@ -27,7 +27,7 @@ const { t } = useI18n();
       class="flex gap-1.5 text-3xl font-bold text-highlighted mt-1"
     >
       <span class="tracking-[-0.015em] mr-1">{{ t("home.hero.title") }}</span>
-      <TextWaveEffect text="Antoine" :duration="0.7" class="heading-font" />
+      <span class="heading-font">Antoine</span>
 
       <!-- Animated wave emoji -->
       <motion.span
