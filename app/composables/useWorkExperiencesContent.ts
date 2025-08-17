@@ -28,9 +28,7 @@ export function useWorkExperiencesContent(): {
     !data.value
       ? undefined
       : data.value.sort((a, b) => { // order by most recent
-          const aEnd = a.endDate ? new Date(a.endDate) : new Date();
-          const bEnd = b.endDate ? new Date(b.endDate) : new Date();
-          return bEnd.getTime() - aEnd.getTime();
+          return orderByMostRecent(a.endDate, b.endDate);
         }).map(experience => ({ // calculate month duration
           ...experience,
           monthDuration: getExperienceMonthDuration(experience),
@@ -64,7 +62,8 @@ export function useWorkExperiencesContent(): {
  * @param experience - The experience to get the duration for
  * @returns The duration in months, or undefined if no experience date
  */
-function getExperienceMonthDuration(experience: ExperiencesCollectionItem): number | undefined {
+function getExperienceMonthDuration(experience: ExperiencesCollectionItem):
+  number | undefined {
   if (!experience.startDate && !experience.endDate) {
     return undefined;
   }
@@ -73,17 +72,4 @@ function getExperienceMonthDuration(experience: ExperiencesCollectionItem): numb
   const end = experience.endDate ? new Date(experience.endDate) : new Date();
 
   return getMonthDifference(end, start);
-}
-
-/**
- * Get the difference in months between two dates.
- * @param end - The end date
- * @param start - The start date
- * @returns The difference in months, rounded down to the nearest unit
- */
-function getMonthDifference(end: Date, start: Date): number {
-  return Math.floor(
-    (end.getFullYear() - start.getFullYear()) * 12
-    + (end.getMonth() - start.getMonth()),
-  );
 }

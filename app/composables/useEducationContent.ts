@@ -27,12 +27,7 @@ export function useEducationContent(): {
   const orderedExperiences = computed<EducationCollectionItem[] | undefined>(() =>
     !data.value
       ? undefined
-      // TODO refactor two sort methods
-      : data.value.sort((a, b) => { // order by most recent
-          const aEnd = a.endDate ? new Date(a.endDate) : new Date();
-          const bEnd = b.endDate ? new Date(b.endDate) : new Date();
-          return bEnd.getTime() - aEnd.getTime();
-        }),
+      : data.value.sort((a, b) => orderByMostRecent(a.endDate, b.endDate)),
   );
 
   return { educationItems: orderedExperiences, status };
