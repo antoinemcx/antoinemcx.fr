@@ -9,7 +9,7 @@ const { t } = useI18n();
     :initial="{ y: 20, opacity: 0 }"
     :animate="{ y: 0, opacity: 1 }"
     :transition="{ duration: 0.65, ease: 'easeOut', delay: 0.2 }"
-    class="flex flex-col gap-12 md:gap-14 lg:gap-20"
+    class="flex flex-col gap-12 md:gap-14 lg:gap-24"
   >
     <!-- Intro -->
     <div class="flex flex-col gap-3">
@@ -80,7 +80,7 @@ const { t } = useI18n();
       :initial="{ y: 20, opacity: 0 }"
       :animate="{ y: 0, opacity: 1 }"
       :transition="{ duration: 0.6, ease: 'easeOut', delay: 1.15 }"
-      class="flex flex-col gap-3.5 mb-5 md:mb-10"
+      class="flex flex-col gap-3.5 mb-5 md:mb-14"
     >
       <motion.h1
         :initial="{ y: 20, opacity: 0 }"
