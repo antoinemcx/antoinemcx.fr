@@ -40,10 +40,10 @@ const age = today.getFullYear() - birthDate.getFullYear() - (
 
     <!-- Short description -->
     {{ t("about.intro.studies") }}
-    <HeroCurrentUniversity />
+    <HeroCurrentUniversity is-always-underline />
     {{ t("about.intro.educationDepartment") }}
     {{ t("about.intro.company") }}
-    <HeroCurrentCompany />
+    <HeroCurrentCompany is-always-underline />
     {{ t("about.intro.work") }}
 
     <br><br>

@@ -1,6 +1,7 @@
 <script setup lang="ts">
 defineProps<{
   isShortened?: boolean;
+  isAlwaysUnderline?: boolean;
 }>();
 
 const { t } = useI18n();
@@ -11,10 +12,14 @@ const { t } = useI18n();
     :href="t('home.hero.description.sbsWebsite')"
     target="_blank"
     class="inline-flex gap-1 text-base font-semibold p-0!
-    hover:underline hover:underline-offset-4 transition-colors duration-200
+    hover:underline underline-offset-4 transition-colors duration-200
     text-fuchsia-600 hover:text-fuchsia-500
     dark:text-fuchsia-500 hover:dark:text-fuchsia-400
-    decoration-fuchsia-500 dark:decoration-fuchsia-400"
+    hover:decoration-fuchsia-500 hover:dark:decoration-fuchsia-400"
+    :class="{
+      'underline decoration-fuchsia-600 dark:decoration-fuchsia-500':
+        isAlwaysUnderline,
+    }"
   >
     {{ isShortened ? "SBS" : "SBS Software" }}
     <NuxtImg
