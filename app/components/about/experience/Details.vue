@@ -1,12 +1,17 @@
 <script setup lang="ts">
 import type { ExperiencesCollectionItem } from "~/types/content";
 
-defineProps<{
+const props = defineProps<{
   experience: ExperiencesCollectionItem;
   displayCompany: boolean;
 }>();
 
 const { t, d } = useI18n();
+
+const monthFormat
+= props.experience.monthDuration && props.experience.monthDuration <= 12
+  ? "short"
+  : undefined; // do not display months if more than a year
 </script>
 
 <template>
@@ -21,12 +26,12 @@ const { t, d } = useI18n();
       <!-- Experience dates and month duration -->
       <div :class="{ 'text-sm': !displayCompany }">
         <span :class="{ 'text-warning': new Date(experience.startDate) > new Date() }">
-          {{ d(experience.startDate, { year: 'numeric', month: 'short' }) }}
+          {{ d(experience.startDate, { year: 'numeric', month: monthFormat }) }}
         </span>
         -
         <span :class="{ 'font-semibold': !experience.endDate }">
           {{ experience.endDate
-            ? d(experience.endDate, { year: 'numeric', month: 'short' })
+            ? d(experience.endDate, { year: 'numeric', month: monthFormat })
             : t("about.experiences.today") }}
         </span>
 
