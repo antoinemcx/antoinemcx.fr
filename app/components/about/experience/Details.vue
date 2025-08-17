@@ -3,7 +3,7 @@ import type { ExperiencesCollectionItem } from "~/types/content";
 
 const props = defineProps<{
   experience: ExperiencesCollectionItem;
-  displayCompany: boolean;
+  displayCompany?: boolean;
 }>();
 
 const { t, d } = useI18n();
@@ -69,7 +69,10 @@ const monthFormat
     <AboutExperienceDescription :description="experience.description" />
 
     <!-- Mobilized skills -->
-    <div v-if="experience.skills && experience.skills.length > 0" class="flex gap-1.5 mt-3">
+    <div
+      v-if="experience.skills && experience.skills.length > 0"
+      class="flex flex-wrap gap-1.5 mt-3"
+    >
       <UBadge
         v-for="skill in experience.skills"
         :key="skill"

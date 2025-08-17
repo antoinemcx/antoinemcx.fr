@@ -14,7 +14,7 @@ const totalDuration = props.experiences.reduce((total, experience) => {
 </script>
 
 <template>
-  <div class="flex flex-col gap-0.5 md:flex-row md:justify-between">
+  <div class="flex flex-col gap-0.5 md:flex-row md:justify-between w-full">
     <div>
       <a :href="experiences[0]!.companyWebsite" target="_blank">
         <h2
