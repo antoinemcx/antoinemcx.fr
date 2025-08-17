@@ -37,5 +37,17 @@ export default defineContentConfig({
       source: "projects/fr/*.md",
       schema: commonProjectSchema,
     }),
+    /* Technologies */
+    technologies: defineCollection({
+      type: "data",
+      source: "technologies.json",
+      schema: z.object({
+        items: z.array(z.object({
+          name: z.string().nonempty(),
+          icon: z.string().url(),
+          link: z.string().url(),
+        })),
+      }),
+    }),
   },
 });
