@@ -1,0 +1,11 @@
+{
+  "jobTitle": "Software Engineer",
+  "contract": "Work-study placement",
+  "company": "SBS Software",
+  "companyWebsite": "https://sbs-software.com",
+  "companyLogo": "/icons/sbs.webp",
+  "location": "Rodez, France",
+  "startDate": "2025-10-13",
+  "description": [],
+  "skills": ["Angular.js", "TypeScript", "Spring Boot", "Java", "JUnit"]
+}

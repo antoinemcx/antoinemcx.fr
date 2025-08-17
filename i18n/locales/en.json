@@ -1,4 +1,6 @@
 {
+  "readMore": "Read more",
+  "readLess": "Read less",
   "navbar": {
     "home": "Home",
     "about": "About",
@@ -27,8 +29,7 @@
       "title": "Featured Projects",
       "description": "My main projects and tools, open-source or not, that I have developed on my free time.",
       "viewAll": "View all",
-      "empty": "No projects found.",
-      "readMore": "Read more"
+      "empty": "No projects found."
     }
   },
   "about": {
@@ -54,8 +55,11 @@
       "developerExperience": "developer experience",
       "onGoing": "In my spare time, I still continue to develop personal projects, whether to learn new technologies or simply for the sheer pleasure of creating tools that are useful to everyone."
     },
-    "experience": {
-      "title": "Experience"
+    "experiences": {
+      "title": "Work experience",
+      "today": "Present",
+      "xYears": "1 year | {count} years",
+      "xMonths": "1 month | {count} months"
     },
     "education": {
       "title": "Education"

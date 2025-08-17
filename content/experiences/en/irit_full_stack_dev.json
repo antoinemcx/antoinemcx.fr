@@ -1,0 +1,15 @@
+{
+  "jobTitle": "Full Stack Developer",
+  "contract": "Fixed-Term Contract",
+  "company": "IRIT (Toulouse Research Institute for Computer Science)",
+  "companyWebsite": "https://irit.fr",
+  "companyLogo": "/icons/irit.webp",
+  "location": "Toulouse, France",
+  "startDate": "2025-07-07",
+  "endDate": "2025-08-06",
+  "description": [
+    "Follow-up to my second-year internship and the full-stack development of KDo (Konsolidation Dashboards).",
+    "\n• Retrieved student revision data from the API, with unit testing\n• Implemented the learners group system and administration of groups, and subjects, of a teacher"
+  ],
+  "skills": ["Nuxt.js", "TypeScript", "Spring Boot", "Java", "JUnit", "SQL", "Docker"]
+}

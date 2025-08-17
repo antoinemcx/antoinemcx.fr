@@ -1,4 +1,6 @@
 {
+  "readMore": "Lire plus",
+  "readLess": "Lire moins",
   "navbar": {
     "home": "Accueil",
     "about": "À propos",
@@ -27,8 +29,7 @@
       "title": "Projets phares",
       "description": "Mes principaux projets et outils, open-source ou non, que j'ai développés sur mon temps libre.",
       "viewAll": "Tout afficher",
-      "empty": "Aucun projet trouvé.",
-      "readMore": "Lire plus"
+      "empty": "Aucun projet trouvé."
     }
   },
   "about": {
@@ -54,8 +55,11 @@
       "developerExperience": "l'expérience développeur",
       "onGoing": "Sur mon temps libre, je continue toujours à développer des projets personnels, que ce soit pour apprendre de nouvelles technologies ou pour le plaisir de créer des outils utiles à tous."
     },
-    "experience": {
-      "title": "Expérience"
+    "experiences": {
+      "title": "Expérience professionnelle",
+      "today": "Aujourd'hui",
+      "xYears": "1 an | {count} ans",
+      "xMonths": "1 mois | {count} mois"
     },
     "education": {
       "title": "Éducation"

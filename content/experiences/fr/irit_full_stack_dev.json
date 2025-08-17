@@ -1,0 +1,15 @@
+{
+  "jobTitle": "Développeur Full Stack",
+  "contract": "CDD",
+  "company": "IRIT (Institut de Recherche en Informatique de Toulouse)",
+  "companyWebsite": "https://irit.fr",
+  "companyLogo": "/icons/irit.webp",
+  "location": "Toulouse, France",
+  "startDate": "2025-07-07",
+  "endDate": "2025-08-06",
+  "description": [
+    "Suite de mon stage de deuxième année et du développement full-stack de KDo (Konsolidation Dashboards).",
+    "\n• Récupération des données de révision des élèves depuis l'API, avec tests unitaires\n• Implémentation du système de groupes et administration des groupes, et des sujets, d'un enseignant"
+  ],
+  "skills": ["Nuxt.js", "TypeScript", "Spring Boot", "Java", "JUnit", "SQL", "Docker"]
+}

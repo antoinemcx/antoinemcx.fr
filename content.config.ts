@@ -24,6 +24,19 @@ const commonProjectSchema = z.object({
   tags: z.array(z.string().nonempty()).optional(),
 });
 
+const commonExperienceSchema = z.object({
+  jobTitle: z.string().nonempty(),
+  contract: z.string().nonempty(),
+  company: z.string().nonempty(),
+  companyWebsite: z.string().url().optional(),
+  companyLogo: z.string().url(),
+  location: z.string().nonempty(),
+  startDate: z.string().nonempty(),
+  endDate: z.string().optional(),
+  description: z.array(z.string().nonempty()),
+  skills: z.array(z.string().nonempty()).optional(),
+});
+
 export default defineContentConfig({
   collections: {
     /* Projects */
@@ -36,6 +49,17 @@ export default defineContentConfig({
       type: "page",
       source: "projects/fr/*.md",
       schema: commonProjectSchema,
+    }),
+    /* Experiences */
+    experiences_en: defineCollection({
+      type: "data",
+      source: "experiences/en/*.json",
+      schema: commonExperienceSchema,
+    }),
+    experiences_fr: defineCollection({
+      type: "data",
+      source: "experiences/fr/*.json",
+      schema: commonExperienceSchema,
     }),
     /* Technologies */
     technologies: defineCollection({

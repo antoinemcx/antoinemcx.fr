@@ -1,0 +1,13 @@
+{
+  "jobTitle": "Student Tutor",
+  "contract": "Fixed-Term Contract",
+  "company": "IUT de Rodez",
+  "companyWebsite": "https://iut-rodez.fr",
+  "companyLogo": "/icons/iut_rodez.webp",
+  "location": "Rodez, France",
+  "startDate": "2024-10-01",
+  "endDate": "2025-03-10",
+  "description": [
+    "Support for students in first year of BUT Informatique.\nOne hour per week I helped students with their revision and gave private lessons, mainly in mathematics and programming."
+  ]
+}

@@ -35,7 +35,7 @@ const { t } = useI18n();
     </div>
 
     <!-- Skills -->
-    <div class="flex flex-col gap-3">
+    <div class="flex flex-col gap-3.5">
       <motion.h1
         :initial="{ y: 20, opacity: 0 }"
         :animate="{ y: 0, opacity: 1 }"
@@ -56,15 +56,14 @@ const { t } = useI18n();
     </div>
 
     <!-- Experience -->
-    <!-- TODO component -->
-    <div class="flex flex-col gap-3">
+    <div class="flex flex-col gap-3.5">
       <motion.h1
         :initial="{ y: 20, opacity: 0 }"
         :animate="{ y: 0, opacity: 1 }"
         :transition="{ duration: 0.6, ease: 'easeOut', delay: 0.6 }"
         class="text-2xl font-bold text-highlighted"
       >
-        {{ t("about.experience.title") }}
+        {{ t("about.experiences.title") }}
       </motion.h1>
 
       <Motion
@@ -73,8 +72,7 @@ const { t } = useI18n();
         :transition="{ duration: 0.5, ease: 'easeOut', delay: 0.65 }"
         as-child
       >
-        <!-- TODO -->
-        <p>TODO</p>
+        <AboutExperiences />
       </Motion>
     </div>
 

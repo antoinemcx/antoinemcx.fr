@@ -1,0 +1,15 @@
+{
+  "jobTitle": "Développeur Full Stack",
+  "contract": "Stage",
+  "company": "IRIT (Institut de Recherche en Informatique de Toulouse)",
+  "companyWebsite": "https://irit.fr",
+  "companyLogo": "/icons/irit.webp",
+  "location": "Toulouse, France",
+  "startDate": "2025-04-07",
+  "endDate": "2025-07-04",
+  "description": [
+    "Développement full-stack de KDo (Konsolidation Dashboards), une application web de tableaux de bord dédiée à la recherche en Environnements Informatiques pour l'Apprentissage Humain (EIAH), au sein de l'équipe TALENT.",
+    "Cette application vise à étudier comment le numérique et l'IA Générative peuvent soutenir l'implication des enseignants dans la régulation du travail hors classe de leurs élèves.\n\n• Participation à la conception UI/UX des tableaux de bord\n• Développement des premiers écrans pour analyser le travail de révision des élèves\n• Ajout de traces d'apprentissage sur l'application de révision existante, données utiles aux chercheurs"
+  ],
+  "skills": ["Nuxt.js", "TypeScript", "Spring Boot", "Java", "JUnit", "SQL", "Docker"]
+}

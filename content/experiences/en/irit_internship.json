@@ -1,0 +1,15 @@
+{
+  "jobTitle": "Full Stack Developer",
+  "contract": "Internship",
+  "company": "IRIT (Toulouse Research Institute for Computer Science)",
+  "companyWebsite": "https://irit.fr",
+  "companyLogo": "/icons/irit.webp",
+  "location": "Toulouse, France",
+  "startDate": "2025-04-07",
+  "endDate": "2025-07-04",
+  "description": [
+    "Full-stack development of KDo (Konsolidation Dashboards), a web-based dashboard application in the context of research in Technology-Enhanced Learning, as a member of the TALENT team of the IRIT laboratory.",
+    "This application aims to study how digital technology and GenAI can support teachers' involvement in regulating their students' out-of-class work.\n\n• Participated in the UI/UX design of the analytics dashboards\n• Developed the first screens to analyze students' revision work\n• Added learning tracks to the existing revision application, providing useful data for researchers"
+  ],
+  "skills": ["Nuxt.js", "TypeScript", "Spring Boot", "Java", "JUnit", "SQL", "Docker"]
+}
