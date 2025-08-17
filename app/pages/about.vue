@@ -8,7 +8,7 @@ const { t } = useI18n();
   <motion.div
     :initial="{ y: 20, opacity: 0 }"
     :animate="{ y: 0, opacity: 1 }"
-    :transition="{ duration: 0.65, ease: 'easeOut', delay: 0.1 }"
+    :transition="{ duration: 0.65, ease: 'easeOut', delay: 0.2 }"
     class="flex flex-col gap-12 md:gap-14 lg:gap-20"
   >
     <!-- Intro -->
@@ -27,7 +27,7 @@ const { t } = useI18n();
       <Motion
         :initial="{ y: 15, opacity: 0 }"
         :animate="{ y: 0, opacity: 1 }"
-        :transition="{ duration: 0.55, ease: 'easeOut', delay: 0.3 }"
+        :transition="{ duration: 0.55, ease: 'easeOut', delay: 0.35 }"
         as-child
       >
         <AboutIntroduction />
@@ -39,7 +39,7 @@ const { t } = useI18n();
       <motion.h1
         :initial="{ y: 20, opacity: 0 }"
         :animate="{ y: 0, opacity: 1 }"
-        :transition="{ duration: 0.6, ease: 'easeOut', delay: 0.5 }"
+        :transition="{ duration: 0.6, ease: 'easeOut', delay: 0.6 }"
         class="text-2xl font-bold text-highlighted"
       >
         {{ t("about.mostUsedTechnologies") }}
@@ -48,7 +48,7 @@ const { t } = useI18n();
       <Motion
         :initial="{ y: 15, opacity: 0 }"
         :animate="{ y: 0, opacity: 1 }"
-        :transition="{ duration: 0.5, ease: 'easeOut', delay: 0.55 }"
+        :transition="{ duration: 0.5, ease: 'easeOut', delay: 0.65 }"
         as-child
       >
         <AboutTechnologies />
@@ -60,7 +60,7 @@ const { t } = useI18n();
       <motion.h1
         :initial="{ y: 20, opacity: 0 }"
         :animate="{ y: 0, opacity: 1 }"
-        :transition="{ duration: 0.6, ease: 'easeOut', delay: 0.75 }"
+        :transition="{ duration: 0.6, ease: 'easeOut', delay: 0.85 }"
         class="text-2xl font-bold text-highlighted"
       >
         {{ t("about.experiences.title") }}
@@ -69,7 +69,7 @@ const { t } = useI18n();
       <Motion
         :initial="{ y: 15, opacity: 0 }"
         :animate="{ y: 0, opacity: 1 }"
-        :transition="{ duration: 0.5, ease: 'easeOut', delay: 0.8 }"
+        :transition="{ duration: 0.5, ease: 'easeOut', delay: 0.9 }"
       >
         <AboutExperiences />
       </Motion>
@@ -80,7 +80,7 @@ const { t } = useI18n();
     <motion.div
       :initial="{ y: 20, opacity: 0 }"
       :animate="{ y: 0, opacity: 1 }"
-      :transition="{ duration: 0.6, ease: 'easeOut', delay: 0.95 }"
+      :transition="{ duration: 0.6, ease: 'easeOut', delay: 1.15 }"
       class="flex flex-col gap-3 mb-3"
     >
       <motion.h1

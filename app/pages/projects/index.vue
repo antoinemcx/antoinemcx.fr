@@ -37,25 +37,29 @@ function toggleTag(tag: string) {
 </script>
 
 <template>
-  <motion.div
+  <motion.h1
     :initial="{ y: 20, opacity: 0 }"
     :animate="{ y: 0, opacity: 1 }"
-    :transition="{ duration: 0.6, ease: 'easeOut', delay: 0.1 }"
+    :transition="{ duration: 0.6, ease: 'easeOut', delay: 0.2 }"
+    class="text-2xl text-highlighted font-bold"
   >
-    <h1 class="text-2xl text-highlighted font-bold">
-      {{ t("projects.title") }}
-    </h1>
-    <p class="text-muted mb-3">
-      {{ t("projects.description") }}
-    </p>
-  </motion.div>
+    {{ t("projects.title") }}
+  </motion.h1>
+  <motion.p
+    :initial="{ y: 15, opacity: 0 }"
+    :animate="{ y: 0, opacity: 1 }"
+    :transition="{ duration: 0.5, ease: 'easeOut', delay: 0.3 }"
+    class="text-muted mb-3"
+  >
+    {{ t("projects.description") }}
+  </motion.p>
 
   <!-- Tags filter -->
   <motion.div
     v-if="tags.length > 0"
     :initial="{ y: 15, opacity: 0 }"
     :animate="{ y: 0, opacity: 1 }"
-    :transition="{ duration: 0.5, ease: 'easeOut', delay: 0.25 }"
+    :transition="{ duration: 0.5, ease: 'easeOut', delay: 0.6 }"
     class="flex items-center gap-2 mb-4"
   >
     <span class="text-muted font-semibold">
@@ -94,9 +98,9 @@ function toggleTag(tag: string) {
 
   <motion.div
     v-if="status === 'pending'"
-    :initial="{ y: 20, opacity: 0 }"
+    :initial="{ y: 15, opacity: 0 }"
     :animate="{ y: 0, opacity: 1 }"
-    :transition="{ duration: 0.6, ease: 'easeOut', delay: 0.4 }"
+    :transition="{ duration: 0.6, ease: 'easeOut', delay: 0.7 }"
     class="grid grid-cols-1 md:grid-cols-2 gap-3"
   >
     <UCard v-for="n in initialProjectsCount" :key="n">
@@ -129,7 +133,7 @@ function toggleTag(tag: string) {
     <motion.div
       :initial="{ y: 25, opacity: 0 }"
       :animate="{ y: 0, opacity: 1 }"
-      :transition="{ duration: 0.6, ease: 'easeOut', delay: 0.4 }"
+      :transition="{ duration: 0.6, ease: 'easeOut', delay: 0.7 }"
       class="grid grid-cols-1 md:grid-cols-2 gap-3"
     >
       <AnimatePresence>
