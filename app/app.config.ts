@@ -10,7 +10,7 @@ export default defineAppConfig({
       },
       variants: {
         variant: {
-          link: "p-0! underline underline-offset-4 text-default! hover:text-highlighted",
+          link: "p-0! underline underline-offset-4 text-default! hover:text-highlighted!",
         },
       },
     },
