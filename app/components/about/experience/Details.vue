@@ -63,6 +63,16 @@ const { t, d } = useI18n();
     <!-- Description -->
     <AboutExperienceDescription :description="experience.description" />
 
-    <!-- TODO technologies -->
+    <!-- Mobilized skills -->
+    <div v-if="experience.skills && experience.skills.length > 0" class="flex gap-1.5 mt-3">
+      <UBadge
+        v-for="skill in experience.skills"
+        :key="skill"
+        variant="soft"
+        class="rounded-full"
+      >
+        {{ skill }}
+      </UBadge>
+    </div>
   </div>
 </template>

@@ -41,12 +41,14 @@ defineProps<{
       />
 
       <!-- Company experiences list -->
-      <AboutExperienceDetails
-        v-for="experience in experiences"
-        :key="experience.id"
-        :experience="experience"
-        :display-company="experiences.length === 1"
-      />
+      <div class="flex flex-col gap-7">
+        <AboutExperienceDetails
+          v-for="experience in experiences"
+          :key="experience.id"
+          :experience="experience"
+          :display-company="experiences.length === 1"
+        />
+      </div>
     </div>
   </motion.div>
 </template>
