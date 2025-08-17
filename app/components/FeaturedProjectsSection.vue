@@ -31,7 +31,7 @@ const { data: featuredProjects } = await useProjectsContent(true);
       v-if="!featuredProjects || featuredProjects.length === 0"
       :initial="{ opacity: 0 }"
       :animate="{ opacity: 1 }"
-      :transition="{ duration: 0.6, delay: 1.2 }"
+      :transition="{ duration: 0.55, delay: 1.2 }"
       class="text-muted"
     >
       {{ t("home.featuredProjects.empty") }}
@@ -41,7 +41,7 @@ const { data: featuredProjects } = await useProjectsContent(true);
       v-else
       :initial="{ y: 20, opacity: 0 }"
       :animate="{ y: 0, opacity: 1 }"
-      :transition="{ duration: 0.65, ease: 'easeOut', delay: 1.2 }"
+      :transition="{ duration: 0.55, ease: 'easeOut', delay: 1.2 }"
       class="flex flex-col gap-5"
     >
       <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
@@ -57,7 +57,7 @@ const { data: featuredProjects } = await useProjectsContent(true);
       <motion.div
         :initial="{ y: 10, opacity: 0 }"
         :animate="{ y: 0, opacity: 1 }"
-        :transition="{ duration: 0.6, ease: 'easeOut', delay: 1.45 }"
+        :transition="{ duration: 0.55, ease: 'easeOut', delay: 1.35 }"
       >
         <UButton
           color="neutral"
