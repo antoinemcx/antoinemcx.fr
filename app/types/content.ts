@@ -8,6 +8,9 @@ export type ExperiencesCollectionItem
   monthDuration?: number;
 };
 
+export type EducationCollectionItem
+= Collections["education_en"] | Collections["education_fr"];
+
 export enum ProjectStatus {
   SOON = "soon",
   ACTIVE = "active", // supposedly default

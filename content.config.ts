@@ -25,8 +25,8 @@ const commonProjectSchema = z.object({
 });
 
 const commonExperienceSchema = z.object({
-  jobTitle: z.string().nonempty(),
-  contract: z.string().nonempty(),
+  title: z.string().nonempty(),
+  contract: z.string().nonempty().optional(),
   company: z.string().nonempty(),
   companyWebsite: z.string().url().optional(),
   companyLogo: z.string().url(),
@@ -59,6 +59,17 @@ export default defineContentConfig({
     experiences_fr: defineCollection({
       type: "data",
       source: "experiences/fr/*.json",
+      schema: commonExperienceSchema,
+    }),
+    /* Education */
+    education_en: defineCollection({
+      type: "data",
+      source: "education/en/*.json",
+      schema: commonExperienceSchema,
+    }),
+    education_fr: defineCollection({
+      type: "data",
+      source: "education/fr/*.json",
       schema: commonExperienceSchema,
     }),
     /* Technologies */

@@ -71,12 +71,11 @@ const { t } = useI18n();
         :animate="{ y: 0, opacity: 1 }"
         :transition="{ duration: 0.5, ease: 'easeOut', delay: 0.9 }"
       >
-        <AboutExperiences />
+        <AboutWorkExperiences />
       </Motion>
     </div>
 
     <!-- Education -->
-    <!-- TODO component -->
     <motion.div
       :initial="{ y: 20, opacity: 0 }"
       :animate="{ y: 0, opacity: 1 }"
@@ -100,8 +99,7 @@ const { t } = useI18n();
         :transition="{ duration: 0.5, ease: 'easeOut', delay: 0.1 }"
         as-child
       >
-        <!-- TODO -->
-        <p>TODO</p>
+        <AboutEducationExperiences />
       </Motion>
     </motion.div>
   </motion.div>

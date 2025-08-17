@@ -7,7 +7,7 @@ import type { ExperiencesCollectionItem } from "~/types/content";
  *
  * @returns AsyncData containing multiple ExperiencesCollectionItem if success
  */
-export function useExperiencesContent(): {
+export function useWorkExperiencesContent(): {
   experiences: Ref<ExperiencesCollectionItem[][] | undefined>;
   status: Ref<AsyncDataRequestStatus>;
 } {

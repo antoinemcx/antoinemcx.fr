@@ -1,0 +1,13 @@
+{
+  "title": "DUT Informatique",
+  "company": "IUT de Rodez",
+  "companyWebsite": "https://iut-rodez.fr",
+  "companyLogo": "/icons/iut_rodez.webp",
+  "location": "Rodez, France",
+  "startDate": "2023-09-02",
+  "endDate": "2025-07-13",
+  "description": [
+    "Parcours Réalisation d'applications : conception, développement, validation."
+  ],
+  "skills": ["Java", "JUnit", "PHP", "Python", "Docker", "Git", "UML", "Scrum"]
+}

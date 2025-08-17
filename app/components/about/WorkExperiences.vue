@@ -1,6 +1,6 @@
 <script setup lang="ts">
 /* Fetch all experiences */
-const { experiences, status } = useExperiencesContent();
+const { experiences, status } = useWorkExperiencesContent();
 </script>
 
 <template>

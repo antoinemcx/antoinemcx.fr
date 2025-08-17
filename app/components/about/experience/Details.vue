@@ -36,8 +36,10 @@ const monthFormat
         </p>
       </h2>
       <h3 v-else class="font-bold">
-        {{ experience.jobTitle }}
-        <span class="font-normal">· {{ experience.contract }}</span>
+        {{ experience.title }}
+        <span v-if="experience.contract" class="font-normal">
+          · {{ experience.contract }}
+        </span>
       </h3>
 
       <!-- Experience dates and month duration -->
@@ -65,8 +67,10 @@ const monthFormat
 
     <!-- Job title -->
     <p v-if="displayCompany" class="font-bold">
-      {{ experience.jobTitle }}
-      <span class="font-normal">· {{ experience.contract }}</span>
+      {{ experience.title }}
+      <span v-if="experience.contract" class="font-normal">
+        · {{ experience.contract }}
+      </span>
     </p>
 
     <!-- Description -->
