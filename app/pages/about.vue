@@ -39,7 +39,7 @@ const { t } = useI18n();
       <motion.h1
         :initial="{ y: 20, opacity: 0 }"
         :animate="{ y: 0, opacity: 1 }"
-        :transition="{ duration: 0.6, ease: 'easeOut', delay: 0.45 }"
+        :transition="{ duration: 0.6, ease: 'easeOut', delay: 0.5 }"
         class="text-2xl font-bold text-highlighted"
       >
         {{ t("about.mostUsedTechnologies") }}
@@ -48,7 +48,7 @@ const { t } = useI18n();
       <Motion
         :initial="{ y: 15, opacity: 0 }"
         :animate="{ y: 0, opacity: 1 }"
-        :transition="{ duration: 0.5, ease: 'easeOut', delay: 0.5 }"
+        :transition="{ duration: 0.5, ease: 'easeOut', delay: 0.55 }"
         as-child
       >
         <AboutTechnologies />
@@ -60,7 +60,7 @@ const { t } = useI18n();
       <motion.h1
         :initial="{ y: 20, opacity: 0 }"
         :animate="{ y: 0, opacity: 1 }"
-        :transition="{ duration: 0.6, ease: 'easeOut', delay: 0.6 }"
+        :transition="{ duration: 0.6, ease: 'easeOut', delay: 0.75 }"
         class="text-2xl font-bold text-highlighted"
       >
         {{ t("about.experiences.title") }}
@@ -69,8 +69,7 @@ const { t } = useI18n();
       <Motion
         :initial="{ y: 15, opacity: 0 }"
         :animate="{ y: 0, opacity: 1 }"
-        :transition="{ duration: 0.5, ease: 'easeOut', delay: 0.65 }"
-        as-child
+        :transition="{ duration: 0.5, ease: 'easeOut', delay: 0.8 }"
       >
         <AboutExperiences />
       </Motion>
@@ -78,11 +77,17 @@ const { t } = useI18n();
 
     <!-- Education -->
     <!-- TODO component -->
-    <div class="flex flex-col gap-3 mb-3">
+    <motion.div
+      :initial="{ y: 20, opacity: 0 }"
+      :animate="{ y: 0, opacity: 1 }"
+      :transition="{ duration: 0.6, ease: 'easeOut', delay: 0.95 }"
+      class="flex flex-col gap-3 mb-3"
+    >
       <motion.h1
         :initial="{ y: 20, opacity: 0 }"
-        :animate="{ y: 0, opacity: 1 }"
-        :transition="{ duration: 0.6, ease: 'easeOut', delay: 0.75 }"
+        :while-in-view="{ y: 0, opacity: 1 }"
+        :in-view-options="{ once: true, amount: 'all' }"
+        :transition="{ duration: 0.6, ease: 'easeOut' }"
         class="text-2xl font-bold text-highlighted"
       >
         {{ t("about.education.title") }}
@@ -90,13 +95,14 @@ const { t } = useI18n();
 
       <Motion
         :initial="{ y: 15, opacity: 0 }"
-        :animate="{ y: 0, opacity: 1 }"
-        :transition="{ duration: 0.5, ease: 'easeOut', delay: 0.8 }"
+        :while-in-view="{ y: 0, opacity: 1 }"
+        :in-view-options="{ once: true }"
+        :transition="{ duration: 0.5, ease: 'easeOut', delay: 0.1 }"
         as-child
       >
         <!-- TODO -->
         <p>TODO</p>
       </Motion>
-    </div>
+    </motion.div>
   </motion.div>
 </template>
