@@ -17,11 +17,28 @@ const monthFormat
 <template>
   <div class="w-full">
     <div class="flex flex-col gap-0.5 md:flex-row md:justify-between">
-      <!-- Job title -->
-      <component :is="displayCompany ? 'h2' : 'h3'" class="font-bold">
+      <!-- Company information if single experience -->
+      <h2 v-if="displayCompany">
+        <p class="font-semibold">
+          <a
+            :href="experience.companyWebsite"
+            target="_blank"
+            :class="{
+              'cursor-pointer hover:text-highlighted': experience.companyWebsite,
+            }"
+          >
+            {{ experience.company }}
+          </a>
+
+          <span class="text-sm text-muted font-normal">
+            ({{ experience.location }})
+          </span>
+        </p>
+      </h2>
+      <h3 v-else class="font-bold">
         {{ experience.jobTitle }}
         <span class="font-normal">· {{ experience.contract }}</span>
-      </component>
+      </h3>
 
       <!-- Experience dates and month duration -->
       <div :class="{ 'text-sm': !displayCompany }">
@@ -46,24 +63,11 @@ const monthFormat
       </div>
     </div>
 
-    <!-- Company information if single experience -->
-    <div v-if="displayCompany">
-      <p class="font-semibold">
-        <a
-          :href="experience.companyWebsite"
-          target="_blank"
-          :class="{
-            'cursor-pointer hover:text-highlighted': experience.companyWebsite,
-          }"
-        >
-          {{ experience.company }}
-        </a>
-
-        <span class="text-sm text-muted font-normal">
-          ({{ experience.location }})
-        </span>
-      </p>
-    </div>
+    <!-- Job title -->
+    <p v-if="displayCompany" class="font-bold">
+      {{ experience.jobTitle }}
+      <span class="font-normal">· {{ experience.contract }}</span>
+    </p>
 
     <!-- Description -->
     <AboutExperienceDescription :description="experience.description" />
