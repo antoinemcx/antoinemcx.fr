@@ -35,7 +35,7 @@ const { t } = useI18n();
     </div>
 
     <!-- Skills -->
-    <div class="flex flex-col gap-3.5">
+    <div class="flex flex-col gap-3.5 mb-1">
       <motion.h1
         :initial="{ y: 20, opacity: 0 }"
         :animate="{ y: 0, opacity: 1 }"
