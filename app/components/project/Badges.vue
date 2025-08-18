@@ -45,46 +45,42 @@ const { t } = useI18n();
     <!-- Tags for large cards or project pages -->
     <div
       v-if="displayTagsAndTechnos && project.tags && project.tags.length > 0"
-      class="flex items-center gap-2"
+      class="flex flex-wrap items-center gap-1"
     >
-      <span v-if="displayLabels" class="text-muted font-semibold">
+      <span v-if="displayLabels" class="text-muted font-semibold mr-1">
         {{ t("projects.tags") }}
       </span>
 
-      <div class="flex flex-wrap gap-1">
-        <UBadge
-          v-for="tag in project.tags"
-          :key="tag"
-          color="neutral"
-          variant="soft"
-          class="rounded-full bg-accented/50"
-        >
-          {{ tag }}
-        </UBadge>
-      </div>
+      <UBadge
+        v-for="tag in project.tags"
+        :key="tag"
+        color="neutral"
+        variant="soft"
+        class="rounded-full bg-accented/50"
+      >
+        {{ tag }}
+      </UBadge>
     </div>
 
     <!-- Used technologies for large cards or project pages -->
     <div
       v-if="displayTagsAndTechnos
         && project.technologies && project.technologies.length > 0"
-      class="flex items-center gap-2"
+      class="flex flex-wrap items-center gap-1"
     >
-      <span v-if="displayLabels" class="text-muted font-semibold">
+      <span v-if="displayLabels" class="text-muted font-semibold mr-1">
         {{ t("projects.technologies") }}
       </span>
 
-      <div class="flex flex-wrap gap-1">
-        <UBadge
-          v-for="techno in project.technologies"
-          :key="techno"
-          color="primary"
-          variant="soft"
-          class="rounded-full"
-        >
-          {{ techno }}
-        </UBadge>
-      </div>
+      <UBadge
+        v-for="techno in project.technologies"
+        :key="techno"
+        color="primary"
+        variant="soft"
+        class="rounded-full"
+      >
+        {{ techno }}
+      </UBadge>
     </div>
   </div>
 </template>
