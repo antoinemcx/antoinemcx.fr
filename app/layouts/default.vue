@@ -2,9 +2,11 @@
 import { motion } from "motion-v";
 
 const isScrolled = ref(false);
+const isFarScrolled = ref(false);
 
 function handleScroll() {
   isScrolled.value = window.scrollY > 20;
+  isFarScrolled.value = window.scrollY > 200;
 }
 
 onMounted(() => {
@@ -47,5 +49,8 @@ onUnmounted(() => {
     >
       <Footer />
     </motion.div>
+
+    <!-- Back to top button -->
+    <BackToTopButton :show="isFarScrolled" />
   </div>
 </template>
