@@ -14,7 +14,10 @@ const status = computed(() => {
   let label = "";
   let color: typeof UBadge["color"] = "";
 
-  if (props.project.status === ProjectStatus.SOON) {
+  if (props.project.status === ProjectStatus.NEW) {
+    label = t("projects.status.new");
+    color = "success";
+  } else if (props.project.status === ProjectStatus.SOON) {
     label = t("projects.status.soon");
     color = "info";
   } else if (props.project.status === ProjectStatus.ACTIVE) {

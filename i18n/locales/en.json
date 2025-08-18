@@ -74,6 +74,7 @@
     "viewLess": "View less",
     "noMatchingProjects": "No projects match your search.",
     "status": {
+      "new": "New",
       "soon": "Coming Soon",
       "active": "Active",
       "archived": "Archived",

@@ -33,8 +33,14 @@ const { data: project } = await useAsyncData(path.value, async () => {
 if (!project.value) {
   throw createError({ statusCode: 404, statusMessage: t("projects.notFound") });
 }
+
+useSeoMeta({
+  title: `Antoine M. - ${project.value.title}`,
+  description: project.value.description,
+});
 </script>
 
+<!-- TODO ToC -->
 <template>
   <motion.div
     v-if="project"
@@ -98,14 +104,23 @@ if (!project.value) {
       />
     </Motion>
 
+    <motion.p
+      :initial="{ y: 20, opacity: 0 }"
+      :animate="{ y: 0, opacity: 1 }"
+      :transition="{ duration: 0.5, ease: 'easeOut', delay: 0.4 }"
+      class="mt-10 font-semibold whitespace-pre-line"
+    >
+      {{ project.description }}
+    </motion.p>
+
     <!-- Content rendering -->
     <motion.div
       :initial="{ y: 10, opacity: 0 }"
       :animate="{ y: 0, opacity: 1 }"
-      :transition="{ duration: 0.5, ease: 'easeOut', delay: 0.4 }"
-      class="mt-8"
+      :transition="{ duration: 0.5, ease: 'easeOut', delay: 0.65 }"
+      class="my-6"
     >
-      <ContentRenderer :value="project" />
+      <ContentRenderer :value="project" prose />
     </motion.div>
   </motion.div>
 </template>

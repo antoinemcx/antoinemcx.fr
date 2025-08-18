@@ -12,6 +12,7 @@ export type EducationCollectionItem
 = Collections["education_en"] | Collections["education_fr"];
 
 export enum ProjectStatus {
+  NEW = "new",
   SOON = "soon",
   ACTIVE = "active", // supposedly default
   ARCHIVED = "archived",
