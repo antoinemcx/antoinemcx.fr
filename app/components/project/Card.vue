@@ -33,7 +33,10 @@ const projectPath = props.project.path.replace(`/${locale.value}/`, "/");
 
         <!-- View more button -->
         <div class="w-full flex justify-end items-center">
-          <span class="opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+          <span
+            class="opacity-0 group-hover:opacity-100 group-hover:-translate-x-0.5
+            transition-all duration-500"
+          >
             {{ t("readMore") }}
           </span>
           <UIcon
