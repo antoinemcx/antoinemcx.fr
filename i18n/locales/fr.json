@@ -10,7 +10,8 @@
     "viewSource": "Voir le code source"
   },
   "footer": {
-    "allRightReserved": "Tous droits réservés.",
+    "allRightReserved": "tous droits réservés.",
+    "legalNotice": "Mentions légales.",
     "madeWith": "Site réalisé avec",
     "using": "en utilisant"
   },
@@ -89,5 +90,24 @@
     "website": "Site internet",
     "backHome": "Retourner à l'accueil",
     "backToProjects": "Retourner aux projets"
+  },
+  "privacy": {
+    "title": "Mentions légales",
+    "subtitle": "Cette page est composée des présentes Mentions légales et de la Politique de confidentialité.\nDernière mise à jour : {date}.",
+    "intro": "Conformément à la Loi pour la confiance dans l'économie numérique (L.C.E.N), les informations suivantes vous sont indiquées :",
+    "editorTitle": "1. Éditeur du site",
+    "editorContent": "Nom : Antoine Marescaux\nStatut : particulier\nEmail : antoine.marescaux81[{'@'}]gmail.com",
+    "hostTitle": "2. Hébergeur",
+    "hostContent": "Le site est hébergé par CONTABO GMBH (localisation du siège social : GmbH Aschauer Strasse 32a 81549 Munich).",
+    "termsTitle": "3. Conditions d'utilisation",
+    "termsContent": "Le site est accessible gratuitement, sans garantie.\nEn cas de dysfonctionnement, l'éditeur ne peut être tenu responsable. Il pourra toujours",
+    "beContacted": "être contacté",
+    "dataTitle": "3. Données collectées",
+    "dataContent": "Aucune donnée personnelle n'est collectée ou conservée sur ce site.\n\nEn revanche, des cookies essentiels au fonctionnement du site sont utilisés (thème, langue).\nLes cookies sont stockés sur le disque dur de votre ordinateur et non sur une base de données, vous pouvez les supprimer à tout moment.",
+    "ipTitle": "4. Propriété intellectuelle",
+    "ipContent": "Le contenu du site est protégé par le droit d'auteur. Toute reproduction est interdite sans autorisation préalable.",
+    "contactTitle": "5. Contact",
+    "contactContent": "Pour toute question concernant ces mentions légales, vous pouvez contacter l'éditeur à l'adresse email suivante : antoine.marescaux81[{'@'}]gmail.com ou sur son",
+    "discordServer": "serveur Discord"
   }
 }

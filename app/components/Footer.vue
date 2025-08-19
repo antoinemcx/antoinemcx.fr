@@ -22,8 +22,18 @@ const { t } = useI18n();
       <div class="font-normal">
         ©
         {{ new Date().getFullYear() }}
-        Antoine Marescaux.
+        Antoine Marescaux,
         {{ t("footer.allRightReserved") }}
+
+        <UButton
+          color="neutral"
+          variant="link"
+          size="xl"
+          to="/privacy"
+          class="font-normal no-underline hover:underline"
+        >
+          {{ t("footer.legalNotice") }}
+        </UButton>
       </div>
 
       <SocialIcons />

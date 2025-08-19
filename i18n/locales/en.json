@@ -10,7 +10,8 @@
     "viewSource": "View the source code"
   },
   "footer": {
-    "allRightReserved": "All rights reserved.",
+    "allRightReserved": "all rights reserved.",
+    "legalNotice": "Legal notice.",
     "madeWith": "Website made with",
     "using": "using"
   },
@@ -89,5 +90,24 @@
     "website": "Website",
     "backHome": "Back to home",
     "backToProjects": "Back to projects"
+  },
+  "privacy": {
+    "title": "Legal notice",
+    "subtitle": "This page consists of the present Legal notices and the Privacy policy.\nLast update: {date}.",
+    "intro": "In accordance with the French Law on Confidence in the Digital Economy (L.C.E.N), the following information is provided:",
+    "editorTitle": "1. Website publisher",
+    "editorContent": "Name: Antoine Marescaux\nStatus: private individual\nEmail: antoine.marescaux81[{'@'}]gmail.com",
+    "hostTitle": "2. Host",
+    "hostContent": "The website is hosted by CONTABO GMBH (headquarters location: GmbH Aschauer Strasse 32a 81549 Munich).",
+    "termsTitle": "3. Terms of use",
+    "termsContent": "The site is accessible free of charge, without guarantee.\nIn the event of a malfunction, the publisher cannot be held liable. He can always",
+    "beContacted": "be contacted",
+    "dataTitle": "3. Data collected",
+    "dataContent": "No personal data is collected or stored on this website.\n\nHowever, cookies essential to the functioning of the website are used (theme, language).\nCookies are stored on your computer's hard drive and not in a database, and you can delete them at any time.",
+    "ipTitle": "4. Intellectual property",
+    "ipContent": "The content of the site is protected by copyright. Any reproduction is prohibited without prior authorization.",
+    "contactTitle": "5. Contact",
+    "contactContent": "For any questions regarding this legal notice, you can contact the publisher at the following email address: antoine.marescaux81[{'@'}]gmail.com or on his",
+    "discordServer": "Discord server"
   }
 }
