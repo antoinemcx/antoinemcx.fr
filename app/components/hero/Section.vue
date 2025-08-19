@@ -24,7 +24,7 @@ const { t } = useI18n();
       :initial="{ y: 15, opacity: 0 }"
       :animate="{ y: 0, opacity: 1 }"
       :transition="{ duration: 0.6, ease: 'easeOut', delay: 0.55 }"
-      class="flex gap-1.5 text-3xl font-bold text-highlighted mt-1"
+      class="flex flex-wrap gap-1.5 text-3xl font-bold text-highlighted mt-1"
     >
       <span class="tracking-[-0.015em] mr-1">{{ t("home.hero.title") }}</span>
       <span class="heading-font">Antoine</span>
@@ -46,7 +46,7 @@ const { t } = useI18n();
       :initial="{ y: 15, opacity: 0 }"
       :animate="{ y: 0, opacity: 1 }"
       :transition="{ duration: 0.6, ease: 'easeOut', delay: 0.75 }"
-      class="text-lg"
+      class="text-lg mt-3 sm:mt-0"
     >
       {{ t("home.hero.description.intro") }}
       <br>
