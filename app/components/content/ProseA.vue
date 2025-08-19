@@ -21,12 +21,13 @@ const props = defineProps({
 </script>
 
 <template>
-  <NuxtLink
-    :href="props.href"
+  <UButton
+    variant="link"
+    color="neutral"
+    size="xl"
+    :to="props.href"
     :target="props.target"
-    class="inline-flex items-center underline underline-offset-4 font-medium
-    text-default hover:text-highlighted transition-all duration-200"
   >
     <slot />
-  </NuxtLink>
+  </UButton>
 </template>
