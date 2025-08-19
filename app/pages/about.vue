@@ -80,7 +80,7 @@ const { t } = useI18n();
       :initial="{ y: 20, opacity: 0 }"
       :animate="{ y: 0, opacity: 1 }"
       :transition="{ duration: 0.6, ease: 'easeOut', delay: 1.15 }"
-      class="flex flex-col gap-3.5 mb-5 md:mb-14"
+      class="flex flex-col gap-3.5 mb-5 md:mb-16"
     >
       <motion.h1
         :initial="{ y: 20, opacity: 0 }"
