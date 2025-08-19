@@ -60,7 +60,7 @@ const { t } = useI18n();
       <motion.h1
         :initial="{ y: 20, opacity: 0 }"
         :animate="{ y: 0, opacity: 1 }"
-        :transition="{ duration: 0.6, ease: 'easeOut', delay: 0.85 }"
+        :transition="{ duration: 0.6, ease: 'easeOut', delay: 0.9 }"
         class="text-2xl font-bold text-highlighted"
       >
         {{ t("about.experiences.title") }}
@@ -69,7 +69,7 @@ const { t } = useI18n();
       <Motion
         :initial="{ y: 15, opacity: 0 }"
         :animate="{ y: 0, opacity: 1 }"
-        :transition="{ duration: 0.5, ease: 'easeOut', delay: 0.9 }"
+        :transition="{ duration: 0.5, ease: 'easeOut', delay: 0.95 }"
       >
         <AboutWorkExperiences />
       </Motion>
@@ -79,7 +79,7 @@ const { t } = useI18n();
     <motion.div
       :initial="{ y: 20, opacity: 0 }"
       :animate="{ y: 0, opacity: 1 }"
-      :transition="{ duration: 0.6, ease: 'easeOut', delay: 1.15 }"
+      :transition="{ duration: 0.6, ease: 'easeOut', delay: 1.2 }"
       class="flex flex-col gap-3.5 mb-5 md:mb-16"
     >
       <motion.h1
