@@ -35,7 +35,7 @@ const githubLinks: DropdownMenuItem[][] = [
 </script>
 
 <template>
-  <div class="flex justify-between items-center px-2 py-3 gap-2 md:gap-4">
+  <div class="flex justify-between items-center py-3 gap-2 md:gap-4">
     <NuxtLink to="/">
       <NuxtImg
         src="/logo.png"
