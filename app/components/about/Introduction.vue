@@ -52,7 +52,7 @@ const age = today.getFullYear() - birthDate.getFullYear() - (
       {{ t("about.whyComputerScience.projects") }}
     </UButton>
     {{ t("about.whyComputerScience.around") }}
-    <UButton variant="link" color="neutral" size="xl" to="/projects">
+    <UButton variant="link" color="neutral" size="xl" to="/projects/meliodas">
       Méliodas
     </UButton>
     {{ t("about.whyComputerScience.thatFollowedMe") }}
