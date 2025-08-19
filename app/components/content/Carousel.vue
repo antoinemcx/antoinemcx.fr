@@ -6,21 +6,22 @@ defineProps<{
 
 <template>
   <!-- Carousel if multiple images -->
-  <UCarousel
-    v-if="imageLinks.length > 1"
-    v-slot="{ item }"
-    auto-height
-    arrows
-    dots
-    :items="imageLinks"
-    :ui="{
-      container: 'transition-[height]',
-      dot: 'w-6 h-1',
-    }"
-    class="max-w-[85%] mx-auto"
-  >
-    <NuxtImg :src="item" width="auto" height="450" class="rounded-md" />
-  </UCarousel>
+  <div v-if="imageLinks.length > 1" class="pb-8">
+    <UCarousel
+      v-slot="{ item }"
+      auto-height
+      arrows
+      dots
+      :items="imageLinks"
+      :ui="{
+        container: 'transition-[height]',
+        dot: 'w-6 h-1',
+      }"
+      class="max-w-[85%] mx-auto"
+    >
+      <NuxtImg :src="item" width="auto" height="450" class="rounded-md" />
+    </UCarousel>
+  </div>
 
   <!-- Immediate image if not -->
   <NuxtImg

@@ -29,7 +29,7 @@ const refinedSrc = computed(() => {
     :alt="props.alt"
     :width="props.width"
     :height="props.height"
-    class="rounded-md py-2"
+    class="rounded-md my-2 shadow-sm"
     placeholder
   />
 </template>
