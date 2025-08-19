@@ -60,7 +60,7 @@ defineProps<{
 
         <!-- Experience details -->
         <AboutExperienceDetails
-          :experience="{ type: 'work', data: experiences[0] }"
+          :experience="{ type: 'work', data: experience }"
           class="-mt-2"
           :class="{ 'pb-8': index < experiences.length - 1 }"
         />
