@@ -9,7 +9,7 @@ const { t } = useI18n();
     :initial="{ y: 25, opacity: 0 }"
     :animate="{ y: 0, opacity: 1 }"
     :transition="{ duration: 0.7, ease: 'easeOut', delay: 0.25 }"
-    class="flex flex-col gap-2 pt-1 md:pt-2 pb-11 hlg:pb-18"
+    class="flex flex-col gap-2 pt-0.5 hlg:pt-2 pb-11 hlg:pb-18"
   >
     <!-- Header -->
     <motion.div
