@@ -14,14 +14,16 @@
 1. Clone the repository: `git clone https://github.com/antoinemcx/antoinemcx.fr.git <YOUR_PROJECT_NAME>`
 2. Install the dependencies: `npm install`
 3. Build the project:  `npm run build`
-4. Run the production server `node ./.output/server/index.mjs` or start with pm2: `pm2 start ecosystem.config.cjs`
+4. Run the production server:
+    - with simply `node ./.output/server/index.mjs`
+    - or start with [pm2](https://pm2.keymetrics.io/): `pm2 start ecosystem.config.cjs` (recommended)
 5. The website is up on port **3000** (or the one defined in `ecosystem.config.cjs`, default to **9000**) 🚀
 
 <br>
 
 ## Website archives
 In this repository, you will also find branches prefixed with `archive/*`.  
-These are older versions of my website. Don't hesitate to check it out:
+These are older versions of my website. Don't hesitate to check them out:
 - [archive/v0-meliooff.xyz-ejs](https://github.com/antoinemcx/antoinemcx.fr/tree/archive/v0-meliooff.xyz-ejs) · My first portfolio, a Discord profile clone (2021)
 - [archive/v1-antoinemcx.fr-ejs](https://github.com/antoinemcx/antoinemcx.fr/tree/archive/v1-antoinemcx.fr-ejs) · Previous published website (2023)
 - [archive/v2-antoinemcx.fr-nextjs](https://github.com/antoinemcx/antoinemcx.fr/tree/archive/v2-antoinemcx.fr-nextjs) · Redesign with Next.js, abandoned (2024)
