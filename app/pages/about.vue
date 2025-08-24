@@ -30,7 +30,7 @@ const { t } = useI18n();
     </div>
 
     <!-- Skills -->
-    <div class="flex flex-col gap-3.5 mb-1">
+    <div class="flex flex-col gap-4 mb-1">
       <motion.h1
         :initial="{ y: 20, opacity: 0 }"
         :animate="{ y: 0, opacity: 1 }"
@@ -51,7 +51,7 @@ const { t } = useI18n();
     </div>
 
     <!-- Experience -->
-    <div class="flex flex-col gap-3.5">
+    <div class="flex flex-col gap-4">
       <motion.h1
         :initial="{ y: 20, opacity: 0 }"
         :animate="{ y: 0, opacity: 1 }"
@@ -72,7 +72,7 @@ const { t } = useI18n();
     </div>
 
     <!-- Education -->
-    <div class="flex flex-col gap-3.5 mb-5 md:mb-16">
+    <div class="flex flex-col gap-4 mb-5 md:mb-16">
       <motion.h1
         :initial="{ y: 20, opacity: 0 }"
         :while-in-view="{ y: 0, opacity: 1 }"
