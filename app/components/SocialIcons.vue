@@ -14,7 +14,7 @@ const icons = [
   {
     name: "X",
     icon: "simple-icons:x",
-    link: "https://x.com/dev_melio",
+    link: "https://x.com/antoinemcx",
   },
   {
     name: "LinkedIn",
