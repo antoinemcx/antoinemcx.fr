@@ -14,21 +14,15 @@ const showAllDescription = ref(false);
     <!-- Short description -->
     <div class="whitespace-pre-line">
       {{ description[0] }}
-      <motion.div
+      <UButton
         v-if="!showAllDescription && description.length > 1"
-        :initial="{ opacity: 0, y: 5 }"
-        :animate="{ opacity: 1, y: 0 }"
-        :transition="{ duration: 0.15, delay: 0.18 }"
+        color="neutral"
+        variant="ghost"
+        class="rounded-lg py-0"
+        @click="showAllDescription = true"
       >
-        <UButton
-          color="neutral"
-          variant="ghost"
-          class="rounded-lg py-0"
-          @click="showAllDescription = true"
-        >
-          ...{{ t("readMore").toLowerCase() }}
-        </UButton>
-      </motion.div>
+        ...{{ t("readMore").toLowerCase() }}
+      </UButton>
     </div>
 
     <!-- Additional information if read more button pressed -->
