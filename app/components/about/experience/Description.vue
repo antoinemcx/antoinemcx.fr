@@ -18,8 +18,7 @@ const showAllDescription = ref(false);
         v-if="!showAllDescription && description.length > 1"
         :initial="{ opacity: 0, y: 5 }"
         :animate="{ opacity: 1, y: 0 }"
-        :transition="{ duration: 0.15, delay: 0.15 }"
-        as-child
+        :transition="{ duration: 0.15, delay: 0.18 }"
       >
         <UButton
           color="neutral"
