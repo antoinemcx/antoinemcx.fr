@@ -12,9 +12,9 @@ const showAllDescription = ref(false);
 <template>
   <div v-if="description.length > 0" class="mt-1 text-sm">
     <!-- Short description -->
-    <p class="whitespace-pre-line">
+    <div class="whitespace-pre-line">
       {{ description[0] }}
-      <Motion
+      <motion.div
         v-if="!showAllDescription && description.length > 1"
         :initial="{ opacity: 0, y: 5 }"
         :animate="{ opacity: 1, y: 0 }"
@@ -28,12 +28,12 @@ const showAllDescription = ref(false);
         >
           ...{{ t("readMore").toLowerCase() }}
         </UButton>
-      </Motion>
-    </p>
+      </motion.div>
+    </div>
 
     <!-- Additional information if read more button pressed -->
     <AnimatePresence>
-      <motion.p
+      <motion.div
         v-for="(other, index)
           in (showAllDescription ? description.slice(1) : [])"
         :key="index"
@@ -52,7 +52,7 @@ const showAllDescription = ref(false);
         >
           ...{{ t("readLess").toLowerCase() }}
         </UButton>
-      </motion.p>
+      </motion.div>
     </AnimatePresence>
   </div>
 </template>
