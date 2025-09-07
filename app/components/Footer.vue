@@ -13,7 +13,9 @@ const { t } = useI18n();
         {{ t("footer.madeWith") }}
         <span class="heart-beat">❤️</span>
         {{ t("footer.using") }}
-        <span class="font-semibold">Nuxt.js</span>.
+        <span class="font-semibold">
+          <NuxtLink to="https://nuxt.com" target="_blank">Nuxt.js</NuxtLink>
+        </span>.
       </div>
     </div>
 
