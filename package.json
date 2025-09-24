@@ -30,6 +30,7 @@
     "@antfu/eslint-config": "^5.1.0",
     "@iconify-json/circle-flags": "^1.2.8",
     "@iconify-json/lucide": "^1.2.62",
+    "@iconify-json/simple-icons": "^1.2.53",
     "@iconify-json/uil": "^1.2.3"
   }
 }
