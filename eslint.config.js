@@ -10,4 +10,9 @@ export default antfu({
     semi: true,
     quotes: "double",
   },
+}, {
+  files: ["**/*.md"],
+  rules: {
+    "style/no-trailing-spaces": "off",
+  },
 });
