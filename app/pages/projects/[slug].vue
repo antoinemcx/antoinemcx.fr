@@ -31,7 +31,7 @@ const { data: project } = await useAsyncData(path.value, async () => {
 });
 
 if (!project.value) {
-  throw createError({ statusCode: 404, statusMessage: t("projects.notFound") });
+  throw createError({ status: 404, statusText: t("projects.notFound") });
 }
 
 useSeoMeta({
