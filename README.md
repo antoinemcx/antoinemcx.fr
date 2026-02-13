@@ -13,8 +13,11 @@
 ### Production
 #### With Docker (recommended)
 1. Clone the repository: `git clone https://github.com/antoinemcx/antoinemcx.fr.git <YOUR_PROJECT_NAME>`
-2. Build and start the container: `docker compose up -d --build`
-3. The website is up on port **9000** 🚀
+2. If you the [Traefik](https://traefik.io/traefik) reverse proxy, update [`docker-compose.yml`](docker-compose.yml):
+   - Change the domain name in the Traefik `Host` rule
+   - Change the network name "traefik-proxy" according to your Traefik configuration
+4. Build and start the container: `docker compose up -d --build`
+5. The website is up on port **9000** and accessible via your domain 🚀
 
 #### Without Docker
 1. Clone the repository: `git clone https://github.com/antoinemcx/antoinemcx.fr.git <YOUR_PROJECT_NAME>`
@@ -23,7 +26,8 @@
 4. Run the production server: `node ./.output/server/index.mjs`
 5. The website is up on port **3000** 🚀
 
-> **Note:** To use a different port, set the `PORT` environment variable:  
+> [!NOTE]
+> To use a different port, set the `PORT` environment variable:  
 > - Linux/macOS: `PORT=9000 node ./.output/server/index.mjs`
 > - Windows (PowerShell): `$env:PORT=9000; node ./.output/server/index.mjs`
 
