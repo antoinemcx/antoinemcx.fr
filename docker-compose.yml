@@ -20,6 +20,9 @@ services:
       start_period: 10s
       retries: 3
     restart: unless-stopped
+    deploy:
+      mode: replicated
+      replicas: 3
 
 networks:
   traefik-proxy:
