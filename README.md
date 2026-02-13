@@ -11,13 +11,21 @@
 4. The website is up on [localhost:3000](http://localhost:3000) 🚀
 
 ### Production
+#### With Docker (recommended)
+1. Clone the repository: `git clone https://github.com/antoinemcx/antoinemcx.fr.git <YOUR_PROJECT_NAME>`
+2. Build and start the container: `docker compose up -d --build`
+3. The website is up on port **9000** 🚀
+
+#### Without Docker
 1. Clone the repository: `git clone https://github.com/antoinemcx/antoinemcx.fr.git <YOUR_PROJECT_NAME>`
 2. Install the dependencies: `npm install`
-3. Build the project:  `npm run build`
-4. Run the production server:
-    - with simply `node ./.output/server/index.mjs`
-    - or start with [pm2](https://pm2.keymetrics.io/): `pm2 start ecosystem.config.cjs` (recommended)
-5. The website is up on port **3000** (or the one defined in `ecosystem.config.cjs`, default to **9000**) 🚀
+3. Build the project: `npm run build`
+4. Run the production server: `node ./.output/server/index.mjs`
+5. The website is up on port **3000** 🚀
+
+> **Note:** To use a different port, set the `PORT` environment variable:  
+> - Linux/macOS: `PORT=9000 node ./.output/server/index.mjs`
+> - Windows (PowerShell): `$env:PORT=9000; node ./.output/server/index.mjs`
 
 <br>
 
