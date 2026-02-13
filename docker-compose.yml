@@ -1,7 +1,6 @@
 services:
   antoinemcx_fr:
     build: .
-    container_name: antoinemcx_fr
     environment:
       - PORT=9000
     networks:
