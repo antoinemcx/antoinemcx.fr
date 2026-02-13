@@ -4,7 +4,7 @@ const { t } = useI18n();
 const isFlagHovered = ref(false);
 
 const today = new Date();
-const birthDate = new Date(2005, 12, 26);
+const birthDate = new Date(2005, 11, 26);
 const age = today.getFullYear() - birthDate.getFullYear() - (
   today.getMonth() < birthDate.getMonth()
   || (today.getMonth() === birthDate.getMonth()
