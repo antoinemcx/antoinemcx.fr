@@ -38,8 +38,8 @@ In this repository, you will also find branches prefixed with `archive/*`.
 These are older versions of my website. Don't hesitate to check them out:
 - [archive/v0-meliooff.xyz-ejs](https://github.com/antoinemcx/antoinemcx.fr/tree/archive/v0-meliooff.xyz-ejs) · My first portfolio, a Discord profile clone (2021)
 - [archive/v1-antoinemcx.fr-ejs](https://github.com/antoinemcx/antoinemcx.fr/tree/archive/v1-antoinemcx.fr-ejs) · Previous published website (2023)
-- [archive/v1-antoinemcx.fr-nextjs](https://github.com/antoinemcx/antoinemcx.fr/tree/archive/v1-antoinemcx.fr-nextjs) · Redesign with Next.js, abandoned (2024)
-- [master](https://github.com/antoinemcx/antoinemcx.fr) · Complete redesign with Nuxt.js 4, and current published version (2025)
+- [archive/v2-antoinemcx.fr-nextjs](https://github.com/antoinemcx/antoinemcx.fr/tree/archive/v2-antoinemcx.fr-nextjs) · Redesign with Next.js, abandoned (2024)
+- [master](https://github.com/antoinemcx/antoinemcx.fr) · Complete redesign with Nuxt.js 4, and current published version (since 2025)
 
 <br>
 
