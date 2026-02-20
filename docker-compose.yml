@@ -3,6 +3,7 @@ services:
     build: .
     environment:
       - PORT=9000
+      - NUXT_PUBLIC_ENVIRONMENT=production
     networks:
       - traefik-proxy
     labels:

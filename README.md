@@ -23,13 +23,15 @@
 1. Clone the repository: `git clone https://github.com/antoinemcx/antoinemcx.fr.git <YOUR_PROJECT_NAME>`
 2. Install the dependencies: `npm install`
 3. Build the project: `npm run build`
-4. Run the production server: `node ./.output/server/index.mjs`
+4. Run the built server:
+   - On Linux/macOS : `NUXT_PUBLIC_ENVIRONMENT=production node ./.output/server/index.mjs`
+   - On Windows : `$env:NUXT_PUBLIC_ENVIRONMENT="production"; node ./.output/server/index.mjs`
 5. The website is up on port **3000** 🚀
 
 > [!NOTE]
 > To use a different port, set the `PORT` environment variable:  
-> - Linux/macOS: `PORT=9000 node ./.output/server/index.mjs`
-> - Windows (PowerShell): `$env:PORT=9000; node ./.output/server/index.mjs`
+> - Linux/macOS: `PORT=9000 NUXT_PUBLIC_ENVIRONMENT=production node ./.output/server/index.mjs`
+> - Windows (PowerShell): `$env:PORT=9000; $env:NUXT_PUBLIC_ENVIRONMENT="production"; node ./.output/server/index.mjs`
 
 <br>
 
