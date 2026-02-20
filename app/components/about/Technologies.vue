@@ -1,8 +1,8 @@
 <script setup lang="ts">
 const { data: technologies }
-= await useAsyncData("technologies", async () => {
-  return await queryCollection("technologies").first();
-});
+  = await useAsyncData("technologies", async () => {
+    return await queryCollection("technologies").first();
+  });
 </script>
 
 <template>

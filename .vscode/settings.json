@@ -11,5 +11,14 @@
   ],
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit"
-  }
+  },
+  "eslint.validate": [
+    "javascript",
+    "typescript",
+    "vue",
+    "markdown",
+    "yaml",
+    "dockerfile",
+    "json"
+  ]
 }
