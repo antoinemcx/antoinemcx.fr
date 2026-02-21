@@ -12,6 +12,7 @@
 
 ### Production
 #### With Docker (recommended)
+<!-- TODO -->
 1. Clone the repository: `git clone https://github.com/antoinemcx/antoinemcx.fr.git <YOUR_PROJECT_NAME>`
 2. If you the [Traefik](https://traefik.io/traefik) reverse proxy, update [`docker-compose.yml`](docker-compose.yml):
    - Change the domain name in the Traefik `Host` rule
