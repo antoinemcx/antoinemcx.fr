@@ -1,15 +1,15 @@
 import type { Collections } from "@nuxt/content";
 
 export type ProjectsCollectionItem
-= Collections["projects_en"] | Collections["projects_fr"];
+  = Collections["projects_en"] | Collections["projects_fr"];
 
 export type ExperiencesCollectionItem
-= (Collections["experiences_en"] | Collections["experiences_fr"]) & {
-  monthDuration?: number;
-};
+  = (Collections["experiences_en"] | Collections["experiences_fr"]) & {
+    monthDuration?: number;
+  };
 
 export type EducationCollectionItem
-= Collections["education_en"] | Collections["education_fr"];
+  = Collections["education_en"] | Collections["education_fr"];
 
 export enum ProjectStatus {
   NEW = "new",

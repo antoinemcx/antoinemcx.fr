@@ -16,12 +16,12 @@ export function useWorkExperiencesContent(): {
 
   /* Fetch experiences */
   const { data, status }
-  = useAsyncData<ExperiencesCollectionItem[]>(cacheKey, async () => {
-    return await queryCollection(`experiences_${locale.value}`)
-      .all() as ExperiencesCollectionItem[];
-  }, {
-    watch: [locale], // re-fetch when locale changes
-  });
+    = useAsyncData<ExperiencesCollectionItem[]>(cacheKey, async () => {
+      return await queryCollection(`experiences_${locale.value}`)
+        .all() as ExperiencesCollectionItem[];
+    }, {
+      watch: [locale], // re-fetch when locale changes
+    });
 
   /* Order by most recent, with current experiences first */
   const orderedExperiences = computed<ExperiencesCollectionItem[] | undefined>(() =>

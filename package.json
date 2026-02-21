@@ -11,10 +11,7 @@
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
     "test": "vitest",
-    "test:watch": "vitest --watch",
-    "test:unit": "vitest --project unit",
-    "test:nuxt": "vitest --project nuxt",
-    "test:e2e": "vitest --project e2e"
+    "test:watch": "vitest --watch"
   },
   "dependencies": {
     "@nuxt/content": "^3.11.2",
