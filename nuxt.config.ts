@@ -41,6 +41,7 @@ export default defineNuxtConfig({
 
   runtimeConfig: {
     public: {
+      environment: "development", // overrided in production
       discordServer: "https://discord.gg/G6WQsMQShZ",
       github: "https://github.com/antoinemcx",
       githubRepo: "https://github.com/antoinemcx/antoinemcx.fr",

@@ -3,6 +3,7 @@ services:
     image: ghcr.io/antoinemcx/antoinemcx.fr:latest
     environment:
       - PORT=9000
+      - NUXT_PUBLIC_ENVIRONMENT=production
     networks:
       - traefik-proxy
     labels:
