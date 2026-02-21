@@ -1,6 +1,6 @@
 services:
   antoinemcx_fr:
-    build: .
+    image: ghcr.io/antoinemcx/antoinemcx.fr:latest
     environment:
       - PORT=9000
     networks:
