@@ -36,7 +36,7 @@ jobs:
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+          password: ${{ secrets.GH_GHCR_PAT }}
 
       - name: Build and push Docker image
         uses: docker/build-push-action@v6
@@ -47,17 +47,26 @@ jobs:
             ghcr.io/${{ github.repository }}:latest
             ghcr.io/${{ github.repository }}:${{ github.event.workflow_run.head_sha }}
 
-      # - uses: actions/setup-node@v4
-      #   with:
-      #     node-version: ${{ env.NODE_VERSION }}
-      #     cache: npm
-      # - run: npm ci --omit=dev
-      # - run: npm run build
+  # deploy:
+  #   runs-on: ubuntu-latest
+  #   needs: publish
 
-      # - name: Get SSH key
-      #   run: |
-      #     mkdir -p ~/.ssh
-      #     echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
-      #     chmod 600 ~/.ssh/id_rsa
-      # - name: Pull Docker images restart application
-      #   run: ssh -p ${{ secrets.SSH_PORT }} -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "cd ${{ secrets.SSH_APP_PATH }} && docker compose pull && docker compose up -d"
+  #   steps:
+  #     - name: Checkout code
+  #       uses: actions/checkout@v4
+  #       with:
+  #         ref: ${{ github.event.workflow_run.head_sha }}
+  #   - uses: actions/setup-node@v4
+  #     with:
+  #       node-version: ${{ env.NODE_VERSION }}
+  #       cache: npm
+  #   - run: npm ci --omit=dev
+  #   - run: npm run build
+
+  #   - name: Get SSH key
+  #     run: |
+  #       mkdir -p ~/.ssh
+  #       echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+  #       chmod 600 ~/.ssh/id_rsa
+  #   - name: Pull Docker images restart application
+  #     run: ssh -p ${{ secrets.SSH_PORT }} -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "cd ${{ secrets.SSH_APP_PATH }} && docker compose pull && docker compose up -d"
