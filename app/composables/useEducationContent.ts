@@ -16,12 +16,12 @@ export function useEducationContent(): {
 
   /* Fetch experiences */
   const { data, status }
-  = useAsyncData<EducationCollectionItem[]>(cacheKey, async () => {
-    return await queryCollection(`education_${locale.value}`)
-      .all() as EducationCollectionItem[];
-  }, {
-    watch: [locale], // re-fetch when locale changes
-  });
+    = useAsyncData<EducationCollectionItem[]>(cacheKey, async () => {
+      return await queryCollection(`education_${locale.value}`)
+        .all() as EducationCollectionItem[];
+    }, {
+      watch: [locale], // re-fetch when locale changes
+    });
 
   /* Order by most recent, with current experiences first */
   const orderedExperiences = computed<EducationCollectionItem[] | undefined>(() =>
