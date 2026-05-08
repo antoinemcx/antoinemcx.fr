@@ -17,20 +17,23 @@ const tags = computed<string[]>(() => {
 });
 
 /* Tags filter */
-const selectedTags = ref<string[]>([]);
+const selectedTags = ref<string[]>(["all"]);
 const hoveredTag = ref<string | null>(null);
-const filteredProjects = computed(() =>
-  selectedTags.value.length === 0
-    ? projects.value // no filter
+const filteredProjects = computed(() => {
+  const hasTags = selectedTags.value.filter(tag => tag !== "all");
+  return hasTags.length === 0
+    ? projects.value
     : projects.value?.filter(project =>
-        project.tags?.some(tag => selectedTags.value.includes(tag)),
-      ),
-);
+        project.tags?.some(tag => hasTags.includes(tag)),
+      );
+});
 
 function toggleTag(tag: string) {
-  if (selectedTags.value.includes(tag)) {
-    selectedTags.value = selectedTags.value.filter(t => t !== tag);
-  } else {
+  if (tag !== "all" && selectedTags.value.includes(tag)) {
+    const newTags = selectedTags.value.filter(t => t !== tag);
+    selectedTags.value = newTags.length > 0 ? newTags : ["all"];
+  } else if (tag !== "all") {
+    selectedTags.value = selectedTags.value.filter(t => t !== "all");
     selectedTags.value.push(tag);
   }
 }
@@ -65,7 +68,23 @@ function toggleTag(tag: string) {
     <span class="text-muted font-semibold">
       {{ t("projects.tags") }}
     </span>
-    <div class="flex flex-wrap gap-1.5">
+    <div class="flex flex-wrap gap-1.5 items-center">
+      <!-- "All" tag -->
+      <UBadge
+        :label="t('projects.all')"
+        color="neutral"
+        variant="subtle"
+        class="h-fit cursor-pointer rounded-full transition-colors duration-300"
+        :class="selectedTags.includes('all')
+          ? 'bg-accented/80' : 'bg-accented/20 hover:bg-accented/80'"
+        @click="selectedTags = ['all']"
+        @mouseenter="hoveredTag = 'all'"
+        @mouseleave="hoveredTag = null"
+      />
+
+      <USeparator orientation="vertical" class="h-3" size="sm" color="neutral" />
+
+      <!-- Other tags -->
       <UBadge
         v-for="tag in tags"
         :key="tag"
@@ -73,27 +92,13 @@ function toggleTag(tag: string) {
         color="neutral"
         variant="subtle"
         class="h-fit cursor-pointer rounded-full transition-colors duration-300"
-        :class="selectedTags.length === 0
-          ? (hoveredTag === null || hoveredTag === tag
-            ? 'bg-accented/75' : 'bg-accented/25 hover:bg-accented/75')
-          : (selectedTags.includes(tag)
-            ? 'bg-accented/75' : 'bg-accented/25 hover:bg-accented/75')"
+        :class="selectedTags.includes(tag)
+          ? 'bg-accented/80' : 'bg-accented/20 hover:bg-accented/80'"
         @click="toggleTag(tag)"
         @mouseenter="hoveredTag = tag"
         @mouseleave="hoveredTag = null"
       />
     </div>
-
-    <!-- Clear filter button -->
-    <UButton
-      v-if="selectedTags.length > 0"
-      size="sm"
-      color="error"
-      variant="ghost"
-      icon="lucide:trash"
-      class="rounded-4xl p-1!"
-      @click="selectedTags = []"
-    />
   </motion.div>
 
   <motion.div
