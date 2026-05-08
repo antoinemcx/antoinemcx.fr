@@ -14,7 +14,8 @@ export type EducationCollectionItem
 export enum ProjectStatus {
   NEW = "new",
   SOON = "soon",
-  ACTIVE = "active", // supposedly default
+  ACTIVE = "active", // active development and/or maintenance
   ARCHIVED = "archived",
   DISCONTINUED = "discontinued",
+  // else : under maintenance but no more active development
 }
