@@ -40,6 +40,7 @@ export default defineNuxtConfig({
   },
 
   runtimeConfig: {
+    redisUrl: "",
     public: {
       environment: "development", // overrided in production
       discordServer: "https://discord.gg/G6WQsMQShZ",

@@ -1,42 +1,83 @@
 <script setup lang="ts">
+import type { AsyncDataRequestStatus } from "#app";
+import type { GithubMetricsRequest } from "~~/server/api/github-metrics.post";
+import type { GithubMetrics } from "~~/server/utils/githubMetricsCache";
+
 const props = defineProps<{
   githubRepositoryUrl: string;
 }>();
 
-const nuxtApp = useNuxtApp();
-const baseUrl = "https://github.com/";
+const githubBaseUrl = "https://github.com/";
+const cacheEndpoint = "/api/github-metrics";
 
-let repoUrl = props.githubRepositoryUrl.replace(baseUrl, "").split("/");
-if (repoUrl.length > 2) {
-  repoUrl = repoUrl.slice(0, 2); // remove branches or tags data
-}
+const repositoryUrl = computed(() => {
+  let repoPath = props.githubRepositoryUrl.replace(githubBaseUrl, "").split("/");
+  if (repoPath.length > 2) {
+    repoPath = repoPath.slice(0, 2); // remove branches or tags data
+  }
 
-const { data, status } = await useLazyFetch<{
-  stargazers_count: number;
-  forks_count: number; // other fields are not useful here
-}>(`https://api.github.com/repos/${repoUrl.join("/")}`, {
-  server: false,
-  transform(input) {
-    return { ...input, fetchedAt: new Date() };
-  },
-  getCachedData(key) { // check cache, refetch if nullish value
-    let data = nuxtApp.payload.data[key] || nuxtApp.static.data[key];
-
-    /* Check for data expiration */
-    if (data) {
-      const expirationDate = new Date(data.fetchedAt);
-      expirationDate.setTime(expirationDate.getTime() + 1000 * 60 * 5); // 5 min
-      if (expirationDate.getTime() < Date.now()) {
-        data = null; // data expired, null to force refetch
-      }
-    }
-
-    return data;
-  },
+  return repoPath.join("/");
 });
 
-const githubStarCount = computed(() => data.value?.stargazers_count);
-const githubForkCount = computed(() => data.value?.forks_count);
+const metrics = ref<GithubMetrics | null>(null);
+const status = ref<AsyncDataRequestStatus>("idle");
+
+async function loadGithubMetrics() {
+  const repository = repositoryUrl.value;
+  status.value = "pending";
+  metrics.value = null;
+
+  if (!repository) {
+    status.value = "error";
+  } else { // check server cache first, then fetch from GitHub if cache miss
+    const cachedMetrics = await getCachedMetrics(repository);
+
+    if (cachedMetrics) {
+      metrics.value = cachedMetrics;
+      status.value = "success";
+    } else { // fetch from GitHub API
+      try {
+        const githubMetrics = await $fetch<GithubMetrics>(
+          `https://api.github.com/repos/${repository}`,
+        );
+        metrics.value = githubMetrics;
+        status.value = "success";
+
+        /* Update server cache with new metrics */
+        updateCachedMetrics(repository, githubMetrics);
+      } catch {
+        status.value = "error";
+      }
+    }
+  }
+}
+
+async function getCachedMetrics(repository: string) {
+  try {
+    return await $fetch<GithubMetrics | null>(cacheEndpoint, {
+      query: { repository },
+    });
+  } catch {
+    // Ignore cache errors to fetch from GitHub
+  }
+  return null;
+}
+
+function updateCachedMetrics(repository: string, metrics: GithubMetrics) {
+  const request: GithubMetricsRequest = {
+    repository,
+    stargazers_count: metrics.stargazers_count,
+    forks_count: metrics.forks_count,
+  };
+  $fetch(cacheEndpoint, { method: "POST", body: request }).catch(() => {
+    // Ignore cache update errors
+  });
+}
+
+watch(repositoryUrl, loadGithubMetrics, { immediate: true });
+
+const githubStarCount = computed(() => metrics.value?.stargazers_count);
+const githubForkCount = computed(() => metrics.value?.forks_count);
 </script>
 
 <template>
