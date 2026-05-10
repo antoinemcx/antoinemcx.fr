@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import ImageComponent from "#build/mdc-image-component.mjs";
-import { computed, useRuntimeConfig } from "#imports";
-
 import { joinURL, withLeadingSlash, withTrailingSlash } from "ufo";
+import ImageComponent from "#build/mdc-image-component.mjs";
+
+import { computed, useRuntimeConfig } from "#imports";
 
 const props = defineProps({
   src: { type: String, default: "" },
