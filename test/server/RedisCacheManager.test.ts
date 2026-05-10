@@ -77,4 +77,47 @@ describe("RedisCacheManager", () => {
     expect(redisGetMock).toHaveBeenCalledWith("github-metrics:owner/repo");
     expect(cached).toEqual({ value: 7 });
   });
+
+  it("evicts expired entries when memory cache reaches max size", async () => {
+    // Arrange
+    vi.useFakeTimers();
+    vi.setSystemTime(new Date("2026-01-01T00:00:00.000Z"));
+    const cacheManager = new RedisCacheManager("", 1);
+
+    // Fill cache to capacity with short-lived entries
+    for (let i = 0; i < 100; i++) {
+      await cacheManager.set(`key-${i}`, i);
+    }
+    // Expire all entries
+    vi.setSystemTime(new Date("2026-01-01T00:00:02.000Z"));
+
+    // Act
+    await cacheManager.set("new-key", "new-value", 60);
+    const result = await cacheManager.get<string>("new-key");
+
+    // Assert
+    expect(result).toBe("new-value");
+    expect(await cacheManager.get("key-0")).toBeNull();
+    expect(await cacheManager.get("key-99")).toBeNull();
+  });
+
+  it("evicts the oldest entry when cache is full and no entries are expired", async () => {
+    // Arrange
+    vi.useFakeTimers();
+    vi.setSystemTime(new Date("2026-01-01T00:00:00.000Z"));
+    const cacheManager = new RedisCacheManager("", 300);
+
+    // Fill cache to capacity with long-lived entries
+    for (let i = 0; i < 100; i++) {
+      await cacheManager.set(`key-${i}`, i);
+    }
+
+    // Act
+    await cacheManager.set("overflow-key", "overflow");
+
+    // Assert
+    expect(await cacheManager.get("key-0")).toBeNull();
+    expect(await cacheManager.get("key-1")).toBe(1);
+    expect(await cacheManager.get<string>("overflow-key")).toBe("overflow");
+  });
 });

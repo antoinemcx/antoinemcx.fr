@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import type { AsyncDataRequestStatus } from "#app";
-import type { GithubMetricsRequest } from "~~/server/api/github-metrics.post";
 import type { GithubMetrics } from "~~/server/utils/githubMetricsCache";
 
 const props = defineProps<{
@@ -8,7 +6,7 @@ const props = defineProps<{
 }>();
 
 const githubBaseUrl = "https://github.com/";
-const cacheEndpoint = "/api/github-metrics";
+const CLIENT_CACHE_TTL_MS = 5 * 60 * 1000;
 
 const repositoryUrl = computed(() => {
   let repoPath = props.githubRepositoryUrl.replace(githubBaseUrl, "").split("/");
@@ -19,62 +17,24 @@ const repositoryUrl = computed(() => {
   return repoPath.join("/");
 });
 
-const metrics = ref<GithubMetrics | null>(null);
-const status = ref<AsyncDataRequestStatus>("idle");
-
-async function loadGithubMetrics() {
-  const repository = repositoryUrl.value;
-  status.value = "pending";
-  metrics.value = null;
-
-  if (!repository) {
-    status.value = "error";
-  } else { // check server cache first, then fetch from GitHub if cache miss
-    const cachedMetrics = await getCachedMetrics(repository);
-
-    if (cachedMetrics) {
-      metrics.value = cachedMetrics;
-      status.value = "success";
-    } else { // fetch from GitHub API
-      try {
-        const githubMetrics = await $fetch<GithubMetrics>(
-          `https://api.github.com/repos/${repository}`,
-        );
-        metrics.value = githubMetrics;
-        status.value = "success";
-
-        /* Update server cache with new metrics */
-        updateCachedMetrics(repository, githubMetrics);
-      } catch {
-        status.value = "error";
+const { data: metrics, status } = await useLazyFetch<GithubMetrics>("/api/github-metrics", {
+  query: { repository: repositoryUrl },
+  transform(input) {
+    return { ...input, fetchedAt: new Date() };
+  },
+  /* Client-side caching to avoid requests to server on component remount */
+  getCachedData(key, nuxtApp) {
+    const data = nuxtApp.payload.data[key] || nuxtApp.static.data[key];
+    if (data?.fetchedAt) {
+      const expirationDate = new Date(data.fetchedAt);
+      expirationDate.setTime(expirationDate.getTime() + CLIENT_CACHE_TTL_MS);
+      if (expirationDate.getTime() < Date.now()) {
+        return; // expired, force refetch
       }
+      return data;
     }
-  }
-}
-
-async function getCachedMetrics(repository: string) {
-  try {
-    return await $fetch<GithubMetrics | null>(cacheEndpoint, {
-      query: { repository },
-    });
-  } catch {
-    // Ignore cache errors to fetch from GitHub
-  }
-  return null;
-}
-
-function updateCachedMetrics(repository: string, metrics: GithubMetrics) {
-  const request: GithubMetricsRequest = {
-    repository,
-    stargazers_count: metrics.stargazers_count,
-    forks_count: metrics.forks_count,
-  };
-  $fetch(cacheEndpoint, { method: "POST", body: request }).catch(() => {
-    // Ignore cache update errors
-  });
-}
-
-watch(repositoryUrl, loadGithubMetrics, { immediate: true });
+  },
+});
 
 const githubStarCount = computed(() => metrics.value?.stargazers_count);
 const githubForkCount = computed(() => metrics.value?.forks_count);

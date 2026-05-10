@@ -75,7 +75,7 @@ function toggleTag(tag: string) {
         color="neutral"
         variant="subtle"
         class="h-fit cursor-pointer rounded-full transition-colors duration-300"
-        :class="selectedTags.includes('all')
+        :class="selectedTags.includes('all') && (!hoveredTag || hoveredTag === 'all')
           ? 'bg-accented/80' : 'bg-accented/20 hover:bg-accented/80'"
         @click="selectedTags = ['all']"
         @mouseenter="hoveredTag = 'all'"
@@ -92,7 +92,7 @@ function toggleTag(tag: string) {
         color="neutral"
         variant="subtle"
         class="h-fit cursor-pointer rounded-full transition-colors duration-300"
-        :class="selectedTags.includes(tag)
+        :class="selectedTags.includes(tag) && hoveredTag !== 'all'
           ? 'bg-accented/80' : 'bg-accented/20 hover:bg-accented/80'"
         @click="toggleTag(tag)"
         @mouseenter="hoveredTag = tag"
