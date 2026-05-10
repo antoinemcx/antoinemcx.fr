@@ -20,7 +20,7 @@ const { t } = useI18n();
     class="flex flex-col gap-2 mt-4"
   >
     <div
-      v-if="project.isContributor || project.github"
+      v-if="project.isContributor || (!displayTagsAndTechnos && project.github)"
       class="flex gap-2 items-center"
     >
       <!-- Contributor badge -->
@@ -37,7 +37,7 @@ const { t } = useI18n();
 
       <!-- GitHub metrics count -->
       <ProjectGithubMetrics
-        v-if="project.github"
+        v-if="!displayTagsAndTechnos && project.github"
         :github-repository-url="project.github"
       />
     </div>
@@ -51,15 +51,22 @@ const { t } = useI18n();
         {{ t("projects.tags") }}
       </span>
 
-      <UBadge
-        v-for="tag in project.tags"
-        :key="tag"
-        color="neutral"
-        variant="soft"
-        class="rounded-full bg-accented/50"
-      >
-        {{ tag }}
-      </UBadge>
+      <div class="flex gap-2 items-center">
+        <UBadge
+          v-for="tag in project.tags"
+          :key="tag"
+          color="neutral"
+          variant="soft"
+          class="rounded-full bg-accented/50"
+        >
+          {{ tag }}
+        </UBadge>
+
+        <ProjectGithubMetrics
+          v-if="project.github"
+          :github-repository-url="project.github"
+        />
+      </div>
     </div>
 
     <!-- Used technologies for large cards or project pages -->

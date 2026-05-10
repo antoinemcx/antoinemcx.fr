@@ -1,4 +1,4 @@
-# <a href="https://antoinemcx.fr"><code><img height="26" src="/public/logo.ico"></code> antoinemcx.fr (v3)</a>
+# <a href="https://antoinemcx.fr"><code><img height="26" src="/public/logo.ico" alt="antoinemcx.fr logo"></code> antoinemcx.fr (v3)</a>
 
 🌐 My personal website and portfolio, built with [Nuxt.js 4](https://nuxt.com/), TypeScript and [TailwindCSS](https://tailwindcss.com/).
 <br><br>

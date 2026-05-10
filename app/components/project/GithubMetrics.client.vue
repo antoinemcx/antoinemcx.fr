@@ -1,42 +1,43 @@
 <script setup lang="ts">
+import type { GithubMetrics } from "~~/server/utils/githubMetricsCache";
+
 const props = defineProps<{
   githubRepositoryUrl: string;
 }>();
 
-const nuxtApp = useNuxtApp();
-const baseUrl = "https://github.com/";
+const githubBaseUrl = "https://github.com/";
+const CLIENT_CACHE_TTL_MS = 5 * 60 * 1000;
 
-let repoUrl = props.githubRepositoryUrl.replace(baseUrl, "").split("/");
-if (repoUrl.length > 2) {
-  repoUrl = repoUrl.slice(0, 2); // remove branches or tags data
-}
+const repositoryUrl = computed(() => {
+  let repoPath = props.githubRepositoryUrl.replace(githubBaseUrl, "").split("/");
+  if (repoPath.length > 2) {
+    repoPath = repoPath.slice(0, 2); // remove branches or tags data
+  }
 
-const { data, status } = await useLazyFetch<{
-  stargazers_count: number;
-  forks_count: number; // other fields are not useful here
-}>(`https://api.github.com/repos/${repoUrl.join("/")}`, {
-  server: false,
+  return repoPath.join("/");
+});
+
+const { data: metrics, status } = await useLazyFetch<GithubMetrics>("/api/github-metrics", {
+  query: { repository: repositoryUrl },
   transform(input) {
     return { ...input, fetchedAt: new Date() };
   },
-  getCachedData(key) { // check cache, refetch if nullish value
-    let data = nuxtApp.payload.data[key] || nuxtApp.static.data[key];
-
-    /* Check for data expiration */
-    if (data) {
+  /* Client-side caching to avoid requests to server on component remount */
+  getCachedData(key, nuxtApp) {
+    const data = nuxtApp.payload.data[key] || nuxtApp.static.data[key];
+    if (data?.fetchedAt) {
       const expirationDate = new Date(data.fetchedAt);
-      expirationDate.setTime(expirationDate.getTime() + 1000 * 60 * 5); // 5 min
+      expirationDate.setTime(expirationDate.getTime() + CLIENT_CACHE_TTL_MS);
       if (expirationDate.getTime() < Date.now()) {
-        data = null; // data expired, null to force refetch
+        return; // expired, force refetch
       }
+      return data;
     }
-
-    return data;
   },
 });
 
-const githubStarCount = computed(() => data.value?.stargazers_count);
-const githubForkCount = computed(() => data.value?.forks_count);
+const githubStarCount = computed(() => metrics.value?.stargazers_count);
+const githubForkCount = computed(() => metrics.value?.forks_count);
 </script>
 
 <template>

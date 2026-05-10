@@ -5,6 +5,7 @@ export default antfu({
     "ts/no-redeclare": "off",
     "eslint-comments/no-unlimited-disable": "off",
     "style/brace-style": ["error", "1tbs"],
+    "test/prefer-lowercase-title": "off",
   },
   stylistic: {
     semi: true,
@@ -14,5 +15,6 @@ export default antfu({
   files: ["**/*.md"],
   rules: {
     "style/no-trailing-spaces": "off",
+    "markdown/no-multiple-h1": "off",
   },
 });
