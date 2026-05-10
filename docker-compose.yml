@@ -17,6 +17,7 @@ services:
       - NUXT_REDIS_URL=redis://redis:6379
     networks:
       - traefik-proxy
+      - default
     labels:
       - traefik.enable=true
       - traefik.http.services.antoinemcx-https.loadbalancer.server.port=9000
