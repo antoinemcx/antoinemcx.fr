@@ -36,7 +36,11 @@ if (!project.value) {
 
 useSeoMeta({
   title: `Antoine M. - ${project.value.title}`,
+  ogTitle: `Antoine M. - ${project.value.title}`,
+  twitterTitle: `Antoine M. - ${project.value.title}`,
   description: project.value.description,
+  ogDescription: project.value.description,
+  twitterDescription: project.value.description,
 });
 </script>
 
