@@ -7,14 +7,13 @@ useHead({
 });
 
 const origin = "https://antoinemcx.fr"; // raw value to avoid hydration issues
-const title = "Antoine M. - Software Engineer Portfolio";
+const title = "Antoine M.";
 const description
   = "I'm Antoine, a French software engineer. Learn more about me, my work and my projects on this website.";
 const ogImageAlt = "Antoine M. - Software Engineer Portfolio";
 useSeoMeta({
   ogType: "website",
   themeColor: "#45556c",
-  title,
   ogTitle: title,
   twitterTitle: title,
   description,

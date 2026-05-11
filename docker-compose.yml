@@ -2,6 +2,8 @@ services:
   redis:
     image: redis:7-alpine
     command: [redis-server, --save, "", --appendonly, no]
+    networks:
+      - internal-redis
     healthcheck:
       test: [CMD, redis-cli, ping]
       interval: 120s
@@ -17,9 +19,10 @@ services:
       - NUXT_REDIS_URL=redis://redis:6379
     networks:
       - traefik-proxy
-      - default
+      - internal-redis
     labels:
       - traefik.enable=true
+      - traefik.docker.network=traefik-proxy
       - traefik.http.services.antoinemcx-https.loadbalancer.server.port=9000
       - traefik.http.routers.antoinemcx-https.tls=true
       - traefik.http.routers.antoinemcx-https.tls.certresolver=cloudflare
@@ -39,3 +42,5 @@ services:
 networks:
   traefik-proxy:
     external: true
+  internal-redis:
+    internal: true
