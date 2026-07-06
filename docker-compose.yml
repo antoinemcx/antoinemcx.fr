@@ -37,7 +37,7 @@ services:
     restart: unless-stopped
     deploy:
       mode: replicated
-      replicas: 3
+      replicas: 2
 
 networks:
   traefik-proxy:
