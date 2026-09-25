@@ -14,29 +14,29 @@
     "test:watch": "vitest --watch"
   },
   "dependencies": {
-    "@nuxt/content": "^3.13.0",
-    "@nuxt/eslint": "^1.15.2",
-    "@nuxt/image": "^2.0.0",
-    "@nuxt/test-utils": "^4.0.3",
-    "@nuxt/ui": "^4.7.1",
-    "@nuxtjs/i18n": "^10.3.0",
-    "better-sqlite3": "^12.9.0",
-    "eslint": "^10.3.0",
-    "ioredis": "^5.10.1",
-    "motion-v": "^2.2.1",
-    "nuxt": "^4.4.4",
+    "@nuxt/content": "^3.16.1",
+    "@nuxt/eslint": "^1.17.0",
+    "@nuxt/image": "^2.1.0",
+    "@nuxt/test-utils": "^4.3.2",
+    "@nuxt/ui": "^4.11.2",
+    "@nuxtjs/i18n": "^10.6.0",
+    "better-sqlite3": "^13.0.3",
+    "eslint": "^10.11.0",
+    "ioredis": "^6.0.0",
+    "motion-v": "^2.4.4",
+    "nuxt": "^4.5.2",
     "typescript": "^6.0.3",
-    "vue": "^3.5.34",
-    "vue-router": "^5.0.6"
+    "vue": "^3.5.43",
+    "vue-router": "^5.3.1"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^8.2.0",
-    "@iconify-json/circle-flags": "^1.2.10",
-    "@iconify-json/lucide": "^1.2.106",
-    "@iconify-json/simple-icons": "^1.2.81",
+    "@antfu/eslint-config": "^9.5.1",
+    "@iconify-json/circle-flags": "^1.2.11",
+    "@iconify-json/lucide": "^1.2.136",
+    "@iconify-json/simple-icons": "^1.2.97",
     "@iconify-json/uil": "^1.2.3",
-    "@vue/test-utils": "^2.4.10",
-    "happy-dom": "^20.9.0",
-    "vitest": "^4.1.5"
+    "@vue/test-utils": "^2.5.1",
+    "happy-dom": "^20.14.5",
+    "vitest": "^5.0.2"
   }
 }
