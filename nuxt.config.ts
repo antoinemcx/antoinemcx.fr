@@ -12,6 +12,12 @@ export default defineNuxtConfig({
     "motion-v/nuxt",
   ],
 
+  content: {
+    experimental: {
+      sqliteConnector: "native",
+    },
+  },
+
   app: { // seo data
     head: {
       title: "Antoine M.",
