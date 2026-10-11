@@ -44,7 +44,6 @@ useSeoMeta({
 });
 </script>
 
-<!-- TODO ToC -->
 <template>
   <motion.div
     v-if="project"
