@@ -16,13 +16,7 @@ const { data: technologies }
       :class="{ 'cursor-pointer': techno.link }"
     >
       <UBadge
-        :avatar="{
-          src: techno.icon,
-          alt: techno.name,
-        }"
-        :ui="{
-          leadingAvatar: 'rounded-none',
-        }"
+        :leading-icon="techno.icon"
         variant="subtle"
         color="neutral"
         size="lg"

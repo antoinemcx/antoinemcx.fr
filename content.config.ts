@@ -79,7 +79,7 @@ export default defineContentConfig({
       schema: z.object({
         items: z.array(z.object({
           name: z.string().nonempty(),
-          icon: z.string().url(),
+          icon: z.string().nonempty(),
           link: z.string().url(),
         })),
       }),

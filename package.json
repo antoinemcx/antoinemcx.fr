@@ -31,6 +31,8 @@
   "devDependencies": {
     "@antfu/eslint-config": "^9.5.1",
     "@iconify-json/circle-flags": "^1.2.11",
+    "@iconify-json/devicon": "^1.2.74",
+    "@iconify-json/logos": "^1.2.18",
     "@iconify-json/lucide": "^1.2.136",
     "@iconify-json/simple-icons": "^1.2.97",
     "@iconify-json/uil": "^1.2.3",
